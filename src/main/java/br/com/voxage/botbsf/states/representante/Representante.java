@@ -17,7 +17,7 @@ public class Representante {
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
-	           "         \"text\":\"Boleto Indispon�vel\"" + 
+	           "         \"text\":\"Boleto IndisponÃ­vel\"" + 
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":2," + 
@@ -25,11 +25,11 @@ public class Representante {
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":3," + 
-	           "         \"text\":\"Dificuldade Impress�o de Boleto\"" + 
+	           "         \"text\":\"Dificuldade ImpressÃ£o de Boleto\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":4," + 
-	           "         \"text\":\"N�o Consegue Pagar Boleto\"" + 
+	           "         \"text\":\"NÃ£o Consegue Pagar Boleto\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":5," + 
@@ -41,15 +41,15 @@ public class Representante {
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":7," + 
-	           "         \"text\":\"Comunica��o de Eventos\"" + 
+	           "         \"text\":\"ComunicaÃ§Ã£o de Eventos\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":8," + 
-	           "         \"text\":\"Andamento do Benef�cio\"" + 
+	           "         \"text\":\"Andamento do BenefÃ­cio\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":9," + 
-	           "         \"text\":\"Valida��o do Cart�o\"" + 
+	           "         \"text\":\"ValidaÃ§Ã£o do CartÃ£o\"" + 
 	           "      }" +
 	           "   ]" + 
 	           "}";

@@ -33,7 +33,7 @@ public class AcomBenef {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("TERMINATE", "#TERMIANTE");
+				put("TERMINATE", "#TERMINATE");
 			}});
 		}};
 	}

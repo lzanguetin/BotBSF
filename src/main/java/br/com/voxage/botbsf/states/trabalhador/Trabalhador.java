@@ -17,7 +17,7 @@ public class Trabalhador {
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
-	           "         \"text\":\"Desbloqueio de Cart�o\"" + 
+	           "         \"text\":\"Desbloqueio de CartÃ£o\"" + 
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":2," + 
@@ -25,19 +25,19 @@ public class Trabalhador {
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":3," + 
-	           "         \"text\":\"Cart�o de Identifica��o\"" + 
+	           "         \"text\":\"CartÃ£o de IdentificaÃ§Ã£o\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":4," + 
-	           "         \"text\":\"Benef�cios Prestados\"" + 
+	           "         \"text\":\"BenefÃ­cios Prestados\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":5," + 
-	           "         \"text\":\"Solicitar Benef�cio\"" + 
+	           "         \"text\":\"Solicitar BenefÃ­cio\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":6," + 
-	           "         \"text\":\"Acompanhar Benef�cio\"" + 
+	           "         \"text\":\"Acompanhar BenefÃ­cio\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":7," + 
@@ -49,7 +49,7 @@ public class Trabalhador {
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":9," + 
-	           "         \"text\":\"O que � Benef�cio Social Familiar\"" + 
+	           "         \"text\":\"O que Ã© BenefÃ­cio Social Familiar\"" + 
 	           "      }" +
 	           "   ]" + 
 	           "}";

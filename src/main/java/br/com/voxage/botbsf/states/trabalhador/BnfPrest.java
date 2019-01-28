@@ -24,6 +24,14 @@ public class BnfPrest {
 				return botStateFlow;
 			});
 			
+			setPosFunction((botState, inputResult) ->{
+				BotStateFlow botStateFlow = new BotStateFlow();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+				botStateFlow.navigationKey = "TERMINATE";
+				
+				return botStateFlow;
+			});
+			
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put("TERMINATE", "#TERMINATE");
 			}});
