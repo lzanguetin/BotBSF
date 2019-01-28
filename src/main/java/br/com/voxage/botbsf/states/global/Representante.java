@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.representante;
+package br.com.voxage.botbsf.states.global;
 
 import java.util.Arrays;
 import java.util.HashMap;

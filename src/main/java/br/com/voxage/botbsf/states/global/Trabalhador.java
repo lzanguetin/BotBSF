@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.trabalhador;
+package br.com.voxage.botbsf.states.global;
 
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.chat.botintegration.MessageType;
