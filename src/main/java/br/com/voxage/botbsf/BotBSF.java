@@ -29,6 +29,7 @@ public class BotBSF extends VBot {
 	    	String START = "start";
 	    	String TRABALHADOR = "trabalhador";
 	    	String REPRESENTANTE = "representante";
+	    	String ATENDENTE = "atendente";
 	    	
 	    	String BOLINDI = "bolindi";
 	    	String RELTRAB = "reltrab";
@@ -49,6 +50,8 @@ public class BotBSF extends VBot {
 	    	String COMEV = "comev";
 	    	String VEREV = "verev";
 	    	String BSF = "bsf";
+	    	
+	    	String TRANSFERIR = "transfer_to_attendant(1)";
 	    	
 	    	//String MOTIVOIMP = "motivoimp";
 	    	//String MOTIVOREAG = "motivoreag";
