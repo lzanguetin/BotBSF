@@ -3,7 +3,7 @@
 		{
 			"id": "/SOLBENEF",
 			"idNavigationDetail":115,
-			"initialMessages": ["Para solicitar os benefícios, você deve procurar o RH da sua empresa. É responsabilidade da empresa comunicar no site beneficiosocial o evento do trabalhador.\nEm casos de acionamento para o funeral, a família (amigo ou responsável) pode entrar em contato através do 0800 773 3738 ou 0800 580 3738 a qualquer hora do dia ou da noite. Será solicitado apenas a cópia da CTPS do trabalhador, que poderá ser enviada via whatsapp ou email."]
+			"initialMessages": ["Para solicitar os benefícios, você deve procurar o RH da sua empresa. É responsabilidade da empresa comunicar no site da <a href=\"http://www.beneficiosocial.com.br\">Beneficio Social</a> o evento do trabalhador.\nEm casos de acionamento para o funeral, a família (amigo ou responsável) pode entrar em contato através do 0800 773 3738 ou 0800 580 3738 a qualquer hora do dia ou da noite. Será solicitado apenas a cópia da CTPS do trabalhador, que poderá ser enviada via whatsapp ou email."]
 		}
 	]
 }
