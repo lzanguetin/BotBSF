@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/BOLINDI",
+			"idNavigationDetail":121,
+			"initialMessages": ["A partir do momento que o cadastro da empresa é efetuado, o boleto leva até 15 minutos para aparecer no site.\nSe ainda não passou este tempo, por favor aguarde e tente novamente após este prazo."]
+		}
+	]
+}

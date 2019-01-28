@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/ANDABENF",
+			"idNavigationDetail":128,
+			"initialMessages": ["Você pode acompanhar o andamento do benefício através do site 'www.beneficiosocial.com.br' na área 'para trabalhador' ou baixando o App BSF Online.\nSerá necessário o CPF do trabalhador, do beneficiário ou o número do protocolo."]
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/RELTRAB",
+			"idNavigationDetail":122,
+			"initialMessages": ["Vamos lá!\n-No site 'www.beneficiosocial.com.br' acesse a área da empresa com o respectivo CNPJ.\n-No menu a esquerda clique em Imprimir > Boletos de Pagamento.\n-Selecione Benefício Social familiar e clique em avançar.\n-Agora clique em gerar boleto no vencimento, que irá relacionar os trabalhadores.\n-Você pode inserir um a um clicando no botão azul(adicionar novo trabalhador) ou se preferir, pode importar todos de uma vez clicando no botão importar listagem trabalhador, onde deverá baixar o modelo de planilha clicando em Modelo Cadastral.\n-Após copiar os dados e colar nesta planilha é só concluir o envio e salvar.\n-Se ainda estiver com dúvidas, você pode assistir ao vídeo tutorial disponível na parte de impressão do boleto, que fica na parte de cima da tela."]
+		}
+	]
+}

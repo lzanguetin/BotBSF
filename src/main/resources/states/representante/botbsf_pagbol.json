@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/PAGBOL",
+			"idNavigationDetail":124,
+			"initialMessages": ["Se o seu boleto é Itaú ou Santander, aguarde no mínimo 1 hora após a impressão para realizar o pagamento.\nSe o boleto for Sicoob, aguarde no mínimo 1 dia útil.\nSe ainda não passou este tempo, por favor aguarde e tente novamente após este prazo."]
+		}
+	]
+}

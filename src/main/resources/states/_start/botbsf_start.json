@@ -1,0 +1,14 @@
+{
+	"states":[
+		{
+			"id": "/START",
+			"idNavigationDetail": 100,
+			"inputErrorResponses":[
+				{"order":"1", "messages":["Desculpe, mas esta opção que você escolheu não existe. Eu consigo te ajudar se você escolher uma das opções a seguir e digitar apenas o número dela\n1 - Fechar Ordem de Serviço\n2 - Visita Improdutiva\n3 - Reagendamento Cliente\n 4 - Apoio Técnico\n 5 - Outros Assuntos"]},
+				{"order":"2", "messages": ["Desculpe, mas você escolheu uma opção que não existe. Para eu te ajudar, escolha uma das opções a seguir e digite apenas o número correspondente a ela:\n1 - Fechar Ordem de Serviço\n2 - Visita Improdutiva\n3 - Reagendamento Cliente\n 4 - Apoio Técnico\n 5 - Outros Assuntos"]}
+			],
+			"maxInputErrorResponses":["Desculpe, mas você não digitou nenhuma opção válida. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."],
+			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
+		}
+	]
+}

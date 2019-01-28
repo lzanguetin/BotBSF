@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/COMEV",
+			"idNavigationDetail":117,
+			"initialMessages": ["Para comunicar um novo evento você deve procurar o RH da sua empresa para que seja feito o comunicado através do nosso site. Será gerado um número de Protocolo e através dele você poderá acompanhar andamento de benefício."]
+		}
+	]
+}
