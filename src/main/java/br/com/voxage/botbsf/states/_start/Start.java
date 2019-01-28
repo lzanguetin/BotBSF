@@ -14,7 +14,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class Start {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Bem-vindo a BenefÃ­cio Social Familiar. Eu sou a PERSONA, assistente digital e estou aqui para te ajudar.\\nMe diga se vocÃª Ã© trabalhador ou representante da empresa?\"," + 
+	           "   \"message\":\"Bem-vindo a Benefício Social Familiar. Eu sou a PERSONA, assistente digital e estou aqui para te ajudar.\nMe diga se você é trabalhador ou representante da empresa?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
