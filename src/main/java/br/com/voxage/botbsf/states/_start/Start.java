@@ -54,7 +54,7 @@ public class Start {
 					switch(userInput) {
 						case "1":
 							try {
-									dadosFluxo.setOption("1");
+									dadosFluxo.setType("1");
 					                botInputResult.setIntentName(BotBSF.STATES.TRABALHADOR);
 					        }catch(Exception e) {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
@@ -62,7 +62,7 @@ public class Start {
 							break;
 						case "2":
 							try {
-					            	dadosFluxo.setOption("2");
+					            	dadosFluxo.setType("2");
 					                botInputResult.setIntentName(BotBSF.STATES.REPRESENTANTE);
 					        }catch(Exception e) {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);

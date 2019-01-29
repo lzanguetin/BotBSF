@@ -30,6 +30,10 @@ public class BotBSF extends VBot {
 	    	String TRABALHADOR = "trabalhador";
 	    	String REPRESENTANTE = "representante";
 	    	String ATENDENTE = "atendente";
+	    	String FAQ = "faq";
+	    	String FINALIZAR = "finalizar";
+	    	String OUTRA = "outra";
+	    	String DESPEDE = "despede";
 	    	
 	    	String BOLINDI = "bolindi";
 	    	String RELTRAB = "reltrab";

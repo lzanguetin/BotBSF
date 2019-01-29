@@ -4,8 +4,18 @@ import br.com.voxage.vbot.BotInputResult;
 
 public class DadosFluxo {
 	private String option;
+	private String type;
 	private BotInputResult botInputResult;
     
+	
+    public String getType() {
+    	return type;
+    }
+    
+    public void setType(String type) {
+    	this.type = type;
+    }  
+	
     public String getOption() {
     	return option;
     }

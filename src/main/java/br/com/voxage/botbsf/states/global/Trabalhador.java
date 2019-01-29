@@ -142,7 +142,7 @@ public class Trabalhador {
 							}
 							break;
 						default:
-							botInputResult.setResult(BotInputResult.Result.ERROR);
+							botInputResult.setIntentName(BotBSF.STATES.FAQ);
 					}
 					
 					return botInputResult;
@@ -165,7 +165,8 @@ public class Trabalhador {
 					put(BotBSF.STATES.ACOMBENEF, "/ACOMBENEF");	
 					put(BotBSF.STATES.COMEV, "/COMEV");	
 					put(BotBSF.STATES.VEREV, "/VEREV");	
-					put(BotBSF.STATES.BSF, "/BSF");	
+					put(BotBSF.STATES.BSF, "/BSF");
+					put(BotBSF.STATES.FAQ, "/FAQ");
                     put("MAX_INPUT_ERROR", "/TERMINATE");
                     put("MAX_NO_INPUT", "/TERMINATE");
 				}});

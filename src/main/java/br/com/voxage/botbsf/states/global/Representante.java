@@ -142,7 +142,7 @@ public class Representante {
 				            }
 							break;
 						default:
-								botInputResult.setResult(BotInputResult.Result.ERROR);
+							botInputResult.setIntentName(BotBSF.STATES.FAQ);
 						}
 					
 					return botInputResult;
@@ -165,7 +165,8 @@ public class Representante {
 					put(BotBSF.STATES.CADEMP, "/CADEMP");	
 					put(BotBSF.STATES.COMENV, "/COMENV");	
 					put(BotBSF.STATES.ANDABENF, "/ANDABENF");	
-					put(BotBSF.STATES.VALCARD, "/VALCARD");		
+					put(BotBSF.STATES.VALCARD, "/VALCARD");
+					put(BotBSF.STATES.FAQ, "/FAQ");
                     put("MAX_INPUT_ERROR", "/TERMINATE");
                     put("MAX_NO_INPUT", "/TERMINATE");
 				}});
