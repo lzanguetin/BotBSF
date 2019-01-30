@@ -26,13 +26,13 @@ public class CrtId {
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = "TERMINATE";
+				botStateFlow.navigationKey = "FINALIZAR";
 				
 				return botStateFlow;
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("TERMINATE", "#TERMINATE");
+				put("FINALIZAR", "#FINALIZAR");
 			}});
 		}};
 	}
