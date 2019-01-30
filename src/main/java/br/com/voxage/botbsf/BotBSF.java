@@ -56,16 +56,6 @@ public class BotBSF extends VBot {
 	    	String BSF = "bsf";
 	    	
 	    	String TRANSFERIR = "transfer_to_attendant(1)";
-	    	
-	    	//String MOTIVOIMP = "motivoimp";
-	    	//String MOTIVOREAG = "motivoreag";
-	    	//String ATENDENTE = "atendente";
-	    	
-			//String CEABS_OS = "transfer_to_attendant(1)";
-		    //String CEABS_IMPRODUTIVA = "transfer_to_attendant(2)";
-			//String CEABS_REAGENDAMENTO = "transfer_to_attendant(3)";
-		    //String CEABS_APOIO = "transfer_to_attendant(4)";
-			//String CEABS_OUTROS = "transfer_to_attendant(5)";
 	}
 	 
 	public BotBSF() {

@@ -55,7 +55,7 @@ public class Start {
 						case "1":
 							try {
 									dadosFluxo.setType("1");
-					                botInputResult.setIntentName(BotBSF.STATES.TRABALHADOR);
+					                botInputResult.setIntentName(BotBSF.STATES.FAQ);
 					        }catch(Exception e) {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
@@ -84,6 +84,7 @@ public class Start {
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
+					put(BotBSF.STATES.FAQ, "#FAQ");
 					put(BotBSF.STATES.TRABALHADOR, "/TRABALHADOR");
 					put(BotBSF.STATES.REPRESENTANTE, "/REPRESENTANTE");				
                     put("MAX_INPUT_ERROR", "/TERMINATE");
