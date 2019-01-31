@@ -21,7 +21,6 @@ public class FAQ {
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				try {
 					String userInput = userInputs.getConcatenatedInputs();
-					
 					setBotStateInteractionType(BotStateInteractionType.FAQ_SEARCH);
 					setNlpSearchEngine(new LuceneSearchEngine());
 					
