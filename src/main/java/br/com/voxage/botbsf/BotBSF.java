@@ -34,6 +34,7 @@ public class BotBSF extends VBot {
 	    	String FINALIZAR = "finalizar";
 	    	String OUTRA = "outra";
 	    	String DESPEDE = "despede";
+	    	String REDIRECT = "redirect";
 	    	
 	    	String BOLINDI = "bolindi";
 	    	String RELTRAB = "reltrab";
