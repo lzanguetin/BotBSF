@@ -80,7 +80,7 @@ public class Representante {
 					switch(userInput) {
 						case "1":
 							try {
-					            botInputResult.setIntentName(BotBSF.STATES.BOLINDI);
+								botInputResult.setIntentName(BotBSF.STATES.BOLINDI);
 					        }catch(Exception e) {
 				                botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
@@ -157,6 +157,7 @@ public class Representante {
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
+					put("faq", "#FAQ");
 					put(BotBSF.STATES.BOLINDI, "/BOLINDI");
 					put(BotBSF.STATES.RELTRAB, "/RELTRAB");	
 					put(BotBSF.STATES.IMPRBOL, "/IMPRBOL");	
