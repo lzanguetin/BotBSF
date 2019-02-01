@@ -11,7 +11,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class Trabalhador {
+public class Beneficiario {
 	private static final String INITIAL_MESSAGE = "{" + 
 	           "   \"message\":\"Sobre qual asssunto deseja falar?\"," + 
 	           "   \"options\":[" + 
@@ -157,15 +157,15 @@ public class Trabalhador {
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
-					put(BotBSF.STATES.DESBCRT, "/DESBCRT");
-					put(BotBSF.STATES.DESCFOL, "/DESCFOL");	
-					put(BotBSF.STATES.CRTID, "/CRTID");	
-					put(BotBSF.STATES.BNFPREST, "/BNFPREST");	
-					put(BotBSF.STATES.SOLBENEF, "/SOLBENEF");	
-					put(BotBSF.STATES.ACOMBENEF, "/ACOMBENEF");	
-					put(BotBSF.STATES.COMEV, "/COMEV");	
-					put(BotBSF.STATES.VEREV, "/VEREV");	
-					put(BotBSF.STATES.BSF, "/BSF");
+					put(BotBSF.STATES.FUNERAL, "/FUNERAL");
+					put(BotBSF.STATES.OPERADOR, "/OPERADOR");	
+					put(BotBSF.STATES.ATUALIZAR, "/ATUALIZAR");	
+					put(BotBSF.STATES.SOBRE, "/SOBRE");	
+					put(BotBSF.STATES.BOLETOS, "/BOLETOS");	
+					put(BotBSF.STATES.INATIVACAO, "/INATIVACAO");	
+					put(BotBSF.STATES.INADIMPLENCIA, "/INADIMPLENCIA");	
+					put(BotBSF.STATES.NEGATIVADO, "/NEGATIVADO");	
+					put(BotBSF.STATES.OUTROS, "/OUTROS");
 					put(BotBSF.STATES.FAQ, "/FAQ");
                     put("MAX_INPUT_ERROR", "/TERMINATE");
                     put("MAX_NO_INPUT", "/TERMINATE");

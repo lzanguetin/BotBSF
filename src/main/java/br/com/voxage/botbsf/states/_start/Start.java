@@ -14,15 +14,15 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class Start {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Bem-vindo a Benefício Social Familiar. Eu sou a PERSONA, assistente digital e estou aqui para te ajudar.\nMe diga se você é trabalhador ou representante da empresa?\"," + 
+	           "   \"message\":\"Olá, você está no atendimento online da Gestora do Benefício Social Familiar!\nVocê deseja falar sobre assuntos da Empresa ou do seu Benefício?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
-	           "         \"text\":\"Trabalhador\"" + 
+	           "         \"text\":\"Empresa\"" + 
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":2," + 
-	           "         \"text\":\"Representante da Empresa\"" + 
+	           "         \"text\":\"Beneficiário\"" + 
 	           "      }" + 
 	           "   ]" + 
 	           "}";
@@ -55,7 +55,7 @@ public class Start {
 						case "1":
 							try {
 									dadosFluxo.setType("1");
-					                botInputResult.setIntentName(BotBSF.STATES.FAQ);
+					                botInputResult.setIntentName(BotBSF.STATES.EMPRESA);
 					        }catch(Exception e) {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
@@ -63,7 +63,7 @@ public class Start {
 						case "2":
 							try {
 					            	dadosFluxo.setType("2");
-					                botInputResult.setIntentName(BotBSF.STATES.REPRESENTANTE);
+					                botInputResult.setIntentName(BotBSF.STATES.BENEFICIARIO);
 					        }catch(Exception e) {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
@@ -85,9 +85,8 @@ public class Start {
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
 					put(BotBSF.STATES.FAQ, "#FAQ");
-					put(BotBSF.STATES.TRABALHADOR, "#TRABALHADOR");
-					put(BotBSF.STATES.REPRESENTANTE, "#REPRESENTANTE");				
-                    put("MAX_INPUT_ERROR", "/TERMINATE");
+					put(BotBSF.STATES.EMPRESA, "#EMPRESA");
+					put(BotBSF.STATES.BENEFICIARIO, "#BENEFICIARIO");				
                     put("MAX_NO_INPUT", "/TERMINATE");
 				}});
 		}};

@@ -27,24 +27,27 @@ public class BotBSF extends VBot {
 	
 	 public interface STATES{
 	    	String START = "start";
-	    	String TRABALHADOR = "trabalhador";
-	    	String REPRESENTANTE = "representante";
+	    	String EMPRESA = "empresa";
+	    	String BENEFICIARIO = "beneficio";
+	    	
+	    	String FUNERAL = "funeral";
+	    	String OPERADOR = "operador";
+	    	String ATUALIZAR = "atualizar";
+	    	String SOBRE = "sobre";
+	    	String BOLETOS = "boletos";
+	    	String INATIVACAO = "inativacao";
+	    	String INADIMPLENCIA = "inadimplencia";
+	    	String NEGATIVADO = "negativado";
+	    	String OUTROS = "outros";
+	    	
+	    	
+	    	
 	    	String ATENDENTE = "atendente";
 	    	String FAQ = "faq";
 	    	String FINALIZAR = "finalizar";
 	    	String OUTRA = "outra";
 	    	String DESPEDE = "despede";
 	    	String REDIRECT = "redirect";
-	    	
-	    	String BOLINDI = "bolindi";
-	    	String RELTRAB = "reltrab";
-	    	String IMPRBOL = "imprbol";
-	    	String PAGBOL = "pagbol"; 
-	    	String ACNFUN = "acnfun";
-	      	String CADEMP = "cademp";
-	    	String COMENV = "comenv";
-	    	String ANDABENF = "andabenf";
-	    	String VALCARD = "valcard";
 	    	
 	    	String DESBCRT = "desbcrt";
 	    	String DESCFOL = "descfol";

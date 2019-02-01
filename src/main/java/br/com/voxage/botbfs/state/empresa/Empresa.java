@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.global;
+package br.com.voxage.botbfs.state.empresa;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Representante {
+public class Empresa {
 	private static final String INITIAL_MESSAGE = "{" + 
 	           "   \"message\":\"Sobre qual asssunto deseja falar?\"," + 
 	           "   \"options\":[" + 
@@ -76,74 +76,6 @@ public class Representante {
 					botInputResult.setResult(BotInputResult.Result.OK);
 												
 					String userInput = userInputs.getConcatenatedInputs();
-						
-					switch(userInput) {
-						case "1":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.BOLINDI);
-					        }catch(Exception e) {
-				                botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						case "2":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.RELTRAB);
-					        }catch(Exception e) {
-				                botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						case "3":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.IMPRBOL);
-					        }catch(Exception e) {
-				                botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						case "4":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.PAGBOL);
-					        }catch(Exception e) {
-				                botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						case "5":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.ACNFUN);
-					        }catch(Exception e) {
-				                botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						case "6":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.CADEMP);
-					        }catch(Exception e) {
-				               	botInputResult.setResult(BotInputResult.Result.ERROR);
-					        }
-							break;
-						case "7":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.COMENV);
-					        }catch(Exception e) {
-				                botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						case "8":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.ANDABENF);
-					        }catch(Exception e) {
-				                botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						case "9":
-							try {
-					            botInputResult.setIntentName(BotBSF.STATES.VALCARD);
-					        }catch(Exception e) {
-				                botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						default:
-							botInputResult.setIntentName(BotBSF.STATES.FAQ);
-						}
 					
 					return botInputResult;
 				});
@@ -157,16 +89,6 @@ public class Representante {
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
-					put(BotBSF.STATES.BOLINDI, "/BOLINDI");
-					put(BotBSF.STATES.RELTRAB, "/RELTRAB");	
-					put(BotBSF.STATES.IMPRBOL, "/IMPRBOL");	
-					put(BotBSF.STATES.PAGBOL, "/PAGBOL");	
-					put(BotBSF.STATES.ACNFUN, "/ACNFUN");	
-					put(BotBSF.STATES.CADEMP, "/CADEMP");	
-					put(BotBSF.STATES.COMENV, "/COMENV");	
-					put(BotBSF.STATES.ANDABENF, "/ANDABENF");	
-					put(BotBSF.STATES.VALCARD, "/VALCARD");
-					put(BotBSF.STATES.FAQ, "/FAQ");
                     put("MAX_INPUT_ERROR", "/TERMINATE");
                     put("MAX_NO_INPUT", "/TERMINATE");
 				}});
