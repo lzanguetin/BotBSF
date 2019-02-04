@@ -1,4 +1,4 @@
-package br.com.voxage.botbfs.state.empresa_operador;
+package br.com.voxage.botbfs.state.empresa_boletos;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,9 +11,9 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Ativo {
+public class SemBoleto {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Localizei seu CPF como ativo para o CNPJ que você digitou.\nVocê esqueceu a senha?\"," + 
+	           "   \"message\":\"Você ainda não possui impressãode boletos nesse mês. Está com dúvidas para imprimir?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
@@ -29,43 +29,43 @@ public class Ativo {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("ATIVO");
+			setId("SEMBOLETO");
 			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			
 			setPreFunction(botState ->{
-				bot.setLastState(BotBSF.STATES.OPERADOR);
-                BotStateFlow botStateFlow = new BotStateFlow();
-                botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-                
+				bot.setLastState(BotBSF.STATES.BOLETOS);
+				BotStateFlow botStateFlow = new BotStateFlow();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+				
                 botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
-               
-                return botStateFlow;   
+			
+				return botStateFlow;
 			});
 			
-			setProcessDirectInputFunction((botState, userInputs) -> {					
+			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();
 				botInputResult.setResult(BotInputResult.Result.OK);
-											
+				
 				String userInput = userInputs.getConcatenatedInputs();
-					
+				
 				switch(userInput) {
 					case "1":
 						try {
-							botInputResult.setIntentName(BotBSF.STATES.ESQUECEU);
-				        }catch(Exception e) {
-			                botInputResult.setResult(BotInputResult.Result.ERROR);
-			            }
+							botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
 						break;
 					case "2":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
-				        }catch(Exception e) {
-			                botInputResult.setResult(BotInputResult.Result.ERROR);
-			            }
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
 						break;
 					default:
-							botInputResult.setResult(BotInputResult.Result.ERROR);
+						botInputResult.setResult(BotInputResult.Result.ERROR);
 				}
 				
 				return botInputResult;
@@ -80,8 +80,7 @@ public class Ativo {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.ESQUECEU, "#ESQUECEU");
-				put(BotBSF.STATES.ATENDENTE, "/ATENDENTE");
+				put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
 			}});
 		}};
 	}

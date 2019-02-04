@@ -7,34 +7,24 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Boletos {
+public class BoletoImpresso {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("BOLETOS");
+			setId("BOLETOIMPRESSO");
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
-			
-			setPreFunction(botState->{
-				bot.setLastState(BotBSF.STATES.MENUEMPRESA);
-				BotStateFlow botStateFlow = new BotStateFlow();
-				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				
-				return botStateFlow;
-			});
 			
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = inputResult.getIntentName();
+				botStateFlow.navigationKey = "FINALIZAR";
 				
 				return botStateFlow;
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
-				put(BotBSF.STATES.SEMBOLETO, "#SEMBOLETO");
-				put(BotBSF.STATES.BOLETOIMPRESSO, "#BOLETOIMPRESSO");
+				put("FINALIZAR", "#FINALIZAR");
 			}});
 		}};
 	}

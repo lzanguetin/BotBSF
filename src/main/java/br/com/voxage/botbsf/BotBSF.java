@@ -57,6 +57,13 @@ public class BotBSF extends VBot {
 	    	String ATUINATIVO = "atuinativo";
 	    	String ATUSCADASTRO = "atuscadastro";
 	    	
+	    	String SEMBOLETO = "semboleto";
+	    	String BOLETOIMPRESSO = "boletoimpresso";
+	    	
+	    	String NSEGMENTO = "nsegmento";
+	    	String NTRABALHADOR = "ntrabalhador";
+	    	String NREGISTRO = "nregistro";
+	    	
 	    	String ATENDENTE = "atendente";
 	    	String FAQ = "faq";
 	    	String FINALIZAR = "finalizar";
