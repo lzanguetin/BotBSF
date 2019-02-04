@@ -150,6 +150,14 @@ public class MenuEmpresa {
 			return botInputResult;
 			});
 			
+			setPosFunction((botState, inputResult)->{
+				BotStateFlow botStateFlow = new BotStateFlow();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+				botStateFlow.navigationKey = inputResult.getIntentName();
+				
+				return botStateFlow;
+			});
+			
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put(BotBSF.STATES.FUNERAL, "/FUNERAL");
 				put(BotBSF.STATES.OPERADOR, "/OPERADOR");	

@@ -42,10 +42,20 @@ public class BotBSF extends VBot {
 	    	
 	    	String MENUEMPRESA = "menuempresa";
 	    	String ERROCNPJ = "errocnpj";
+	    	
 	    	String PLANTAO = "plantao";
 	    	String LOCAL = "local";
 	    	String CONTATO = "contato";
 	    	String CPFUNERAL = "cpfuneral";
+	    	
+	    	String ATIVO = "ativo";
+	    	String INATIVO = "inativo";
+	    	String SCADASTRO = "scadastro";
+	    	String ESQUECEU = "esqueceu";
+	    	
+	    	String ATUATIVO = "atuativo";
+	    	String ATUINATIVO = "atuinativo";
+	    	String ATUSCADASTRO = "atuscadastro";
 	    	
 	    	String ATENDENTE = "atendente";
 	    	String FAQ = "faq";
@@ -53,16 +63,6 @@ public class BotBSF extends VBot {
 	    	String OUTRA = "outra";
 	    	String DESPEDE = "despede";
 	    	String REDIRECT = "redirect";
-	    	
-	    	String DESBCRT = "desbcrt";
-	    	String DESCFOL = "descfol";
-	    	String CRTID = "crtid";
-	    	String BNFPREST = "bnfprest";
-	    	String SOLBENEF = "solbenef";
-	    	String ACOMBENEF = "acombenef";
-	    	String COMEV = "comev";
-	    	String VEREV = "verev";
-	    	String BSF = "bsf";
 	    	
 	    	String TRANSFERIR = "transfer_to_attendant(1)";
 	}

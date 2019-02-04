@@ -29,7 +29,7 @@ public class CPFuneral {
 				if((CPFValidator.isValidCPF(userInput)) == false) {
 					botInputResult.setResult(BotInputResult.Result.ERROR);
 				}else {
-					dadosFluxo.setCPFuneral(userInput);
+					dadosFluxo.setCPF(userInput);
 					botInputResult.setResult(BotInputResult.Result.OK);
 				}
 				

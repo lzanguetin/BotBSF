@@ -9,16 +9,26 @@ public class DadosFluxo {
 	private String faq;
 	private String local;
 	private String contato;
-	private String cpfuneral;
+	private String cpf;
+	private String operador;
 	private BotInputResult botInputResult;
     
-	public String getCPFuneral() {
-		return cpfuneral;
+	public String getOperador() {
+		return operador;
 	}
 
-	public void setCPFuneral(String cpfuneral) {
-		this.cpfuneral = cpfuneral;
-	}  
+	public void setOperador(String operador) {
+		this.operador = operador;
+	}
+	
+	public String getCPF() {
+		return cpf;
+	}
+
+	public void setCPF(String cpf) {
+		this.cpf = cpf;
+	} 
+	
 	public String getContato() {
 		return contato;
 	}
@@ -26,6 +36,7 @@ public class DadosFluxo {
 	public void setContato(String contato) {
 		this.contato = contato;
 	}  
+	
 	public String getLocal() {
 		return local;
 	}
@@ -33,20 +44,23 @@ public class DadosFluxo {
 	public void setLocal(String local) {
 		this.local = local;
 	}  
+	
 	public String getFAQ() {
 		return faq;
 	}
 
 	public void setFAQ(String faq) {
 		this.faq = faq;
-	}  
+	} 
+	
 	public String getCNPJ() {
 		return cnpj;
 	}
 
 	public void setCNPJ(String cnpj) {
 		this.cnpj = cnpj;
-	}  
+	} 
+	
     public String getType() {
     	return type;
     }
