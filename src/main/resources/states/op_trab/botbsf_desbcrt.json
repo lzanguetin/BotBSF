@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/DESBCRT",
-			"idNavigationDetail":111,
-			"initialMessages": ["Você pode fazer o desbloquio do seu cartão de duas formas:\nA 1ª através do aplicativo BSF Online.\nA 2ª, ligando nos números 0800 773 3738 ou 0800 580 3738, das 8h às 18h, apenas em dias úteis.\nDas duas formas será necessária o número do protocolo aberto pela empresa, o número do cartão, o CPF do beneficiário e o ano de nascimento do trabalhador."]
-		}
-	]
-}

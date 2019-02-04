@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/VALCARD",
-			"idNavigationDetail":129,
-			"initialMessages": ["Se você recebeu o cartão de benefício e deseja validá-lo tenha em mãos o número do protocolo do seu benefício, o número do cartão que você recebeu, a data de nascimento do trabalhador e o número do seu CPF. Se você estiver com essas informações, clique aqui e fale com um de nossos consultores.Se não possuir, por favor, nos retorne com elas em mãos"]
-		}
-	]
-}

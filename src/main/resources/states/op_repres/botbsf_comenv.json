@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/COMENV",
-			"idNavigationDetail":127,
-			"initialMessages": ["Para comunicar um evento, primeiro você deve se certificar, na tabela de benefícios anexo a cláusula do BSF, que o sindicato disponibiliza esse benefício o qual deseja comunicar.\nEntão acesse a área da empresa no site '<a href=\"http://www.beneficiosocial.com.br\">Beneficio Social</a>' e no menu esquerdo clique em 'comunicar' e escolha o formulário correspondente ao que deseja. Preencha todos os campos e anexo os documentos solicitados.\nAo final, você receberá o número do protocolo que deverá ser passado ao beneficiário e a própria empresa acompanhar o andamento deste benefício através do site eneficiosocial ou através do aplicativo BSF Online"]   		
-		}
-	]
-}

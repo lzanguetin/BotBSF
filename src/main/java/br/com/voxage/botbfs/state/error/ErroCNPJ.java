@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.op_trab;
+package br.com.voxage.botbfs.state.error;
 
 import java.util.HashMap;
 
@@ -7,33 +7,24 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class SolBenef {
+public class ErroCNPJ {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("SOLBENEF");
-			
+			setId("ERROCNPJ");
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
-			
-			setPreFunction(botState ->{
-				bot.setLastState(BotBSF.STATES.TRABALHADOR);
-				
-				BotStateFlow botStateFlow = new BotStateFlow();
-				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				
-				return botStateFlow;
-			});
+			setMaxInputTime(BotBSF.NO_INPUT_TIMEOUT);
 			
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = "FINALIZAR";
+				botStateFlow.navigationKey = "TERMINATE";
 				
 				return botStateFlow;
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("FINALIZAR", "#FINALIZAR");
+				put("TERMINATE", "/TERMINATE");
 			}});
 		}};
 	}

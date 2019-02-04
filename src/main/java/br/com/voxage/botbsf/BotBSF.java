@@ -40,7 +40,12 @@ public class BotBSF extends VBot {
 	    	String NEGATIVADO = "negativado";
 	    	String OUTROS = "outros";
 	    	
-	    	
+	    	String MENUEMPRESA = "menuempresa";
+	    	String ERROCNPJ = "errocnpj";
+	    	String PLANTAO = "plantao";
+	    	String LOCAL = "local";
+	    	String CONTATO = "contato";
+	    	String CPFUNERAL = "cpfuneral";
 	    	
 	    	String ATENDENTE = "atendente";
 	    	String FAQ = "faq";

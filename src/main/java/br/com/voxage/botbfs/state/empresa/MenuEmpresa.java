@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.chat.botintegration.MessageType;
 import br.com.voxage.chat.botintegration.entities.BotMessage;
 import br.com.voxage.vbot.BotInputResult;
@@ -72,6 +73,7 @@ public class MenuEmpresa {
 			
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();
+				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botInputResult.setResult(BotInputResult.Result.OK);
 				
 				String userInput = userInputs.getConcatenatedInputs();
@@ -141,6 +143,7 @@ public class MenuEmpresa {
 		            }
 					break;
 				default:
+					dadosFluxo.setFAQ(userInput);
 					botInputResult.setIntentName(BotBSF.STATES.FAQ);
 				}
 			
