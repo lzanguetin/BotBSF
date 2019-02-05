@@ -1,4 +1,4 @@
-package br.com.voxage.botbfs.state.empresa;
+package br.com.voxage.botbsf.states.empresa;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -42,7 +42,7 @@ public class MenuEmpresa {
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":7," + 
-	           "         \"text\":\"Recebeu e-maiol de Inadimplência\"" + 
+	           "         \"text\":\"Recebeu e-mail de Inadimplência\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":8," + 
@@ -62,7 +62,7 @@ public class MenuEmpresa {
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			
 			setPreFunction(botState ->{
-				bot.setLastState(BotBSF.STATES.EMPRESA);
+				bot.setLastState(BotBSF.STATES.CNPJ);
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				

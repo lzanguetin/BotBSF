@@ -1,4 +1,4 @@
-package br.com.voxage.botbfs.state.empresa;
+package br.com.voxage.botbsf.states.empresa;
 
 import java.util.HashMap;
 

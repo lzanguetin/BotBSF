@@ -54,9 +54,9 @@ public class Outra {
 					case "1":
 						try {
 							if((dadosFluxo.getType()) == "1") {
-								botInputResult.setIntentName(BotBSF.STATES.TRABALHADOR);
+								//botInputResult.setIntentName(BotBSF.STATES.EMPRESA);
 							}else if((dadosFluxo.getType()) == "2") {
-								botInputResult.setIntentName(BotBSF.STATES.REPRESENTANTE);
+								//botInputResult.setIntentName(BotBSF.STATES.BENEFICIARIO);
 							}
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.OK);
@@ -83,8 +83,8 @@ public class Outra {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-                put(BotBSF.STATES.TRABALHADOR, "/TRABALHADOR");
-                put(BotBSF.STATES.REPRESENTANTE, "/REPRESENTANTE");
+                //put(BotBSF.STATES.EMPRESA, "/TRABALHADOR");
+                //put(BotBSF.STATES.BENEFICIARIO, "/REPRESENTANTE");
                 put(BotBSF.STATES.DESPEDE, "/DESPEDE");
 				put("MAX_INPUT_ERROR", "/TERMINATE");
                 put("MAX_NO_INPUT", "/TERMINATE");

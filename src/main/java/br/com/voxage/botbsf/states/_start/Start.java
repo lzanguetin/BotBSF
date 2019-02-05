@@ -14,7 +14,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class Start {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Olá, você está no atendimento online da Gestora do Benefício Social Familiar!\nVocê deseja falar sobre assuntos da Empresa ou do seu Benefício?\"," + 
+	           "   \"message\":\"Olá, você está no atendimento online da Gestora do Benefício Social Familiar!\nEu sou a Benê, assitente gigital e estou aqui para te ajudar. Você deseja falar sobre assuntos da Empresa ou do seu Benefício?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
@@ -55,7 +55,7 @@ public class Start {
 						case "1":
 							try {
 									dadosFluxo.setType("1");
-					                botInputResult.setIntentName(BotBSF.STATES.EMPRESA);
+					                botInputResult.setIntentName(BotBSF.STATES.CNPJ);
 					        }catch(Exception e) {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
@@ -63,7 +63,7 @@ public class Start {
 						case "2":
 							try {
 					            	dadosFluxo.setType("2");
-					                botInputResult.setIntentName(BotBSF.STATES.BENEFICIARIO);
+					                botInputResult.setIntentName(BotBSF.STATES.CPF);
 					        }catch(Exception e) {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
@@ -84,8 +84,8 @@ public class Start {
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
-					put(BotBSF.STATES.EMPRESA, "#EMPRESA");
-					put(BotBSF.STATES.BENEFICIARIO, "#BENEFICIARIO");				
+					put(BotBSF.STATES.CNPJ, "#CNPJ");
+					put(BotBSF.STATES.CPF, "#CPF");				
                     put("MAX_NO_INPUT", "/TERMINATE");
 				}});
 		}};

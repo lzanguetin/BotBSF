@@ -1,4 +1,4 @@
-package br.com.voxage.botbfs.state.empresa_funeral;
+package br.com.voxage.botbsf.states.empresa_funeral;
 
 import java.util.HashMap;
 
@@ -46,7 +46,7 @@ public class CPFuneral {
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
             	put("ATENDENTE", "#ATENDENTE");
-                put("MAX_INPUT_ERROR", "#ATENDENTE");
+                put("MAX_INPUT_ERROR", "/TERMINATE");
                 put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};

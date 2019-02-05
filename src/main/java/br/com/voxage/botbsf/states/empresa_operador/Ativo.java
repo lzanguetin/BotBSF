@@ -1,4 +1,4 @@
-package br.com.voxage.botbfs.state.empresa_operador;
+package br.com.voxage.botbsf.states.empresa_operador;
 
 import java.util.Arrays;
 import java.util.HashMap;

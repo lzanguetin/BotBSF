@@ -20,15 +20,15 @@ import br.com.voxage.vbot.utils.ClassFinder;
 @Bot(name="BotBSF")
 public class BotBSF extends VBot {
 	
-	public static int NO_INPUT_TIMEOUT = 180000;
+	public static int NO_INPUT_TIMEOUT = 300000;
 	
 	private String lastState;
 	private DadosFluxo dadosFluxo;
 	
 	 public interface STATES{
 	    	String START = "start";
-	    	String EMPRESA = "empresa";
-	    	String BENEFICIARIO = "beneficio";
+	    	String CNPJ = "cnpj";
+	    	String CPF = "cpf";
 	    	
 	    	String FUNERAL = "funeral";
 	    	String OPERADOR = "operador";
@@ -42,6 +42,7 @@ public class BotBSF extends VBot {
 	    	
 	    	String MENUEMPRESA = "menuempresa";
 	    	String ERROCNPJ = "errocnpj";
+
 	    	
 	    	String PLANTAO = "plantao";
 	    	String LOCAL = "local";

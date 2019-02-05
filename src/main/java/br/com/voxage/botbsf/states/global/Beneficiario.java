@@ -80,63 +80,63 @@ public class Beneficiario {
 					switch(userInput) {
 						case "1":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.DESBCRT);
+								//botInputResult.setIntentName(BotBSF.STATES.DESBCRT);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "2":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.DESCFOL);
+								//botInputResult.setIntentName(BotBSF.STATES.DESCFOL);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "3":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.CRTID);
+								//botInputResult.setIntentName(BotBSF.STATES.CRTID);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "4":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.BNFPREST);
+								//botInputResult.setIntentName(BotBSF.STATES.BNFPREST);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "5":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.SOLBENEF);
+								//botInputResult.setIntentName(BotBSF.STATES.SOLBENEF);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "6":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.ACOMBENEF);
+								//botInputResult.setIntentName(BotBSF.STATES.ACOMBENEF);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "7":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.COMEV);
+								//botInputResult.setIntentName(BotBSF.STATES.COMEV);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "8":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.VEREV);
+								//botInputResult.setIntentName(BotBSF.STATES.VEREV);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "9":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.BSF);
+								//botInputResult.setIntentName(BotBSF.STATES.BSF);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}

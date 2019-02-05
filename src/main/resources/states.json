@@ -2,7 +2,7 @@
 	"states":[
 		{
 			"id": "/START",
-			"idNavigationDetail": 1
+			"idNavigationDetail": 10000
 		}
 	]
 }

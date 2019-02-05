@@ -1,4 +1,4 @@
-package br.com.voxage.botbfs.state.empresa_funeral;
+package br.com.voxage.botbsf.states.empresa_funeral;
 
 import java.util.HashMap;
 
@@ -13,7 +13,7 @@ public class Local {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("CNPJ");
+			setId("LOCAL");
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			setMaxInputTime(BotBSF.NO_INPUT_TIMEOUT);
 			setMaxInputError(3);
