@@ -29,7 +29,7 @@ public class SemCadastro {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("SEMCADASTRO");
+			setId("SCADASTRO");
 			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			

@@ -39,7 +39,7 @@ public class Operador {
 			
 			setPosFunction((botState, inputResult)-> {
 				BotStateFlow botStateFlow = new BotStateFlow();
-				botStateFlow.flow = botStateFlow.flow.CONTINUE;
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				botStateFlow.navigationKey = inputResult.getIntentName();
 				
 				return botStateFlow;
