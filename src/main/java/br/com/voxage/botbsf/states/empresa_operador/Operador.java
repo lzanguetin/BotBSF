@@ -1,9 +1,12 @@
 package br.com.voxage.botbsf.states.empresa_operador;
 
 import java.util.HashMap;
+import java.util.concurrent.CompletableFuture;
 
 import br.com.voxage.basicvalidators.CPFValidator;
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.BotBSFIntegration;
+import br.com.voxage.botbsf.models.ConsultaCPF;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
@@ -27,6 +30,8 @@ public class Operador {
 				botInputResult.setResult(BotInputResult.Result.OK);			
 				String userInput = userInputs.getConcatenatedInputs().replaceAll("\\D+", "");;
 				
+				dadosFluxo.setCPF(userInput);
+				
 				if((CPFValidator.isValidCPF(userInput)) == false) {
 					botInputResult.setResult(BotInputResult.Result.ERROR);
 				}else {
@@ -37,13 +42,31 @@ public class Operador {
 				return botInputResult;
 			});
 			
-			setPosFunction((botState, inputResult)-> {
+			setAsyncPosFunction((botState, inputResult)-> CompletableFuture.supplyAsync(() ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
+				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = inputResult.getIntentName();
+				
+				
+				ConsultaCPF customerInfo = null;
+				
+				try {
+	                    customerInfo = BotBSFIntegration.dadostrabalhador(bot, dadosFluxo.getCPF());
+	                    
+	                    if(customerInfo.getStatus() == "true") {
+	                    	dadosFluxo.setOperador("1");
+	                    	botStateFlow.navigationKey = BotBSF.STATES.ATIVO;
+	                    }else {
+	                    	dadosFluxo.setOperador("2");
+	                    	botStateFlow.navigationKey = BotBSF.STATES.INATIVO;
+	                    }
+	               }catch(Exception e) {
+	            	   dadosFluxo.setOperador("3");
+	            	   botStateFlow.navigationKey = BotBSF.STATES.SCADASTRO;
+	              }
 				
 				return botStateFlow;
-			});
+			}));
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put(BotBSF.STATES.ATIVO, "#ATIVO");

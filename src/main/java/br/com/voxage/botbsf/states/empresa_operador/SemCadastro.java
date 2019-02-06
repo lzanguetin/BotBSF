@@ -34,7 +34,7 @@ public class SemCadastro {
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			
 			setPreFunction(botState ->{
-				bot.setLastState(BotBSF.STATES.OPERADOR);
+				bot.setLastState(BotBSF.STATES.SCADASTRO);
 				BotStateFlow botStateFlow =  new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
@@ -52,14 +52,14 @@ public class SemCadastro {
 				switch(userInput) {
 					case "1":
 						try {
-							botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
+							botInputResult.setIntentName(BotBSF.STATES.SOBRE);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
 					case "2":
 						try {
-							botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
+							botInputResult.setIntentName(BotBSF.STATES.SOBRE);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
@@ -79,7 +79,7 @@ public class SemCadastro {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.ATENDENTE, "/ATENDENTE");
+				put(BotBSF.STATES.SOBRE, "/SOBRE");
 			}});
 		}};
 	}

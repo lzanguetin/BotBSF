@@ -1,8 +1,13 @@
 package br.com.voxage.botbsf.models;
 
-import java.util.ArrayList;
-import java.util.List;
+public class ConsultaCPF {
+	private String status;
+	
+	public String getStatus() {
+		return status;
+	}
 
-public class ConsultaCNPJ {
-	private Boolean status; 
+	public void setStatus(String status) {
+		this.status = status;
+	}
 }
