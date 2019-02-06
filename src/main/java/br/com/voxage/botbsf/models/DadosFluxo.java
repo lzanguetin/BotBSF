@@ -11,8 +11,26 @@ public class DadosFluxo {
 	private String contato;
 	private String cpf;
 	private String operador;
+	private String debito;
+	private String vencer;
 	private BotInputResult botInputResult;
     
+	public String getVencer() {
+		return vencer;
+	}
+
+	public void setVencer(String vencer) {
+		this.vencer = vencer;
+	}
+	
+	public String getDebito() {
+		return debito;
+	}
+
+	public void setDebito(String debito) {
+		this.debito = debito;
+	}
+	
 	public String getOperador() {
 		return operador;
 	}

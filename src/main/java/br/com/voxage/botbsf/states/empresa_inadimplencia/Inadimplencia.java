@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.atualizar;
+package br.com.voxage.botbsf.states.empresa_inadimplencia;
 
 import java.util.HashMap;
 
@@ -8,28 +8,33 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Atualizar {
+public class Inadimplencia {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("ATUALIZAR");
+			setId("INADIMPLENCIA");
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
-
+			
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				DadosFluxo dadosFluxo = bot.getDadosFluxo();
-				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
 				switch(dadosFluxo.getOperador()) {
 				case "1":
-					 	botStateFlow.navigationKey = "ATUATIVO";
-					 	break;
+					if(dadosFluxo.getDebito() == "1") {
+						botStateFlow.navigationKey = "INADATIVO";
+					}else if(dadosFluxo.getVencer() == "1") {
+						botStateFlow.navigationKey = "INADVENCER";
+					}else {
+						botStateFlow.navigationKey = "SEMINAD";
+					}
+					break;
 				case "2":
-						botStateFlow.navigationKey = "ATUINATIVO";
+						botStateFlow.navigationKey = "INADINATIVO";
 						break;
 				case "3":
-						botStateFlow.navigationKey = "ATUSCADASTRO";
+						botStateFlow.navigationKey = "INADSCADASTRO";
 						break;
 				default:
 						botStateFlow.navigationKey = "TERMINATE";
@@ -38,10 +43,12 @@ public class Atualizar {
 				return botStateFlow;
 			});
 			
-			setNextNavigationMap(new HashMap<String, String>() {{
-				put("ATUATIVO", "#ATUATIVO");
-				put("ATUINATIVO", "#ATUINATIVO");
-				put("ATUSCADASTRO", "#ATUSCADASTRO");
+			setNextNavigationMap(new HashMap<String, String>(){{
+				put("INADATIVO", "#INADATIVO");
+				put("INADVENCER", "#INADVENCER");
+				put("SEMINAD", "#SEMINAD");
+				put("INADINATIVO", "#INADINATIVO");
+				put("INADSCADASTRO", "#INADSCADASTRO");
 				put("TERMINATE", "/TERMINATE");
 			}});
 		}};

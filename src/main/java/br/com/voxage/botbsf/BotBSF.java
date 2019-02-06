@@ -65,6 +65,13 @@ public class BotBSF extends VBot {
 	    	String NTRABALHADOR = "ntrabalhador";
 	    	String NREGISTRO = "nregistro";
 	    	
+	    	String INADINATIVO = "inadinativo";
+	    	String INADSCADASTRO = "inadscadastro";	    	
+	    	String INADATIVO = "inadativo";
+	    	String INADVENCER = "inadvencer";
+	    	String SEMINAD = "seminad";
+	    	String FINALIZARINAD = "finalizarinad";
+	    	
 	    	String ATENDENTE = "atendente";
 	    	String FAQ = "faq";
 	    	String FINALIZAR = "finalizar";
