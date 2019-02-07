@@ -37,7 +37,6 @@ public class BotBSF extends VBot {
 	    	String BOLETOS = "boletos";
 	    	String INATIVACAO = "inativacao";
 	    	String INADIMPLENCIA = "inadimplencia";
-	    	String NEGATIVADO = "negativado";
 	    	String OUTROS = "outros";
 	    	
 	    	String MENUEMPRESA = "menuempresa";
@@ -71,6 +70,19 @@ public class BotBSF extends VBot {
 	    	String INADVENCER = "inadvencer";
 	    	String SEMINAD = "seminad";
 	    	String FINALIZARINAD = "finalizarinad";
+	    	
+	    	String SERASA = "sarasa";
+	    	String COMSERASA = "comsarasa";
+	    	String SEMSERASA = "semsarasa";
+	    	String PRESERASA = "presarasa";
+	    	String NDCONSTA = "ndconsta";
+	    	String REGULARIZADO = "regularizado";
+	    	String NEGATIVADA = "negativada";
+	    	String INDEVIDA = "indevida";
+	    	String ACORDO = "acordo";
+	    	String COBSEGMENTO = "cobsegmento";
+	    	String COBSEMTRAB = "cobsemtrab";
+	    	
 	    	
 	    	String ATENDENTE = "atendente";
 	    	String FAQ = "faq";

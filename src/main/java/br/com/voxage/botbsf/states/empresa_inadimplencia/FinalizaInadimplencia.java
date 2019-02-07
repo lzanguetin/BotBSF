@@ -11,9 +11,9 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class InadimplenciaSCadastro {
+public class FinalizaInadimplencia {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Para ter acesso a quais boletos a Empresa: CNPJ: Possui em aberto você precisa ser um operador autorizado ao acesso desta empresa no site, porém seu CPF não consta como autorizado. Deseja solicitar autorização de acesso? (neste caso o responsável pelo email receberá sua solicitação e precisará autorizá-lo).\"," + 
+	           "   \"message\":\"Resolvi sua dúvida?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
@@ -29,12 +29,12 @@ public class InadimplenciaSCadastro {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-				setId("INADSCADASTRO");
+				setId("FINALIZARINAD");
 				
 				setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 				
 				setPreFunction(botState ->{
-					bot.setLastState(BotBSF.STATES.INADSCADASTRO);
+					bot.setLastState(BotBSF.STATES.FINALIZARINAD);
 					BotStateFlow botStateFlow = new BotStateFlow();
 					botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 					
@@ -80,11 +80,12 @@ public class InadimplenciaSCadastro {
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
-					put(BotBSF.STATES.FINALIZAR, "#FINALIZAR");
-					put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");				
-                    put("MAX_NO_INPUT", "/TERMINATE");
+	                put(BotBSF.STATES.FINALIZAR, "#FINALIZAR");
+					put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
+					put("MAX_INPUT_ERROR", "/TERMINATE");
+	                put("MAX_NO_INPUT", "/TERMINATE");
 				}});
 		}};
 	}
+	
 }
-

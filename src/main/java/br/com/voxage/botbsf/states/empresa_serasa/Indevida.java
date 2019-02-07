@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.empresa_inadimplencia;
+package br.com.voxage.botbsf.states.empresa_serasa;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,17 +11,17 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class InadimplenciaSCadastro {
+public class Indevida {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Para ter acesso a quais boletos a Empresa: CNPJ: Possui em aberto você precisa ser um operador autorizado ao acesso desta empresa no site, porém seu CPF não consta como autorizado. Deseja solicitar autorização de acesso? (neste caso o responsável pelo email receberá sua solicitação e precisará autorizá-lo).\"," + 
+	           "   \"message\":\"Por que você considera a cobrança indevida?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
-	           "         \"text\":\"Sim\"" + 
+	           "         \"text\":\"Empresa não pertence ao segmento abrangido pelo Beneficio Social Familiar\"" + 
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":2," + 
-	           "         \"text\":\"Nao\"" + 
+	           "         \"text\":\"Empresa é do segmento que possui o BSF, mas atualmente não possui nenhum trabalhador registrado\"" + 
 	           "      }" + 
 	           "   ]" + 
 	           "}";
@@ -29,44 +29,44 @@ public class InadimplenciaSCadastro {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-				setId("INADSCADASTRO");
+				setId("INDEVIDA");
 				
 				setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 				
-				setPreFunction(botState ->{
-					bot.setLastState(BotBSF.STATES.INADSCADASTRO);
-					BotStateFlow botStateFlow = new BotStateFlow();
-					botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-					
-					botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
-					
-					return botStateFlow;
-				});
+				setPreFunction(botState -> {
+	                bot.setLastState(BotBSF.STATES.INDEVIDA);
+	                BotStateFlow botStateFlow = new BotStateFlow();
+	                botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+	                
+	                botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
+	                
+	                return botStateFlow;     
+	            });
 				
-				setProcessDirectInputFunction((botState, userInputs) ->{
+				setProcessDirectInputFunction((botState, userInputs) -> {					
 					BotInputResult botInputResult = new BotInputResult();
 					botInputResult.setResult(BotInputResult.Result.OK);
-					
+												
 					String userInput = userInputs.getConcatenatedInputs();
-					
+						
 					switch(userInput) {
 						case "1":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.FINALIZAR);
-							}catch(Exception e) {
-								botInputResult.setResult(BotInputResult.Result.ERROR);
-							}
+					                botInputResult.setIntentName(BotBSF.STATES.COBSEGMENTO);
+					        }catch(Exception e) {
+				                	botInputResult.setResult(BotInputResult.Result.ERROR);
+				            }
 							break;
 						case "2":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
-							}catch(Exception e) {
-								botInputResult.setResult(BotInputResult.Result.ERROR);
-							}
+					                botInputResult.setIntentName(BotBSF.STATES.COBSEMTRAB);
+					        }catch(Exception e) {
+				                	botInputResult.setResult(BotInputResult.Result.ERROR);
+				            }
 							break;
 						default:
-							botInputResult.setResult(BotInputResult.Result.ERROR);
-					}
+								botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
 					
 					return botInputResult;
 				});
@@ -78,13 +78,11 @@ public class InadimplenciaSCadastro {
 					
 					return botStateFlow;
 				});
-				
 				setNextNavigationMap(new HashMap<String, String>(){{
-					put(BotBSF.STATES.FINALIZAR, "#FINALIZAR");
-					put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");				
+					put(BotBSF.STATES.COBSEGMENTO, "#COBSEGMENTO");
+					put(BotBSF.STATES.COBSEMTRAB, "#COBSEMTRAB");				
                     put("MAX_NO_INPUT", "/TERMINATE");
 				}});
 		}};
 	}
 }
-
