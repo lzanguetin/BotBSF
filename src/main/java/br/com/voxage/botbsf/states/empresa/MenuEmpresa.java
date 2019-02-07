@@ -130,7 +130,7 @@ public class MenuEmpresa {
 					break;
 				case "8":
 					try {
-			            botInputResult.setIntentName(BotBSF.STATES.NEGATIVADO);
+			            botInputResult.setIntentName(BotBSF.STATES.SERASA);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
@@ -166,7 +166,7 @@ public class MenuEmpresa {
 				put(BotBSF.STATES.BOLETOS, "/BOLETOS");	
 				put(BotBSF.STATES.INATIVACAO, "/INATIVACAO");	
 				put(BotBSF.STATES.INADIMPLENCIA, "/INADIMPLENCIA");	
-				put(BotBSF.STATES.NEGATIVADO, "/NEGATIVADO");	
+				put(BotBSF.STATES.SERASA, "/SERASA");	
 				put(BotBSF.STATES.OUTROS, "/OUTROS");
 				put(BotBSF.STATES.FAQ, "/FAQ");
                 put("MAX_INPUT_ERROR", "/TERMINATE");

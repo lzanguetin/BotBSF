@@ -42,7 +42,6 @@ public class BotBSF extends VBot {
 	    	String MENUEMPRESA = "menuempresa";
 	    	String ERROCNPJ = "errocnpj";
 
-	    	
 	    	String PLANTAO = "plantao";
 	    	String LOCAL = "local";
 	    	String CONTATO = "contato";
@@ -83,13 +82,20 @@ public class BotBSF extends VBot {
 	    	String COBSEGMENTO = "cobsegmento";
 	    	String COBSEMTRAB = "cobsemtrab";
 	    	
-	    	
 	    	String ATENDENTE = "atendente";
 	    	String FAQ = "faq";
 	    	String FINALIZAR = "finalizar";
 	    	String OUTRA = "outra";
 	    	String DESPEDE = "despede";
 	    	String REDIRECT = "redirect";
+	    	
+	    	String MENUTRABALHADOR = "menutrabalhador";
+	    	String ERROCPF = "errocpf";
+	    	String CARTAO = "cartao";
+	    	String ANDAMENTO = "andamento";
+	    	String VALIDAR = "validar";
+	    	String SALDO = "saldo";
+	    	String CESTA = "cesta";
 	    	
 	    	String TRANSFERIR = "transfer_to_attendant(1)";
 	}

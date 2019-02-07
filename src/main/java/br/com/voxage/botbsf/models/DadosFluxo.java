@@ -13,8 +13,17 @@ public class DadosFluxo {
 	private String operador;
 	private String debito;
 	private String vencer;
+	private String os;
 	private BotInputResult botInputResult;
     
+	public String getOS() {
+		return os;
+	}
+
+	public void setOS(String os) {
+		this.os = os;
+	}
+	
 	public String getVencer() {
 		return vencer;
 	}

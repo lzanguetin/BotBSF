@@ -7,11 +7,11 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Outros {
+public class ErroCNPJ {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("OUTROS");
+			setId("ERROCNPJ");
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 			

@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.empresa;
+package br.com.voxage.botbsf.trabalhador;
 
 import java.util.HashMap;
 
@@ -7,11 +7,11 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Outros {
+public class ErroCPF {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("OUTROS");
+			setId("ERROCPF");
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 			
