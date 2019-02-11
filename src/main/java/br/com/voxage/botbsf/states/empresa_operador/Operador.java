@@ -6,15 +6,16 @@ import java.util.concurrent.CompletableFuture;
 import br.com.voxage.basicvalidators.CPFValidator;
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.BotBSFIntegration;
-import br.com.voxage.botbsf.models.ConsultaCPF;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
+@SuppressWarnings("unused")
 public class Operador {
-	@SuppressWarnings("serial")
+	@SuppressWarnings({ "serial", "null" })
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
 			setId("OPERADOR");
@@ -32,12 +33,12 @@ public class Operador {
 				
 				dadosFluxo.setCPF(userInput);
 				
-				if((CPFValidator.isValidCPF(userInput)) == false) {
-					botInputResult.setResult(BotInputResult.Result.ERROR);
-				}else {
-					dadosFluxo.setCPF(userInput);
-					botInputResult.setResult(BotInputResult.Result.OK);
-				}
+				//if((CPFValidator.isValidCPF(userInput)) == false) {
+					//botInputResult.setResult(BotInputResult.Result.ERROR);
+				//}else {
+					//dadosFluxo.setCPF(userInput);
+					//botInputResult.setResult(BotInputResult.Result.OK);
+				//}
 				
 				return botInputResult;
 			});
@@ -48,12 +49,12 @@ public class Operador {
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
 				
-				ConsultaCPF customerInfo = null;
+				ConsultaCNPJ customerInfo = null;
 				
 				try {
-	                    customerInfo = BotBSFIntegration.dadostrabalhador(bot, dadosFluxo.getCPF());
+	                    //customerInfo = BotBSFIntegration.dadostrabalhador(bot, dadosFluxo.getCPF());
 	                    
-	                    if(customerInfo.getStatus() == "true") {
+	                    if(customerInfo.getNome() == "true") {
 	                    	dadosFluxo.setOperador("1");
 	                    	botStateFlow.navigationKey = BotBSF.STATES.ATIVO;
 	                    }else {

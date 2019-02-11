@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/BOLETOIMPRESSO",
-			"idNavigationDetail":11700,
-			"initialMessages": ["Sua última impressão foi realizada no dia referente ao vencimento de. Você deverá efetuar o pagamento após horas da impressão."]
-		}
-	]
-}

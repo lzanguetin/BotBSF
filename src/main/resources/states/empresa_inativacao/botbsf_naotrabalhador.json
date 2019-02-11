@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/NTRABALHADOR",
-			"idNavigationDetail": 12100,
-			"initialMessages": ["Como a Empresa é do segmento, mas atualmente não possui trabalhador registrado, nos envie um email com o último extrato de CAGED declarado e em até 48 horas você será respondido. Anote aí o email para você nos enviar e assim já resolvermos essa situação: atendimento@beneficiosocial.com.br ou clique aqui e preencha o formulário."]
-		}
-	]
-}

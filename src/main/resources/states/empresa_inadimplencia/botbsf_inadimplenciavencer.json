@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/INADVENCER",
-			"idNavigationDetail": 12700,
-			"initialMessages": ["O único boleto disponível para pagamento irá vencer em, portanto deve ter recebido um email de aviso de boleto disponível e não de inadimplência."]
-		}
-	]
-}

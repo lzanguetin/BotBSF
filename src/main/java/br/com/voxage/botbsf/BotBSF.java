@@ -30,6 +30,10 @@ public class BotBSF extends VBot {
 	    	String CNPJ = "cnpj";
 	    	String CPF = "cpf";
 	    	
+	    	String SEGUECNPJ = "seguecnpj";
+	    	String MENUEMPRESA = "menuempresa";
+	    	String ERROCNPJ = "errocnpj";
+	    	
 	    	String FUNERAL = "funeral";
 	    	String OPERADOR = "operador";
 	    	String ATUALIZAR = "atualizar";
@@ -38,9 +42,6 @@ public class BotBSF extends VBot {
 	    	String INATIVACAO = "inativacao";
 	    	String INADIMPLENCIA = "inadimplencia";
 	    	String OUTROS = "outros";
-	    	
-	    	String MENUEMPRESA = "menuempresa";
-	    	String ERROCNPJ = "errocnpj";
 
 	    	String PLANTAO = "plantao";
 	    	String LOCAL = "local";
@@ -56,7 +57,7 @@ public class BotBSF extends VBot {
 	    	String ATUINATIVO = "atuinativo";
 	    	String ATUSCADASTRO = "atuscadastro";
 	    	
-	    	String SEMBOLETO = "semboleto";
+	    	String SEMBOLETOS = "semboleto";
 	    	String BOLETOIMPRESSO = "boletoimpresso";
 	    	
 	    	String NSEGMENTO = "nsegmento";

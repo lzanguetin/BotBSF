@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/SEGUECNPJ",
+			"idNavigationDetail":10102,
+			"initialMessages": ["Pronto! Já localizei. Esse CNPJ já possuiu XX cadastros. Para cadastrar mais um plano (Adicionar um Sindicato) junto ao BSF acesse www.beneficiosocial.com.br. Insira o CNPJ na área da Empresa e clique em “Solicitar Alteração de Dados Cadastrais” na opção “Adicionar Planos”."]
+		}
+	]
+}

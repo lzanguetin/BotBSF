@@ -83,8 +83,6 @@ public class Outra {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-                //put(BotBSF.STATES.EMPRESA, "/TRABALHADOR");
-                //put(BotBSF.STATES.BENEFICIARIO, "/REPRESENTANTE");
                 put(BotBSF.STATES.DESPEDE, "/DESPEDE");
 				put("MAX_INPUT_ERROR", "/TERMINATE");
                 put("MAX_NO_INPUT", "/TERMINATE");

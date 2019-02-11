@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/SEMINAD",
-			"idNavigationDetail": 12400,
-			"initialMessages": ["Não localizamos nenhum boleto em aberto para: Empresa: CNPJ: O último pagamento ocorreu em:"]
-		}
-	]
-}

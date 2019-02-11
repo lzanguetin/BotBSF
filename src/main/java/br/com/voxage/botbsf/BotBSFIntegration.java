@@ -1,7 +1,7 @@
 package br.com.voxage.botbsf;
 
 import br.com.voxage.botbsf.BotBSF;
-import br.com.voxage.botbsf.models.ConsultaCPF;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.botbsf.models.Authorization;
 import static br.com.voxage.chat.botintegration.utils.AppLogger.log;
 import br.com.voxage.chat.botintegration.utils.AsyncHttpUtils;
@@ -13,8 +13,8 @@ import java.util.HashMap;
 public class BotBSFIntegration {
 	private static final String BASE_URL = "http://localhost:3001/";
 	
-	public static ConsultaCPF dadostrabalhador(BotBSF bot,  String cpf) {
-		String url = String.format("%s%s/%s?%s&%s", BASE_URL, "v1", "dadosOperador", "cnpj=11222333000102", "cpf=" + cpf);
+	public static ConsultaCNPJ dadosempresa(BotBSF bot,  String cnpj) {
+		String url = String.format("%s%s/%s?%s", BASE_URL, "v1", "dadosEmpresa", "cnpj=" + cnpj);
 		
 		HashMap<String, String> headers = new HashMap<String, String>();
 		
@@ -22,18 +22,18 @@ public class BotBSFIntegration {
 		
 		try {
 			AsyncHttpUtils asyncHttpUtils = new AsyncHttpUtils();
-			ConsultaCPF trab = asyncHttpUtils.get(url, headers)
+			ConsultaCNPJ trab = asyncHttpUtils.get(url, headers)
 					.exceptionally(t->{
 						throw(new RuntimeException(t));
 					})
 					.thenApply(resp-> {
 						try {
-	                        ConsultaCPF customerInfo = null;
+	                        ConsultaCNPJ customerInfo = null;
 	                        
 	                        switch(resp.getStatusCode()) {
 	                        	case 200:
 	                        		String json = resp.getResponseBody();
-	                        		customerInfo = JsonUtils.parseJson(json, ConsultaCPF.class);
+	                        		customerInfo = JsonUtils.parseJson(json, ConsultaCNPJ.class);
 	                                break;
 	                        	case 500:
 	                            	throw(new RuntimeException(resp.getResponseBody()));
@@ -56,4 +56,3 @@ public class BotBSFIntegration {
 	        }
 	    }
 }
-	                        

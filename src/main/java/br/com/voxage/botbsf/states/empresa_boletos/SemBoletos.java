@@ -11,7 +11,7 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class SemBoleto {
+public class SemBoletos {
 	private static final String INITIAL_MESSAGE = "{" + 
 	           "   \"message\":\"Você ainda não possui impressãode boletos nesse mês. Está com dúvidas para imprimir?\"," + 
 	           "   \"options\":[" + 
@@ -29,7 +29,7 @@ public class SemBoleto {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("SEMBOLETO");
+			setId("SEMBOLETOS");
 			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			

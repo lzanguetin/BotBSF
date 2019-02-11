@@ -1,8 +1,8 @@
 {
 	"states":[
 		{
-			"id": "/CNPJ",
-			"idNavigationDetail":10100,
+			"id": "/ERROCNPJ",
+			"idNavigationDetail":10101,
 			"initialMessages": ["Ok, agora por favor digite o número do CNPJ da Empresa."],
 			"inputErrorResponses":[
 				{"order":"1", "messages":["Não entendi. Por favor, digite o número do CNPJ da Empresa."]},

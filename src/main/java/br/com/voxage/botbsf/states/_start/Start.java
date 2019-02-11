@@ -86,7 +86,8 @@ public class Start {
 				setNextNavigationMap(new HashMap<String, String>(){{
 					put(BotBSF.STATES.CNPJ, "#CNPJ");
 					put(BotBSF.STATES.CPF, "#CPF");				
-                    put("MAX_NO_INPUT", "/TERMINATE");
+					put("MAX_INPUT_ERROR", "/TERMINATE");
+					put("MAX_NO_INPUT", "/TERMINATE");
 				}});
 		}};
 	}

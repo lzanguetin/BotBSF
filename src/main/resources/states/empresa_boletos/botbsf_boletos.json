@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/BOLETOS",
-			"idNavigationDetail":11600,
-			"initialMessages": ["Aguarde enquanto eu consulto seu cadastro."]
-		}
-	]
-}
