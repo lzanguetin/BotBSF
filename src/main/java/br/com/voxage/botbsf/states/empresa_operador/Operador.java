@@ -7,6 +7,7 @@ import br.com.voxage.basicvalidators.CPFValidator;
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.BotBSFIntegration;
 import br.com.voxage.botbsf.models.ConsultaCNPJ;
+import br.com.voxage.botbsf.models.ConsultaOperador;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
@@ -15,7 +16,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 @SuppressWarnings("unused")
 public class Operador {
-	@SuppressWarnings({ "serial", "null" })
+	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
 			setId("OPERADOR");
@@ -33,12 +34,12 @@ public class Operador {
 				
 				dadosFluxo.setCPF(userInput);
 				
-				//if((CPFValidator.isValidCPF(userInput)) == false) {
-					//botInputResult.setResult(BotInputResult.Result.ERROR);
-				//}else {
-					//dadosFluxo.setCPF(userInput);
-					//botInputResult.setResult(BotInputResult.Result.OK);
-				//}
+				if((CPFValidator.isValidCPF(userInput)) == false) {
+					botInputResult.setResult(BotInputResult.Result.ERROR);
+				}else {
+					dadosFluxo.setCPF(userInput);
+					botInputResult.setResult(BotInputResult.Result.OK);
+				}
 				
 				return botInputResult;
 			});
@@ -49,10 +50,10 @@ public class Operador {
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
 				
-				ConsultaCNPJ customerInfo = null;
+				ConsultaOperador customerInfo = null;
 				
 				try {
-	                    //customerInfo = BotBSFIntegration.dadostrabalhador(bot, dadosFluxo.getCPF());
+	                    customerInfo = BotBSFIntegration.dadosOperador(bot, dadosFluxo.getCNPJ(), dadosFluxo.getCPF());
 	                    
 	                    if(customerInfo.getNome() == "true") {
 	                    	dadosFluxo.setOperador("1");

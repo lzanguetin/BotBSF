@@ -2,6 +2,7 @@ package br.com.voxage.botbsf;
 
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.ConsultaCNPJ;
+import br.com.voxage.botbsf.models.ConsultaOperador;
 import br.com.voxage.botbsf.models.Authorization;
 import static br.com.voxage.chat.botintegration.utils.AppLogger.log;
 import br.com.voxage.chat.botintegration.utils.AsyncHttpUtils;
@@ -51,6 +52,49 @@ public class BotBSFIntegration {
 	                }).get();
 
 	        	return trab;
+	        }catch(Exception e) {
+	            throw( new RuntimeException(e) );
+	        }
+	    }
+	
+	public static ConsultaOperador dadosOperador(BotBSF bot, String cnpj, String cpf) {
+		String url = String.format("%s%s/%s?%s&%s", BASE_URL, "v1", "dadosOperador", "cnpj=" + cnpj, "cpf=" + cpf);
+		
+		HashMap<String, String> headers = new HashMap<String, String>();
+		
+		headers.putAll(Authorization.getHeaderMap(bot));
+		
+		try {
+			AsyncHttpUtils asyncHttpUtils = new AsyncHttpUtils();
+			ConsultaOperador oper = asyncHttpUtils.get(url, headers)
+					.exceptionally(t->{
+						throw(new RuntimeException(t));
+					})
+					.thenApply(resp-> {
+						try {
+							ConsultaOperador customerInfo = null;
+	                        
+	                        switch(resp.getStatusCode()) {
+	                        	case 200:
+	                        		String json = resp.getResponseBody();
+	                        		customerInfo = JsonUtils.parseJson(json, ConsultaOperador.class);
+	                                break;
+	                        	case 500:
+	                            	throw(new RuntimeException(resp.getResponseBody()));
+	                        }
+	                        return( customerInfo );
+	                    } catch( JsonSyntaxException e ) {
+	                        log.error(resp.getResponseBody(), bot.getSessionId());
+	                        log.error("Erro ao fazer parse do json", e, bot.getSessionId());
+	                        throw( new JsonSyntaxException(e) );
+	                    } catch(Exception e) {
+	                        log.error(resp.getResponseBody(), bot.getSessionId());
+	                        log.error("Erro ao fazer parse do json", e, bot.getSessionId());
+	                        throw( new RuntimeException(e) );
+	                    }
+	                }).get();
+
+	        	return oper;
 	        }catch(Exception e) {
 	            throw( new RuntimeException(e) );
 	        }

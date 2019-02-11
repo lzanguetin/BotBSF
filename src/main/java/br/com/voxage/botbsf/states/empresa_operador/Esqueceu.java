@@ -24,7 +24,7 @@ public class Esqueceu {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("TERMINATE", "/TERMIANTE");
+				put("TERMINATE", "/TERMINATE");
 			}});
 		}};
 	}

@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.chat.botintegration.MessageType;
 import br.com.voxage.chat.botintegration.entities.BotMessage;
 import br.com.voxage.vbot.BotInputResult;
@@ -13,7 +14,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class Ativo {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Localizei seu CPF como ativo para o CNPJ que você digitou.\nVocê esqueceu a senha?\"," + 
+	           "   \"message\":\"Localizei seu CPF como ativo para o CNPJ que você digitou %s.\nVocê esqueceu a senha?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
@@ -22,7 +23,7 @@ public class Ativo {
 	           "      {" + 
 	           "         \"id\":2," + 
 	           "         \"text\":\"Não\"" + 
-	           "      }," + 
+	           "      }" +
 	           "   ]" + 
 	           "}";
 	
@@ -34,13 +35,15 @@ public class Ativo {
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			
 			setPreFunction(botState ->{
-				bot.setLastState(BotBSF.STATES.OPERADOR);
-                BotStateFlow botStateFlow = new BotStateFlow();
-                botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-                
-                botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
-               
-                return botStateFlow;   
+				BotStateFlow botStateFlow = new BotStateFlow();
+				DadosFluxo dadosFluxo = bot.getDadosFluxo();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+				
+				String output = String.format(INITIAL_MESSAGE, dadosFluxo.getCNPJ());
+				
+				botState.setInitialMessages(Arrays.asList(new BotMessage(output, MessageType.OPTION_BOX)));
+				
+				return botStateFlow;
 			});
 			
 			setProcessDirectInputFunction((botState, userInputs) -> {					

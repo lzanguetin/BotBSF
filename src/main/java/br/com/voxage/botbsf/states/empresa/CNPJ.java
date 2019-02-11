@@ -31,13 +31,13 @@ public class CNPJ {
 				String userInput = userInputs.getConcatenatedInputs().replaceAll("\\D+", "");;
 				
 				dadosFluxo.setCNPJ(userInput);
-				/*
+				
 				if((CNPJValidator.isValidCNPJ(userInput)) == true) {
 					botInputResult.setResult(BotInputResult.Result.OK);
 				}else {
 					botInputResult.setResult(BotInputResult.Result.ERROR);
 				}
-				*/
+				
 				return botInputResult;
 			});
 			
@@ -50,6 +50,7 @@ public class CNPJ {
 				
 				try {
 					customerInfo = BotBSFIntegration.dadosempresa(bot, dadosFluxo.getCNPJ());
+					bot.setConsultaCNPJ(customerInfo);
 					botStateFlow.navigationKey = BotBSF.STATES.SEGUECNPJ;
 				}catch(Exception e) {
 					botStateFlow.navigationKey = BotBSF.STATES.ERROCNPJ;

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.DadosFluxo;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.chat.botintegration.ISearchEngine;
 import br.com.voxage.chat.botintegration.ISearchEngineCredentials;
 import br.com.voxage.chat.botintegration.TextSearchEngine;
@@ -19,39 +20,48 @@ import br.com.voxage.vbot.utils.ClassFinder;
 @SuppressWarnings("serial")
 @Bot(name="BotBSF")
 public class BotBSF extends VBot {
-	
+
 	public static int NO_INPUT_TIMEOUT = 300000;
 	
 	private String lastState;
 	private DadosFluxo dadosFluxo;
+	private ConsultaCNPJ consulta;
 	
 	 public interface STATES{
 	    	String START = "start";
-	    	String CNPJ = "cnpj";
+	    	
 	    	String CPF = "cpf";
 	    	
+	    	String CNPJ = "cnpj";
 	    	String SEGUECNPJ = "seguecnpj";
 	    	String MENUEMPRESA = "menuempresa";
 	    	String ERROCNPJ = "errocnpj";
 	    	
 	    	String FUNERAL = "funeral";
+	    	String PLANTAO = "plantao";
+	    	String LOCAL = "local";
+	    	String CONTATO = "contato";
+	    	String CPFUNERAL = "cpfuneral";
+	    	
 	    	String OPERADOR = "operador";
+	    	String ATIVO = "ativo";
+	    	String INATIVO = "inativo";
+	    	String SCADASTRO = "scadastro";
+	    	String ESQUECEU = "esqueceu";
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
 	    	String ATUALIZAR = "atualizar";
 	    	String SOBRE = "sobre";
 	    	String BOLETOS = "boletos";
 	    	String INATIVACAO = "inativacao";
 	    	String INADIMPLENCIA = "inadimplencia";
 	    	String OUTROS = "outros";
-
-	    	String PLANTAO = "plantao";
-	    	String LOCAL = "local";
-	    	String CONTATO = "contato";
-	    	String CPFUNERAL = "cpfuneral";
-	    	
-	    	String ATIVO = "ativo";
-	    	String INATIVO = "inativo";
-	    	String SCADASTRO = "scadastro";
-	    	String ESQUECEU = "esqueceu";
 	    	
 	    	String ATUATIVO = "atuativo";
 	    	String ATUINATIVO = "atuinativo";
@@ -189,5 +199,13 @@ public class BotBSF extends VBot {
 
 	public DadosFluxo getDadosFluxo() {
 		return this.dadosFluxo;
+	}
+	
+	public void setConsultaCNPJ(ConsultaCNPJ consulta) {
+		this.consulta = consulta;
+	}
+	
+	public ConsultaCNPJ getConsultaCNPJ() {
+		return this.consulta;
 	}
 }
