@@ -76,15 +76,22 @@ public class BotBSF extends VBot {
 	    	
 	    	String OUTROS = "outros";
 
-
-	    	
-	    	
 	    	String SERASA = "sarasa";
-	    	String COMSERASA = "comsarasa";
 	    	String SEMSERASA = "semsarasa";
-	    	String PRESERASA = "presarasa";
 	    	String NDCONSTA = "ndconsta";
 	    	String REGULARIZADO = "regularizado";
+	    	String COMSERASA = "comsarasa";
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	
+	    	String PRESERASA = "presarasa";
+
 	    	String NEGATIVADA = "negativada";
 	    	String INDEVIDA = "indevida";
 	    	String ACORDO = "acordo";

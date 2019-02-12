@@ -1,0 +1,9 @@
+{
+	"states":[
+	{
+			"id": "/NDCONSTA",
+			"idNavigationDetail": 13101,
+			"initialMessages": ["Este CNPJ não consta no SERASA."]		
+		}
+	]
+}

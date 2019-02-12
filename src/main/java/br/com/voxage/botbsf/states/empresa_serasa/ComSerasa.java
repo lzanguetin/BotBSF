@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.chat.botintegration.MessageType;
 import br.com.voxage.chat.botintegration.entities.BotMessage;
 import br.com.voxage.vbot.BotInputResult;
@@ -13,6 +14,23 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class ComSerasa {
 	private static final String INITIAL_MESSAGE = "{" + 
+			   "   \"message\":\"Você tem até o dia %s para regularizar o cadastro junto ao BSF e evitar que essa empresa seja negativada. Sobre a Negativação:\"," +  
+	           "   \"options\":[" + 
+	           "      {" + 
+	           "         \"id\":1," + 
+	           "         \"text\":\"Deseja entender por que a Empresa foi negativada\"" + 
+	           "      }," + 
+	           "      {" + 
+	           "         \"id\":2," + 
+	           "         \"text\":\"Entende que essa cobrança é indevida\"" + 
+	           "      }" +
+	           "      {" + 
+	           "         \"id\":3," + 
+	           "         \"text\":\"Deseja fazer um acordo para a regularização dos débitos\"" + 
+	           "      }," + 
+	           "   ]" + 
+	           "}";
+	private static final String INITIAL_MESSAGE1 = "{" + 
 			   "   \"message\":\"Este CNPJ está negativado junto ao SERASA pelo BSF devido descumprimento de Convenção Coletiva de Trabalho. Sobre a Negativação:\"," +  
 	           "   \"options\":[" + 
 	           "      {" + 
@@ -38,11 +56,17 @@ public class ComSerasa {
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			
 			setPreFunction(botState ->{
-				bot.setLastState(BotBSF.STATES.COMSERASA);
 				BotStateFlow botStateFlow = new BotStateFlow();
+				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
+				if((consulta.getSerasa().getPre()) == "true") {
+					botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
+				}
+				if((consulta.getSerasa().getSerasa()) == "true") {
+					String output = String.format(INITIAL_MESSAGE1, (consulta.getSerasa().getdataPreSerasa()));
+					botState.setInitialMessage(output);
+				}
 			
 				return botStateFlow;
 			});
