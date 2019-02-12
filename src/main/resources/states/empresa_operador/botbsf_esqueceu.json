@@ -1,0 +1,9 @@
+{
+	"states":[
+	{
+			"id": "/ESQUECEU",
+			"idNavigationDetail": 10702,
+			"initialMessages": ["Se esqueceu sua senha clique em 'Esqueceu a senha' logo após digitar o CNPJ da Empresa no site 'www.beneficiosocial.com.br'."]		
+		}
+	]
+}

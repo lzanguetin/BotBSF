@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/ATUATIVO",
+			"idNavigationDetail":11200,
+			"initialMessages": ["Para atualizar os dados acesse www.beneficiosocial.com.br e digite o CNPJ na área da Empresa e clique em 'Solicitar Alteração de Dados Cadastrais'."]
+		}
+	]
+}
