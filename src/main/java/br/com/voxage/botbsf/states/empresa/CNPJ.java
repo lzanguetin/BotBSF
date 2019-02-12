@@ -13,7 +13,6 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-@SuppressWarnings("unused")
 public class CNPJ {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {

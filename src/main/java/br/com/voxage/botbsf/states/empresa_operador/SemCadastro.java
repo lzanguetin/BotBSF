@@ -52,14 +52,14 @@ public class SemCadastro {
 				switch(userInput) {
 					case "1":
 						try {
-							botInputResult.setIntentName(BotBSF.STATES.SOBRE);
+							botInputResult.setIntentName(BotBSF.STATES.FINALIZAR);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
 					case "2":
 						try {
-							botInputResult.setIntentName(BotBSF.STATES.SOBRE);
+							botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
@@ -79,7 +79,8 @@ public class SemCadastro {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.SOBRE, "/SOBRE");
+				put(BotBSF.STATES.ATENDENTE, "/ATENDENTE");
+				put(BotBSF.STATES.FINALIZAR, "/FINALIZAR");
 			}});
 		}};
 	}

@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.atualizar;
+package br.com.voxage.botbsf.states.empresa_atualizar;
 
 import java.util.HashMap;
 

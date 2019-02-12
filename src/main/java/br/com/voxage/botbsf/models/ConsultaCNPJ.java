@@ -45,13 +45,5 @@ public class ConsultaCNPJ {
 
 	public void setSerasa(Serasa serasa) {
 		this.serasa = serasa;
-	}
-
-	@Override
-	public String toString() {
-		return "ConsultaCNPJ [nomeEmpresa=" + nomeEmpresa + ", emailResponsavel=" + emailResponsavel + ", debitos="
-				+ debitos + ", impressao=" + impressao + ", serasa=" + serasa + "]";
-	}
-	
-	
+	}	
 }

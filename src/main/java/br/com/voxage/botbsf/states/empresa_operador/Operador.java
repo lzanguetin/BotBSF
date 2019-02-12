@@ -49,7 +49,6 @@ public class Operador {
 				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				
 				ConsultaOperador customerInfo = null;
 				
 				try {

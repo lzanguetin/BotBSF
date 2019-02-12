@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.atualizar;
+package br.com.voxage.botbsf.states.empresa_atualizar;
 
 import java.util.HashMap;
 
@@ -7,11 +7,11 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class AtulizaInativo {
+public class AtulizaAtivo {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("ATUINATIVO");
+			setId("ATUATIVO");
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 			
