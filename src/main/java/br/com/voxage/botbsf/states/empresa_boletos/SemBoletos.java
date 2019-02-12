@@ -13,7 +13,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class SemBoletos {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Você ainda não possui impressãode boletos nesse mês. Está com dúvidas para imprimir?\"," + 
+	           "   \"message\":\"Você ainda não possui impressão de boletos nesse mês. Está com dúvidas para imprimir?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 

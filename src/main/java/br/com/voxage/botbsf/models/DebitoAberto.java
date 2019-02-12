@@ -4,7 +4,7 @@ import java.util.List;
 
 public class DebitoAberto {
 	private String plano;
-	private List<String> vencimentos;
+	private List<String> debitos;
 	
 	public String getPlano() {
 		return plano;
@@ -15,11 +15,16 @@ public class DebitoAberto {
 	}
 	
 	public List<String> getVencimentos() {
-		return vencimentos;
+		return debitos;
 	}
 
-	public void setVencimentos(List<String> vencimentos) {
-		this.vencimentos = vencimentos;
+	public void setVencimentos(List<String> debitos) {
+		this.debitos = debitos;
+	}
+
+	@Override
+	public String toString() {
+		return "DebitoAberto [plano=" + plano + ", debitos=" + debitos + "]";
 	}
 }
 

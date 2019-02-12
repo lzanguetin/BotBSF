@@ -1,39 +1,48 @@
 package br.com.voxage.botbsf.models;
 
 public class Debitos {
-	private String possuiDeb;
-	private DebitoAberto aberto;
-	private String avencer;
-	private String datavencer;
-	private String ultimopag;
-	public String getAvencer() {
-		return avencer;
-	}
-	public void setAvencer(String avencer) {
-		this.avencer = avencer;
-	}
-	public DebitoAberto getAberto() {
-		return aberto;
-	}
-	public void setAberto(DebitoAberto aberto) {
-		this.aberto = aberto;
-	}
+	private String possuiDebitos;
+	private DebitoAberto debitosEmAberto;
+	private String soPossuiBoletoAVencer;
+	private String dataVencimentoBoletoAVencer;
+	private String dataUltimoPagamento;
+	
 	public String getPossuiDeb() {
-		return possuiDeb;
+		return possuiDebitos;
 	}
-	public void setPossuiDeb(String possuiDeb) {
-		this.possuiDeb = possuiDeb;
+	public void setPossuiDeb(String possuiDebitos) {
+		this.possuiDebitos = possuiDebitos;
 	}
-	public String getDatavencer() {
-		return datavencer;
+	
+	public String getAvencer() {
+		return soPossuiBoletoAVencer;
 	}
-	public void setDatavencer(String datavencer) {
-		this.datavencer = datavencer;
+	public void setAvencer(String soPossuiBoletoAVencer) {
+		this.soPossuiBoletoAVencer = soPossuiBoletoAVencer;
 	}
-	public String getUltimopag() {
-		return ultimopag;
+
+	public DebitoAberto getdebitosEmAberto() {
+		return debitosEmAberto;
 	}
-	public void setUltimopag(String ultimopag) {
-		this.ultimopag = ultimopag;
-	}	
+	public void setdebitosEmAberto(DebitoAberto debitosEmAberto) {
+		this.debitosEmAberto = debitosEmAberto;
+	}
+	public String getdataVencimentoBoletoAVencer() {
+		return dataVencimentoBoletoAVencer;
+	}
+	public void setdataVencimentoBoletoAVencer(String dataVencimentoBoletoAVencer) {
+		this.dataVencimentoBoletoAVencer = dataVencimentoBoletoAVencer;
+	}
+	public String getdataUltimoPagamento() {
+		return dataUltimoPagamento;
+	}
+	public void setdataUltimoPagamento(String dataUltimoPagamento) {
+		this.dataUltimoPagamento = dataUltimoPagamento;
+	}
+	@Override
+	public String toString() {
+		return "Debitos [possuiDebitos=" + possuiDebitos + ", soPossuiBoletosAVencer=" + soPossuiBoletoAVencer
+				+ ", debitosEmAberto=" + debitosEmAberto + ", dataVencimentoBoletoAVencer=" + dataVencimentoBoletoAVencer + ", dataUltimoPagamento=" + dataUltimoPagamento + "]";
+	}
+	
 }

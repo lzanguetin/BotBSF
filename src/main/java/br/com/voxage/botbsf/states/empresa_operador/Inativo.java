@@ -10,7 +10,7 @@ import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
 public class Inativo {
-	private static final String INITIAL_MESSAGE = "Localizei seu CPF como ativo para o CNPJ que você informou\nEmpresa: %s\n CNPJ: %s\nporém ele está inativo. Para ativá-lo é necessário que o responsável pelo email %s o acesse e clique em 'Autorizar Cadastramento'. Verifique o recebimento na caixa de lixo eletrônico ou spam.";
+	private static final String INITIAL_MESSAGE = "Localizei seu CPF como ativo para o CNPJ que você informou\nEmpresa: %s\n CNPJ: %s\nPorém ele está inativo. Para ativá-lo é necessário que o responsável pelo email %s o acesse e clique em 'Autorizar Cadastramento'. Verifique o recebimento na caixa de lixo eletrônico ou spam.";
 	
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {

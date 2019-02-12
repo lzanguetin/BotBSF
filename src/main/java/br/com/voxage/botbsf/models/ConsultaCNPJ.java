@@ -1,5 +1,7 @@
 package br.com.voxage.botbsf.models;
 
+import br.com.voxage.botbsf.models.Debitos;
+
 public class ConsultaCNPJ {
 	private String nomeEmpresa;
 	private String emailResponsavel;
@@ -23,12 +25,12 @@ public class ConsultaCNPJ {
 		this.emailResponsavel = emailResponsavel;
 	}
 	
-	public Debitos getDebitos() {
-		return debitos;
-	}
-
 	public void setDebitos(Debitos debitos) {
 		this.debitos = debitos;
+	}
+	
+	public Debitos getDebitos() {
+		return this.debitos;
 	}
 	
 	public Impressao getImpressao() {
@@ -45,5 +47,13 @@ public class ConsultaCNPJ {
 
 	public void setSerasa(Serasa serasa) {
 		this.serasa = serasa;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		return "ConsultaCNPJ [nomeEmpresa=" + nomeEmpresa + ", emailResponsavel=" + emailResponsavel + ", debitos="
+				+ debitos + ", impressao=" + impressao + ", serasa=" + serasa + "]";
+	}
+	
+	
 }

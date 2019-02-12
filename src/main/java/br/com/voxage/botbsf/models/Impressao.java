@@ -1,42 +1,50 @@
 package br.com.voxage.botbsf.models;
 
 public class Impressao {
-	private String possuiImp;
-	private String ultimaImp;
-	private String vencUltima;
-	private String hrsPagamento;
+	private String possuiImpressao;
+	private String data;
+	private String vencimento;
+	private String horasParaPagamento;
 
 	public String getPossuiImp() {
-		return possuiImp;
+		return possuiImpressao;
 	}
 
-	public void setPossuiImp(String possuiImp) {
-		this.possuiImp = possuiImp;
+	public void setPossuiImp(String possuiImpressao) {
+		this.possuiImpressao = possuiImpressao;
 	}
 
 	public String getUltimaImp() {
-		return ultimaImp;
+		return data;
 	}
 
-	public void setUltimaImp(String ultimaImp) {
-		this.ultimaImp = ultimaImp;
+	public void setUltimaImp(String data) {
+		this.data = data;
 	}
 	
 	public String getVencUltima() {
-		return vencUltima;
+		return vencimento;
 	}
 
-	public void setVencUltima(String vencUltima) {
-		this.vencUltima = vencUltima;
+	public void setVencUltima(String vencimento) {
+		this.vencimento = vencimento;
 	}
 	
 	public String getHrsPagamento() {
-		return hrsPagamento;
+		return horasParaPagamento;
 	}
 
-	public void setHrsPagamento(String hrsPagamento) {
-		this.hrsPagamento = hrsPagamento;
+	public void setHrsPagamento(String horasParaPagamento) {
+		this.horasParaPagamento = horasParaPagamento;
 	}
+
+	@Override
+	public String toString() {
+		return "Impressao [possuiImpressao=" + possuiImpressao + ", data=" + data + ", vencimento=" + vencimento
+				+ ", horasParaPagamento=" + horasParaPagamento + "]";
+	}
+
+	
 }
 
 
