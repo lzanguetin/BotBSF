@@ -60,25 +60,24 @@ public class BotBSF extends VBot {
 	    	String SEMBOLETOS = "semboleto";
 	    	String BOLETOIMPRESSO = "boletoimpresso";
 	    	
-	    	
-	    	
-	    	
-	    	
-	    	
 	    	String INATIVACAO = "inativacao";
-	    	String INADIMPLENCIA = "inadimplencia";
-	    	String OUTROS = "outros";
-
 	    	String NSEGMENTO = "nsegmento";
 	    	String NTRABALHADOR = "ntrabalhador";
 	    	String NREGISTRO = "nregistro";
 	    	
+	    	String INADIMPLENCIA = "inadimplencia";
 	    	String INADINATIVO = "inadinativo";
 	    	String INADSCADASTRO = "inadscadastro";	    	
 	    	String INADATIVO = "inadativo";
 	    	String INADVENCER = "inadvencer";
 	    	String SEMINAD = "seminad";
 	    	String FINALIZARINAD = "finalizarinad";
+	    	String INADPAGO = "inadpago";
+	    	
+	    	String OUTROS = "outros";
+
+
+	    	
 	    	
 	    	String SERASA = "sarasa";
 	    	String COMSERASA = "comsarasa";

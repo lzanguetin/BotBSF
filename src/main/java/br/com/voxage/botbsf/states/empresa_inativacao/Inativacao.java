@@ -13,20 +13,20 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class Inativacao {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"OK, escolha uma das opções a seguir:\"," + 
+	           "   \"message\":\"OK, escolha uma das opções a seguir\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
-	           "         \"text\":\"A Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar\"" + 
+	           "         \"text\":\"A Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar.\"" + 
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":2," + 
-	           "         \"text\":\"A Empresa é do segmento, mas atualmente não possui trabalhador registrado\"" + 
+	           "         \"text\":\"A Empresa é do segmento, mas atualmente não possui trabalhador registrado.\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":3," + 
-	           "         \"text\":\"A Empresa é do segmento, mas nunca teve trabalhador registrado\"" + 
-	           "      }," + 
+	           "         \"text\":\"Empresa é do segmento, mas nunca teve trabalhador registrado.\"" + 
+	           "      }" +
 	           "   ]" + 
 	           "}";
 	
@@ -38,7 +38,7 @@ public class Inativacao {
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			
 			setPreFunction(botState ->{
-				bot.setLastState(BotBSF.STATES.MENUEMPRESA);
+				bot.setLastState(BotBSF.STATES.INATIVACAO);
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				

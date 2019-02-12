@@ -21,7 +21,11 @@ public class FinalizaInadimplencia {
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":2," + 
-	           "         \"text\":\"Nao\"" + 
+	           "         \"text\":\"Não\"" + 
+	           "      }," + 
+	           "      {" + 
+	           "         \"id\":3," + 
+	           "         \"text\":\"Não, pois paguei meu boleto hoje e consta em aberto\"" + 
 	           "      }" + 
 	           "   ]" + 
 	           "}";
@@ -52,7 +56,7 @@ public class FinalizaInadimplencia {
 					switch(userInput) {
 						case "1":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.FINALIZAR);
+								botInputResult.setIntentName(BotBSF.STATES.DESPEDE);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
@@ -60,6 +64,13 @@ public class FinalizaInadimplencia {
 						case "2":
 							try {
 								botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
+							}catch(Exception e) {
+								botInputResult.setResult(BotInputResult.Result.ERROR);
+							}
+							break;
+						case "3":
+							try {
+								botInputResult.setIntentName(BotBSF.STATES.INADPAGO);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
@@ -80,7 +91,8 @@ public class FinalizaInadimplencia {
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
-	                put(BotBSF.STATES.FINALIZAR, "#FINALIZAR");
+	                put(BotBSF.STATES.INADPAGO, "#INADPAGO");
+	                put(BotBSF.STATES.DESPEDE, "#DESPEDE");
 					put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
 					put("MAX_INPUT_ERROR", "/TERMINATE");
 	                put("MAX_NO_INPUT", "/TERMINATE");

@@ -3,6 +3,7 @@ package br.com.voxage.botbsf.states.empresa_inadimplencia;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
@@ -19,12 +20,13 @@ public class Inadimplencia {
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				DadosFluxo dadosFluxo = bot.getDadosFluxo();
+				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
 				
 				switch(dadosFluxo.getOperador()) {
 				case "1":
-					if(dadosFluxo.getDebito() == "1") {
+					if((consulta.getDebitos().getPossuiDeb()) == "true") {
 						botStateFlow.navigationKey = "INADATIVO";
-					}else if(dadosFluxo.getVencer() == "1") {
+					}else if((consulta.getDebitos().getAvencer() == "true")) {
 						botStateFlow.navigationKey = "INADVENCER";
 					}else {
 						botStateFlow.navigationKey = "SEMINAD";

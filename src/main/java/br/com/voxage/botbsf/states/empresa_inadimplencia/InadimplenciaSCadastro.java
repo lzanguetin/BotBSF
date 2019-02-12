@@ -1,11 +1,10 @@
 package br.com.voxage.botbsf.states.empresa_inadimplencia;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
-import br.com.voxage.chat.botintegration.MessageType;
-import br.com.voxage.chat.botintegration.entities.BotMessage;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
+import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
@@ -13,7 +12,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class InadimplenciaSCadastro {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Para ter acesso a quais boletos a Empresa: CNPJ: Possui em aberto você precisa ser um operador autorizado ao acesso desta empresa no site, porém seu CPF não consta como autorizado. Deseja solicitar autorização de acesso? (neste caso o responsável pelo email receberá sua solicitação e precisará autorizá-lo).\"," + 
+	           "   \"message\":\"Para ter acesso a quais boletos a\nEmpresa: %s\nCNPJ: %s\nPossui em aberto você precisa ser um operador autorizado ao acesso desta empresa no site, porém seu CPF não consta como autorizado.\nDeseja solicitar autorização de acesso? Neste caso o responsável pelo email %s receberá sua solicitação e precisará autorizá-lo.\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
@@ -21,11 +20,11 @@ public class InadimplenciaSCadastro {
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":2," + 
-	           "         \"text\":\"Nao\"" + 
-	           "      }" + 
+	           "         \"text\":\"Não\"" + 
+	           "      }" +
 	           "   ]" + 
 	           "}";
-	
+
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
@@ -34,11 +33,14 @@ public class InadimplenciaSCadastro {
 				setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 				
 				setPreFunction(botState ->{
-					bot.setLastState(BotBSF.STATES.INADSCADASTRO);
 					BotStateFlow botStateFlow = new BotStateFlow();
+					DadosFluxo dadosFluxo = bot.getDadosFluxo();
+					ConsultaCNPJ consulta = bot.getConsultaCNPJ();
 					botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 					
-					botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
+					String output = String.format(INITIAL_MESSAGE, consulta.getNome(), dadosFluxo.getCNPJ(), consulta.getEmail());
+					
+					botState.setInitialMessage(output);
 					
 					return botStateFlow;
 				});
