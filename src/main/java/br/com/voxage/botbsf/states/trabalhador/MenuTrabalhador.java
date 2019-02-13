@@ -42,7 +42,7 @@ public class MenuTrabalhador {
 	           "      {" + 
 	           "         \"id\":7," + 
 	           "         \"text\":\"Outros Assuntos\"" + 
-	           "      }," +
+	           "      }" +
 	           "   ]" + 
 	           "}";
 	
@@ -135,13 +135,13 @@ public class MenuTrabalhador {
 			});
 		
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.FUNERAL, "#CNPJ");
-				put(BotBSF.STATES.CARTAO, "#CPF");
-				put(BotBSF.STATES.ANDAMENTO, "#CNPJ");
-				put(BotBSF.STATES.VALIDAR, "#CPF");	
-				put(BotBSF.STATES.SALDO, "#CNPJ");
-				put(BotBSF.STATES.CESTA, "#CPF");	
-				put(BotBSF.STATES.OUTROS, "#CNPJ");
+				put(BotBSF.STATES.FUNERAL, "#FUNERAL");
+				put(BotBSF.STATES.CARTAO, "#CARTAO");
+				put(BotBSF.STATES.ANDAMENTO, "#ANDAMENTO");
+				put(BotBSF.STATES.VALIDAR, "#VALIDAR");	
+				put(BotBSF.STATES.SALDO, "#SALDO");
+				put(BotBSF.STATES.CESTA, "#CESTA");	
+				put(BotBSF.STATES.OUTROS, "#OUTROS");
                 put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};

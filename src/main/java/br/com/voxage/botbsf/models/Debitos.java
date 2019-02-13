@@ -1,8 +1,10 @@
 package br.com.voxage.botbsf.models;
 
+import java.util.List;
+
 public class Debitos {
 	private String possuiDebitos;
-	private DebitoAberto debitosEmAberto;
+	private List<DebitoAberto> debitosEmAberto;
 	private String soPossuiBoletoAVencer;
 	private String dataVencimentoBoletoAVencer;
 	private String dataUltimoPagamento;
@@ -21,10 +23,10 @@ public class Debitos {
 		this.soPossuiBoletoAVencer = soPossuiBoletoAVencer;
 	}
 
-	public DebitoAberto getdebitosEmAberto() {
+	public List<DebitoAberto> getdebitosEmAberto() {
 		return debitosEmAberto;
 	}
-	public void setdebitosEmAberto(DebitoAberto debitosEmAberto) {
+	public void setdebitosEmAberto(List<DebitoAberto> debitosEmAberto) {
 		this.debitosEmAberto = debitosEmAberto;
 	}
 	public String getdataVencimentoBoletoAVencer() {
