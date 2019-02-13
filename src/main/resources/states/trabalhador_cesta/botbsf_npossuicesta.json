@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/NPOSSUICESTA",
+			"idNavigationDetail":14501,
+			"initialMessages": ["Não encontrei nenhuma cesta disponível com o Protocolo que você passou."]
+		}
+	]
+}

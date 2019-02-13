@@ -118,7 +118,8 @@ public class ComSerasa {
 				put(BotBSF.STATES.NEGATIVADA, "#NEGATIVADA");
 				put(BotBSF.STATES.INDEVIDA, "#INDEVIDA");
 				put(BotBSF.STATES.ACORDO, "#ACORDO");
-                put("MAX_NO_INPUT", "/TERMINATE");
+				put("MAX_INPUT_ERROR", "/TERMINATE");
+				put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};
 	}

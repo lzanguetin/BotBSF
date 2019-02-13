@@ -1,0 +1,9 @@
+{
+	"states":[
+	{
+			"id": "/VALIDAR",
+			"idNavigationDetail": 14300,
+			"initialMessages": ["Para efetuar a validação do seu cartão de benefícios tenha em mãos o número do protocolo, a data de nascimento do trabalhador e o CPF do Beneficiário e entre em contato pelo '0800-580-3738' ou baixe o APP BSF Online. O BSF agradece o seu contato."]		
+		}
+	]
+}

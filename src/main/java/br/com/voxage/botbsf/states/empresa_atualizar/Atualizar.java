@@ -43,6 +43,8 @@ public class Atualizar {
 				put("ATUINATIVO", "#ATUINATIVO");
 				put("ATUSCADASTRO", "#ATUSCADASTRO");
 				put("TERMINATE", "/TERMINATE");
+				put("MAX_INPUT_ERROR", "/TERMINATE");
+				put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};
 	}

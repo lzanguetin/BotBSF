@@ -45,6 +45,8 @@ public class Boletos {
 				put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
 				put(BotBSF.STATES.SEMBOLETOS, "#SEMBOLETOS");
 				put(BotBSF.STATES.BOLETOIMPRESSO, "#BOLETOIMPRESSO");
+				put("MAX_INPUT_ERROR", "/TERMINATE");
+				put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};
 	}

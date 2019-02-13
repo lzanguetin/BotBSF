@@ -13,7 +13,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class Finalizar {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Esta resposta te ajudou?\"," + 
+	           "   \"message\":\"Resolvi sua dúvida?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
@@ -51,7 +51,7 @@ public class Finalizar {
 				switch(userInput) {
 					case "1":
 						try {
-							botInputResult.setIntentName(BotBSF.STATES.OUTRA);
+							botInputResult.setIntentName(BotBSF.STATES.DESPEDE);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
@@ -77,7 +77,7 @@ public class Finalizar {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.OUTRA, "/OUTRA");
+				put(BotBSF.STATES.DESPEDE, "/DESPEDE");
 				put(BotBSF.STATES.ATENDENTE, "/ATENDENTE");
                 put("MAX_INPUT_ERROR", "/TERMINATE");
                 put("MAX_NO_INPUT", "/TERMINATE");

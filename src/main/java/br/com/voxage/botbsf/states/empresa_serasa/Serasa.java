@@ -1,6 +1,7 @@
 package br.com.voxage.botbsf.states.empresa_serasa;
 
 import java.util.HashMap;
+import java.util.concurrent.CompletableFuture;
 
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.ConsultaCNPJ;
@@ -16,7 +17,7 @@ public class Serasa {
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 			
-			setPosFunction((botState, inputResult) ->{
+			setAsyncPosFunction((botState, inputResult)-> CompletableFuture.supplyAsync(() ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
@@ -27,9 +28,8 @@ public class Serasa {
 					botStateFlow.navigationKey = "SEMSERASA";
 				}
 				
-				
 				return botStateFlow;
-			});
+			}));
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put(BotBSF.STATES.COMSERASA, "#COMSERASA");

@@ -52,6 +52,8 @@ public class Inadimplencia {
 				put("INADINATIVO", "#INADINATIVO");
 				put("INADSCADASTRO", "#INADSCADASTRO");
 				put("TERMINATE", "/TERMINATE");
+				put("MAX_INPUT_ERROR", "/TERMINATE");
+				put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};
 	}

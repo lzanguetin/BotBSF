@@ -57,7 +57,7 @@ public class Operador {
 	                    if(customerInfo.getNome() == "true") {
 	                    	dadosFluxo.setOperador("1");
 	                    	botStateFlow.navigationKey = BotBSF.STATES.ATIVO;
-	                    }else {
+	                    }else if(customerInfo.getNome() == "false") {
 	                    	dadosFluxo.setOperador("2");
 	                    	botStateFlow.navigationKey = BotBSF.STATES.INATIVO;
 	                    }

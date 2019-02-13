@@ -40,6 +40,8 @@ public class InadimplenciaVencer {
 			
 			setNextNavigationMap(new HashMap<String, String>() {{
 				put("FINALIZARINAD", "#FINALIZARINAD");
+				put("MAX_INPUT_ERROR", "/TERMINATE");
+				put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};
 	}

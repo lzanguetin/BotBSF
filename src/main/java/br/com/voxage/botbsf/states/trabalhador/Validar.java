@@ -18,13 +18,13 @@ public class Validar {
 				setPosFunction((botState, inputResult) ->{
 					BotStateFlow botStateFlow = new BotStateFlow();
 					botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-					botStateFlow.navigationKey = "FINALIZAR";
+					botStateFlow.navigationKey = "TERMINATE";
 					
 					return botStateFlow;
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{			
-                    put("FINALIZAR", "#FINALIZAR");
+                    put("TERMINATE", "#TERMINATE");
 				}});
 		}};
 	}

@@ -37,14 +37,14 @@ public class Atendente {
 				botStateFlow.flow = BotStateFlow.Flow.TRANSFER;
 
 				switch(dayOfWeek) {
-            	case Calendar.SUNDAY:
-            		inputResult.setResult(BotInputResult.Result.ERROR);
-            		break;
-            	case Calendar.SATURDAY:
-            		inputResult.setResult(BotInputResult.Result.ERROR);
-            		break;
-            	default:
-            		inputResult.setResult(BotInputResult.Result.OK);
+            		case Calendar.SUNDAY:
+            			inputResult.setResult(BotInputResult.Result.ERROR);
+            			break;
+            		case Calendar.SATURDAY:
+            			inputResult.setResult(BotInputResult.Result.ERROR);
+            			break;
+            		default:
+            			inputResult.setResult(BotInputResult.Result.OK);
 				}
 				
 				bot.setBotNameToTransfer(BotBSF.STATES.TRANSFERIR);

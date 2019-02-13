@@ -1,47 +1,52 @@
-package br.com.voxage.botbsf.states.empresa_funeral;
+package br.com.voxage.botbsf.states.trabalhador_cesta;
 
 import java.util.HashMap;
+import java.util.concurrent.CompletableFuture;
 
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.ConsultaCPF;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Contato {
+public class Cesta {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("CONTATO");
+			setId("CESTA");
+			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
-			setMaxInputTime(BotBSF.NO_INPUT_TIMEOUT);
-			setMaxInputError(3);
-			setMaxNoInput(3);
 			
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();
 				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botInputResult.setResult(BotInputResult.Result.OK);
-				String userInput = userInputs.getConcatenatedInputs();
 				
-				dadosFluxo.setContato(userInput);
+				String userInput = userInputs.getConcatenatedInputs();
+				dadosFluxo.setOS(userInput);
 				
 				return botInputResult;
 			});
 			
-			setPosFunction((botState, inputResult) ->{
+			setAsyncPosFunction((botState, inputResult)-> CompletableFuture.supplyAsync(() ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
+				ConsultaCPF trab = bot.getConsultaCPF();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = "CPFUNERAL";
 				
+				if((trab.getCesta().getCestaReceber()) == "true") {
+					botStateFlow.navigationKey = "POSSUICESTA";
+				}else {
+					botStateFlow.navigationKey = "NPOSSUICESTA";
+				}
+
 				return botStateFlow;
-			});
+			}));
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("CPFUNERAL", "#CPFUNERAL");
-				put("MAX_INPUT_ERROR", "/TERMINATE");
-				put("MAX_NO_INPUT", "/TERMINATE");
+				put("POSSUICESTA", "/POSSUICESTA");
+				put("NPOSSUICESTA", "/NPOSSUICESTA");
 			}});
 		}};
 	}

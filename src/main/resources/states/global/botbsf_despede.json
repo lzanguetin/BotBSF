@@ -1,0 +1,9 @@
+{
+	"states":[
+	{
+			"id": "/DESPEDE",
+			"idNavigationDetail": 99990,
+			"initialMessages": ["O BSF agradece o seu contato."]		
+		}
+	]
+}

@@ -90,27 +90,22 @@ public class BotBSF extends VBot {
 	    	String CPF = "cpf";
 	    	String SEGUECPF = "seguecpf";
 	    	String ERROCPF = "errocpf";
-	    	
-
-	    	
-	    	
-	    	
-
-	    	
-	    	String ATENDENTE = "atendente";
-	    	String FAQ = "faq";
-	    	String FINALIZAR = "finalizar";
-	    	String OUTRA = "outra";
-	    	String DESPEDE = "despede";
-	    	String REDIRECT = "redirect";
-	    	
 	    	String MENUTRABALHADOR = "menutrabalhador";
-	    	
+
 	    	String CARTAO = "cartao";
 	    	String ANDAMENTO = "andamento";
 	    	String VALIDAR = "validar";
 	    	String SALDO = "saldo";
+	    	
 	    	String CESTA = "cesta";
+	    	String POSSUICESTA = "possuicesta";
+	    	String NPOSSUICESTA = "npossuicesta";
+	    	
+	    	String FAQ = "faq";
+	    	String ATENDENTE = "atendente";
+	    	String FINALIZAR = "finalizar";
+	    	String DESPEDE = "despede";
+	    	String REDIRECT = "redirect";
 	    	
 	    	String TRANSFERIR = "transfer_to_attendant(1)";
 	}

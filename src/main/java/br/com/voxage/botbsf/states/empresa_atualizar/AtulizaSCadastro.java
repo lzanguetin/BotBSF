@@ -87,6 +87,8 @@ public class AtulizaSCadastro {
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put(BotBSF.STATES.FINALIZAR, "#FINALIZAR");
+				put("MAX_INPUT_ERROR", "/TERMINATE");
+				put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};
 	}

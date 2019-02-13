@@ -85,6 +85,8 @@ public class Ativo {
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put(BotBSF.STATES.ESQUECEU, "#ESQUECEU");
 				put(BotBSF.STATES.ATENDENTE, "/ATENDENTE");
+				put("MAX_INPUT_ERROR", "/TERMINATE");
+				put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};
 	}
