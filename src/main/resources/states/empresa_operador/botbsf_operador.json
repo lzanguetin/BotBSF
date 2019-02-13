@@ -3,10 +3,10 @@
 		{
 			"id": "/OPERADOR",
 			"idNavigationDetail": 10600,
-			"initialMessages": ["Digite o CPF do Operador que deve ter acesso a ·rea da Empresa:"],
+			"initialMessages": ["Digite o CPF do Operador que deve ter acesso a √°rea da Empresa:"],
 			"inputErrorResponses":[
-				{"order":"1", "messages":["O CPF que vocÍ digitou n„o È v·lido. Digite novamente o CPF do trabalhador com 11 dÌgitos."]},
-				{"order":"2", "messages": ["O CPF continua inv·lido. Vamos tentar mais uma vez. Digite o CPF do trabalhador com 11 dÌgitos."]}
+				{"order":"1", "messages":["O CPF que voc√™ digitou n√£o √© v√°lido. Digite novamente o CPF do trabalhador com 11 d√≠gitos."]},
+				{"order":"2", "messages": ["O CPF continua inv√°lido. Vamos tentar mais uma vez. Digite o CPF do trabalhador com 11 d√≠gitos."]}
 			],
 			"noInputResponses":[{"order":"1", "messages":["Voc√™ n√£o est√° respondendo. Tudo bem, n√£o tem problema. Vou continuar trabalhando por aqui e quando voc√™ precisar de ajuda pode me chamar."]}]
 		}

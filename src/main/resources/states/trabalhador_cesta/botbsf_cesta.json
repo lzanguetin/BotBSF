@@ -3,7 +3,7 @@
 		{
 			"id": "/CESTA",
 			"idNavigationDetail":14500,
-			"initialMessages": ["Ok, digite o número do Protocolo"]
+			"initialMessages": ["Ok, digite o nÃºmero do Protocolo"]
 		}
 	]
 }
