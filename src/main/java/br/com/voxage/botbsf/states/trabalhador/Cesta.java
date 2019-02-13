@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.trabalhador;
+package br.com.voxage.botbsf.states.trabalhador;
 
 import java.util.HashMap;
 

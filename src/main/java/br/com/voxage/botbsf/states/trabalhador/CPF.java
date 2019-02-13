@@ -1,9 +1,12 @@
-package br.com.voxage.botbsf.trabalhador;
+package br.com.voxage.botbsf.states.trabalhador;
 
 import java.util.HashMap;
+import java.util.concurrent.CompletableFuture;
 
 import br.com.voxage.basicvalidators.CPFValidator;
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.BotBSFIntegration;
+import br.com.voxage.botbsf.models.ConsultaCPF;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
@@ -35,16 +38,26 @@ public class CPF {
 				return botInputResult;
 			});
 			
-			setPosFunction((botState, inputResult) ->{
+			setAsyncPosFunction((botState, inputResult)-> CompletableFuture.supplyAsync(() ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
+				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = inputResult.getIntentName();
+				
+				ConsultaCPF customerInfo = null;
+				
+				try {
+					customerInfo = BotBSFIntegration.dadosTrabalhador(bot, dadosFluxo.getCPF());
+					bot.setConsultaCPF(customerInfo);
+					botStateFlow.navigationKey = BotBSF.STATES.SEGUECPF;
+				}catch(Exception e) {
+					botStateFlow.navigationKey = BotBSF.STATES.ERROCPF;
+				}
 				
 				return botStateFlow;
-			});
+			}));
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.MENUTRABALHADOR, "#MENUTRABALHADOR");
+				put(BotBSF.STATES.SEGUECPF, "#SEGUECPF");
 				put(BotBSF.STATES.ERROCPF, "#ERROCPF");
                 put("MAX_INPUT_ERROR", "/TERMINATE");
                 put("MAX_NO_INPUT", "/TERMINATE");

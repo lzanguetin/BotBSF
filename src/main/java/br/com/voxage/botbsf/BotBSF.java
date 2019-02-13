@@ -6,6 +6,7 @@ import java.util.Map;
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.botbsf.models.ConsultaCNPJ;
+import br.com.voxage.botbsf.models.ConsultaCPF;
 import br.com.voxage.chat.botintegration.ISearchEngine;
 import br.com.voxage.chat.botintegration.ISearchEngineCredentials;
 import br.com.voxage.chat.botintegration.TextSearchEngine;
@@ -26,11 +27,10 @@ public class BotBSF extends VBot {
 	private String lastState;
 	private DadosFluxo dadosFluxo;
 	private ConsultaCNPJ consulta;
+	private ConsultaCPF trab;
 	
 	 public interface STATES{
 	    	String START = "start";
-	    	
-	    	String CPF = "cpf";
 	    	
 	    	String CNPJ = "cnpj";
 	    	String SEGUECNPJ = "seguecnpj";
@@ -73,30 +73,29 @@ public class BotBSF extends VBot {
 	    	String SEMINAD = "seminad";
 	    	String FINALIZARINAD = "finalizarinad";
 	    	String INADPAGO = "inadpago";
-	    	
-	    	String OUTROS = "outros";
 
 	    	String SERASA = "sarasa";
 	    	String SEMSERASA = "semsarasa";
 	    	String NDCONSTA = "ndconsta";
 	    	String REGULARIZADO = "regularizado";
 	    	String COMSERASA = "comsarasa";
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	
-	    	String PRESERASA = "presarasa";
-
 	    	String NEGATIVADA = "negativada";
-	    	String INDEVIDA = "indevida";
 	    	String ACORDO = "acordo";
+	    	String INDEVIDA = "indevida";
 	    	String COBSEGMENTO = "cobsegmento";
 	    	String COBSEMTRAB = "cobsemtrab";
+	    	
+	    	String OUTROS = "outros";
+	    	
+	    	String CPF = "cpf";
+	    	String SEGUECPF = "seguecpf";
+	    	String ERROCPF = "errocpf";
+	    	
+
+	    	
+	    	
+	    	
+
 	    	
 	    	String ATENDENTE = "atendente";
 	    	String FAQ = "faq";
@@ -106,7 +105,7 @@ public class BotBSF extends VBot {
 	    	String REDIRECT = "redirect";
 	    	
 	    	String MENUTRABALHADOR = "menutrabalhador";
-	    	String ERROCPF = "errocpf";
+	    	
 	    	String CARTAO = "cartao";
 	    	String ANDAMENTO = "andamento";
 	    	String VALIDAR = "validar";
@@ -212,5 +211,12 @@ public class BotBSF extends VBot {
 	
 	public ConsultaCNPJ getConsultaCNPJ() {
 		return this.consulta;
+	}
+	public void setConsultaCPF(ConsultaCPF trab) {
+		this.trab = trab;
+	}
+	
+	public ConsultaCPF getConsultaCPF() {
+		return this.trab;
 	}
 }

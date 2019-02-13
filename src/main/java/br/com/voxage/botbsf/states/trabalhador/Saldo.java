@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.trabalhador;
+package br.com.voxage.botbsf.states.trabalhador;
 
 import java.util.HashMap;
 
@@ -7,11 +7,11 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Validar {
+public class Saldo {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-				setId("VALIDAR");
+				setId("SALDO");
 				
 				setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 				
