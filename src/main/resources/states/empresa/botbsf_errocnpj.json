@@ -3,12 +3,7 @@
 		{
 			"id": "/ERROCNPJ",
 			"idNavigationDetail":10101,
-			"initialMessages": ["Ok, agora por favor digite o número do CNPJ da Empresa."],
-			"inputErrorResponses":[
-				{"order":"1", "messages":["Não entendi. Por favor, digite o número do CNPJ da Empresa."]},
-				{"order":"2", "messages": ["Ainda não entendi. Vamos tentar mais uma vez. Digite agora, o número completo que possui 14 dígitos (sem pontos ou barra) do CNPJ da Empresa que deseja falar."]}
-			],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
+			"initialMessages": ["para cadastrar a empresa junto ao BSF acesse 'www.beneficiosocial.com.br'. Clique em 'Cadastre sua Empresa' e preencha o formulário até concluí-lo. O BSF agradece o seu contato."]
 		}
 	]
 }

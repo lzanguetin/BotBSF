@@ -7,6 +7,7 @@ import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.chat.botintegration.MessageType;
 import br.com.voxage.chat.botintegration.entities.BotMessage;
+import br.com.voxage.lucenesearchengine.LuceneSearchEngine;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
@@ -77,11 +78,12 @@ public class MenuEmpresa {
 				botInputResult.setResult(BotInputResult.Result.OK);
 				
 				String userInput = userInputs.getConcatenatedInputs();
+				dadosFluxo.setFAQ(userInput);
 				
 				switch(userInput) {
 				case "1":
 					try {
-			            botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
+			            botInputResult.setIntentName(BotBSF.STATES.FAQ);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
@@ -142,12 +144,19 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				default:
-					dadosFluxo.setFAQ(userInput);
-					botInputResult.setIntentName(BotBSF.STATES.FAQ);
+				default:		
+					try {
+						userInput = dadosFluxo.getFAQ();
+						setBotStateInteractionType(BotStateInteractionType.FAQ_SEARCH);
+						setNlpSearchEngine(new LuceneSearchEngine());
+						
+						return BotInputResult.BOT_INPUT_RESULT_RETRY;
+					}catch(Exception ex) {
+						botInputResult.setResult(BotInputResult.Result.ERROR);
+					}	
 				}
 			
-			return botInputResult;
+				return botInputResult;
 			});
 			
 			setPosFunction((botState, inputResult)->{
@@ -168,7 +177,7 @@ public class MenuEmpresa {
 				put(BotBSF.STATES.INADIMPLENCIA, "/INADIMPLENCIA");	
 				put(BotBSF.STATES.SERASA, "/SERASA");	
 				put(BotBSF.STATES.OUTROS, "/OUTROS");
-				put(BotBSF.STATES.FAQ, "/FAQ");
+				put("faq", "#FAQ");
                 put("MAX_INPUT_ERROR", "/TERMINATE");
                 put("MAX_NO_INPUT", "/TERMINATE");
 			}});

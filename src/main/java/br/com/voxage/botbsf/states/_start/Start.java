@@ -14,7 +14,7 @@ import br.com.voxage.vbot.BotStateInteractionType;
 
 public class Start {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Olá, você está no atendimento online da Gestora do Benefício Social Familiar!\nEu sou a Benê, assitente gigital e estou aqui para te ajudar. Você deseja falar sobre assuntos da Empresa ou do seu Benefício?\"," + 
+	           "   \"message\":\"Olá, você está no atendimento online da Gestora do Benefício Social Familiar!\nEu sou a Benê, assitente digital e estou aqui para te ajudar. Você deseja falar sobre assuntos da Empresa ou do seu Benefício?\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
@@ -86,7 +86,6 @@ public class Start {
 				setNextNavigationMap(new HashMap<String, String>(){{
 					put(BotBSF.STATES.CNPJ, "#CNPJ");
 					put(BotBSF.STATES.CPF, "#CPF");				
-					put("MAX_INPUT_ERROR", "/TERMINATE");
 					put("MAX_NO_INPUT", "/TERMINATE");
 				}});
 		}};

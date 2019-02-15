@@ -1,8 +1,10 @@
 package br.com.voxage.botbsf.states.trabalhador;
 
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.chat.botintegration.MessageType;
 import br.com.voxage.chat.botintegration.entities.BotMessage;
+import br.com.voxage.lucenesearchengine.LuceneSearchEngine;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
@@ -59,15 +61,16 @@ public class MenuTrabalhador {
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
 				 botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
-			
 				return botStateFlow;
 			});
 			
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();
+				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botInputResult.setResult(BotInputResult.Result.OK);
 				
 				String userInput = userInputs.getConcatenatedInputs();
+				dadosFluxo.setFAQ(userInput);
 				
 				switch(userInput) {
 					case "1":
@@ -120,7 +123,15 @@ public class MenuTrabalhador {
 						}
 						break;
 					default:
-						botInputResult.setIntentName(BotBSF.STATES.FAQ);
+						try {
+							userInput = dadosFluxo.getFAQ();
+							setBotStateInteractionType(BotStateInteractionType.FAQ_SEARCH);
+							setNlpSearchEngine(new LuceneSearchEngine());
+							
+							return BotInputResult.BOT_INPUT_RESULT_RETRY;
+						}catch(Exception ex) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}	
 				}
 			
 				return botInputResult;
@@ -142,6 +153,8 @@ public class MenuTrabalhador {
 				put(BotBSF.STATES.SALDO, "#SALDO");
 				put(BotBSF.STATES.CESTA, "#CESTA");	
 				put(BotBSF.STATES.OUTROS, "#OUTROS");
+				put("faq", "#FAQ");
+                put("MAX_INPUT_ERROR", "/TERMINATE");
                 put("MAX_NO_INPUT", "/TERMINATE");
 			}});
 		}};
