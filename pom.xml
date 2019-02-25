@@ -32,9 +32,35 @@
             <version>2.8.0</version>
         </dependency>
         <dependency>
+            <groupId>br.com.voxage</groupId>
+            <artifactId>LuceneSearchEngine</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+        	<groupId>br.com.voxage</groupId>
+        	<artifactId>LuisSearchEngine</artifactId>
+        	<version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        	<groupId>br.com.voxage</groupId>
+        	<artifactId>NLPSimulatorSearchEngine</artifactId>
+        	<version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        	<groupId>br.com.voxage</groupId>
+        	<artifactId>BasicValidators</artifactId>
+        	<version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+        	<groupId>br.com.voxage</groupId>
+        	<artifactId>BotIntegrator</artifactId>
+        	<version>1.00.00-chatbot</version>
+        </dependency>
+        <dependency>
         	<groupId>br.com.voxage</groupId>
         	<artifactId>VBot</artifactId>
-        	<version>1.1.1</version>
+        	<version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <build>

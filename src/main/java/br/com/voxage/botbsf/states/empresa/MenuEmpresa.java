@@ -1,18 +1,12 @@
 package br.com.voxage.botbsf.states.empresa;
 
-import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.chat.botintegration.MessageType;
 import br.com.voxage.chat.botintegration.entities.BotMessage;
-import br.com.voxage.chat.botintegration.ejb.entitties.SearchedLiveQuestion;
 import br.com.voxage.lucenesearchengine.LuceneSearchEngine;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
@@ -89,7 +83,7 @@ public class MenuEmpresa {
 				switch(userInput) {
 				case "1":
 					try {
-			            botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
+			            botInputResult.setIntentName(BotBSF.STATES.FAQ);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
@@ -150,12 +144,12 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				default:
+				default:		
 					try {
-						userInput = dadosFluxo.getFAQ();						
+						userInput = dadosFluxo.getFAQ();
 						setBotStateInteractionType(BotStateInteractionType.FAQ_SEARCH);
 						setNlpSearchEngine(new LuceneSearchEngine());
-		                 
+						
 						return BotInputResult.BOT_INPUT_RESULT_RETRY;
 					}catch(Exception ex) {
 						botInputResult.setResult(BotInputResult.Result.ERROR);
@@ -165,24 +159,6 @@ public class MenuEmpresa {
 				return botInputResult;
 			});
 			
-			setProcessFAQResultFunction((botState, input)->{
-                BotInputResult botInputResult = new BotInputResult();
-                botInputResult.setResult(br.com.voxage.vbot.BotInputResult.Result.OK);
-                Type listType = new TypeToken<List<SearchedLiveQuestion>>(){}.getType();
-                try {
-                    List<SearchedLiveQuestion> results = new Gson().fromJson(input.getAnswer(), listType);
-                    if(!results.isEmpty()) {
-                        botInputResult.setAnswer(results.get(0).getChAnswer());
-                    }
-                }catch(Exception e) {
-                    botInputResult.setResult(br.com.voxage.vbot.BotInputResult.Result.ERROR);
-                }
-                botInputResult.setIntentName(BotBSF.STATES.FAQ);
-                
-                return botInputResult;
-            });
-			
-
 			setPosFunction((botState, inputResult)->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
@@ -201,7 +177,6 @@ public class MenuEmpresa {
 				put(BotBSF.STATES.INADIMPLENCIA, "/INADIMPLENCIA");	
 				put(BotBSF.STATES.SERASA, "/SERASA");	
 				put(BotBSF.STATES.OUTROS, "/OUTROS");
-				put(BotBSF.STATES.MENUEMPRESA, "/MENUEMPRESA");
 				put("faq", "#FAQ");
                 put("MAX_INPUT_ERROR", "/TERMINATE");
                 put("MAX_NO_INPUT", "/TERMINATE");
