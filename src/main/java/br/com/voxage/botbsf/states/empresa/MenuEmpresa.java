@@ -33,7 +33,7 @@ public class MenuEmpresa {
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":3," + 
-	           "         \"text\":\"Atualizar os Dados da Empresa\"" + 
+	           "         \"text\":\"Atualizar os Dadosd da Empresa\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":4," + 
