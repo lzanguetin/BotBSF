@@ -17,15 +17,15 @@ public class Inativacao {
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
-	           "         \"text\":\"A Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar.\"" + 
+	           "         \"text\":\"A Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar\"" + 
 	           "      }," + 
 	           "      {" + 
 	           "         \"id\":2," + 
-	           "         \"text\":\"A Empresa é do segmento, mas atualmente não possui trabalhador registrado.\"" + 
+	           "         \"text\":\"A Empresa é do segmento, mas atualmente não possui trabalhador registrado\"" + 
 	           "      }," +
 	           "      {" + 
 	           "         \"id\":3," + 
-	           "         \"text\":\"Empresa é do segmento, mas nunca teve trabalhador registrado.\"" + 
+	           "         \"text\":\"Empresa é do segmento, mas nunca teve trabalhador registrado\"" + 
 	           "      }" +
 	           "   ]" + 
 	           "}";
@@ -61,6 +61,13 @@ public class Inativacao {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
+					case "A Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.NSEGMENTO);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
 					case "2":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.NTRABALHADOR);
@@ -68,7 +75,21 @@ public class Inativacao {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
+					case "A Empresa é do segmento, mas atualmente não possui trabalhador registrado":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.NTRABALHADOR);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
 					case "3":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.NREGISTRO);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
+					case "Empresa é do segmento, mas nunca teve trabalhador registrado":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.NREGISTRO);
 						}catch(Exception e) {

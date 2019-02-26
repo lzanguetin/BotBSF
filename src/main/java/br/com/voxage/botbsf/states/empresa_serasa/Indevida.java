@@ -57,7 +57,21 @@ public class Indevida {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
 							break;
+						case "Empresa não pertence ao segmento abrangido pelo Beneficio Social Familiar":
+							try {
+					                botInputResult.setIntentName(BotBSF.STATES.COBSEGMENTO);
+					        }catch(Exception e) {
+				                	botInputResult.setResult(BotInputResult.Result.ERROR);
+				            }
+							break;
 						case "2":
+							try {
+					                botInputResult.setIntentName(BotBSF.STATES.COBSEMTRAB);
+					        }catch(Exception e) {
+				                	botInputResult.setResult(BotInputResult.Result.ERROR);
+				            }
+							break;
+						case "Empresa é do segmento que possui o BSF, mas atualmente não possui nenhum trabalhador registrado":
 							try {
 					                botInputResult.setIntentName(BotBSF.STATES.COBSEMTRAB);
 					        }catch(Exception e) {

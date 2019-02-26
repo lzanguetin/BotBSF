@@ -52,7 +52,15 @@ public class Start {
 					String userInput = userInputs.getConcatenatedInputs();
 						
 					switch(userInput) {
-						case "1":
+						case ("1"):
+							try {
+									dadosFluxo.setType("1");
+					                botInputResult.setIntentName(BotBSF.STATES.CNPJ);
+					        }catch(Exception e) {
+				                	botInputResult.setResult(BotInputResult.Result.ERROR);
+				            }
+							break;
+						case ("Empresa"):
 							try {
 									dadosFluxo.setType("1");
 					                botInputResult.setIntentName(BotBSF.STATES.CNPJ);
@@ -68,9 +76,18 @@ public class Start {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
 							break;
+						case ("Beneficiário"):
+							try {
+									dadosFluxo.setType("2");
+					                botInputResult.setIntentName(BotBSF.STATES.CPF);
+					        }catch(Exception e) {
+				                	botInputResult.setResult(BotInputResult.Result.ERROR);
+				            }
+							break;
 						default:
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
+					
 					
 					return botInputResult;
 				});

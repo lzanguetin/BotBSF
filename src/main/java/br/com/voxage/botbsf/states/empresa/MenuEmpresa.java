@@ -94,7 +94,21 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
+				case "Acionar Agora o Serviço Funeral":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
 				case "2":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.OPERADOR);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
+				case "Acesso do Operador ao Cadastro da Empresa":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.OPERADOR);
 			        }catch(Exception e) {
@@ -108,7 +122,21 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
+				case "Atualizar os Dados da Empresa":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.ATUALIZAR);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
 				case "4":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.SOBRE);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
+				case "Saber Mais Sobre O Que É BSF":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.SOBRE);
 			        }catch(Exception e) {
@@ -122,6 +150,13 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
+				case "Impressão ou Pagamento de Boletos":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.BOLETOS);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
 				case "6":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.INATIVACAO);
@@ -129,7 +164,21 @@ public class MenuEmpresa {
 		               	botInputResult.setResult(BotInputResult.Result.ERROR);
 			        }
 					break;
+				case "Inativação de Cadastro":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.INATIVACAO);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
 				case "7":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.INADIMPLENCIA);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
+				case "Recebeu e-mail de Inadimplência":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.INADIMPLENCIA);
 			        }catch(Exception e) {
@@ -143,7 +192,21 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
+				case "Empresa está Negativada no SERASA":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.SERASA);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
 				case "9":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.OUTROS);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
+				case "Outros Assuntos":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.OUTROS);
 			        }catch(Exception e) {

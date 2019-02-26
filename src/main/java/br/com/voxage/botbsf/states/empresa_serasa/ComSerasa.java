@@ -85,6 +85,13 @@ public class ComSerasa {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
+					case "Deseja entender por que a Empresa foi negativada":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.NEGATIVADA);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
 					case "2":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.INDEVIDA);
@@ -92,7 +99,21 @@ public class ComSerasa {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
+					case "Entende que essa cobrança é indevida":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.INDEVIDA);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
 					case "3":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.ACORDO);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
+					case "Deseja fazer um acordo para a regularização dos débitos":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.ACORDO);
 						}catch(Exception e) {

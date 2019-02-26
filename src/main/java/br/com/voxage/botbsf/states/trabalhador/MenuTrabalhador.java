@@ -80,7 +80,21 @@ public class MenuTrabalhador {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
+					case "Acionar agora o Serviço Funeral":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
 					case "2":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.CARTAO);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
+					case "Recebi esse cartão e quero saber o que é":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.CARTAO);
 						}catch(Exception e) {
@@ -94,7 +108,21 @@ public class MenuTrabalhador {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
+					case "Acompanhar o andamento do meu benefício":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.ANDAMENTO);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
 					case "4":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.VALIDAR);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
+					case "Validar seu cartão de benefícios":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.VALIDAR);
 						}catch(Exception e) {
@@ -108,6 +136,13 @@ public class MenuTrabalhador {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
+					case "Quero saber meu saldo no cartão Agilitas":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.SALDO);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
 					case "6":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.CESTA);
@@ -115,7 +150,21 @@ public class MenuTrabalhador {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
+					case "Quer saber quando irá receber sua próxima Cesta de Alimentos":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.CESTA);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
 					case "7":
+						try {
+							botInputResult.setIntentName(BotBSF.STATES.OUTROS);
+						}catch(Exception e) {
+							botInputResult.setResult(BotInputResult.Result.ERROR);
+						}
+						break;
+					case "Outros Assuntos":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.OUTROS);
 						}catch(Exception e) {

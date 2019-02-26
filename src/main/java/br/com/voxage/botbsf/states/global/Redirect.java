@@ -55,7 +55,21 @@ public class Redirect {
 			                	botInputResult.setResult(BotInputResult.Result.ERROR);
 			            }
 						break;
+					case "Sim":
+						try {
+				                botInputResult.setIntentName(BotBSF.STATES.DESPEDE);
+				        }catch(Exception e) {
+			                	botInputResult.setResult(BotInputResult.Result.ERROR);
+			            }
+						break;
 					case "2":
+						try {
+				                botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
+				        }catch(Exception e) {
+			                	botInputResult.setResult(BotInputResult.Result.ERROR);
+			            }
+						break;
+					case "Não":
 						try {
 				                botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
 				        }catch(Exception e) {
