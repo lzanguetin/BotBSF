@@ -243,8 +243,7 @@ public class MenuEmpresa {
                 botInputResult.setIntentName(BotBSF.STATES.FAQ);
                 
                 return botInputResult;
-            });
-			
+            });		
 
 			setPosFunction((botState, inputResult)->{
 				BotStateFlow botStateFlow = new BotStateFlow();
