@@ -28,7 +28,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry exported="true" kind="src" path="/BotIntegration"/>
 	<classpathentry exported="true" kind="src" path="/AttendantBot"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/BasicValidators"/>
 	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/VBot"/>

@@ -29,6 +29,7 @@ public class Regularizado{
 				
 				return botStateFlow;
 			});
+			
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
