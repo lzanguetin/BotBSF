@@ -40,7 +40,7 @@ public class ConsultaCPF {
 
 	@Override
 	public String toString() {
-		return "ConsultaCPF [dataNascimento=" + dataNascimento + ", protocoloValidacao=" + protocoloValidacao
+		return "ConsultaCPF [dataNascimento=" + dataNascimento + ", numeroProtocolo=" + numeroProtocolo
 				+ ", cesta=" + cesta + ", benef=" + benef + "]";
 	}
 }
