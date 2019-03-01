@@ -5,6 +5,7 @@ import br.com.voxage.botbsf.models.Debitos;
 public class ConsultaCNPJ {
 	private String nomeEmpresa;
 	private String emailResponsavel;
+	private String qtdContratos;
 	private Debitos debitos;
 	private Impressao impressao;
 	private Serasa serasa;
@@ -24,6 +25,14 @@ public class ConsultaCNPJ {
 	public void setEmail(String emailResponsavel) {
 		this.emailResponsavel = emailResponsavel;
 	}
+	
+	public String getContratos() {
+		return qtdContratos;
+	}
+	
+	public void setContratos(String qtdContratos) {
+		this.qtdContratos = qtdContratos;
+	}		
 	
 	public void setDebitos(Debitos debitos) {
 		this.debitos = debitos;

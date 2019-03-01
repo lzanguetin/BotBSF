@@ -2,7 +2,7 @@ package br.com.voxage.botbsf.models;
 
 public class ConsultaCPF {
 	private String dataNascimento;
-	private String protocoloValidacao;
+	private String numeroProtocolo;
 	private Cesta cesta;
 	private Beneficio benef;
 	
@@ -14,12 +14,12 @@ public class ConsultaCPF {
 		this.dataNascimento = dataNascimento;
 	}
 	
-	public String getProtocoloValidacao() {
-		return protocoloValidacao;
+	public String getProtocolo() {
+		return numeroProtocolo;
 	}
 	
-	public void setProtocoloValidacao(String protocoloValidacao) {
-		this.protocoloValidacao = protocoloValidacao;
+	public void setProtocolo(String numeroProtocolo) {
+		this.numeroProtocolo = numeroProtocolo;
 	}
 	
 	public Cesta getCesta() {
