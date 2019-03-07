@@ -3,7 +3,7 @@
 		{
 			"id": "/ERROCNPJ",
 			"idNavigationDetail":10101,
-			"initialMessages": ["para cadastrar a empresa junto ao BSF acesse 'www.beneficiosocial.com.br'. Clique em 'Cadastre sua Empresa' e preencha o formulário até concluí-lo. O BSF agradece o seu contato."]
+			"initialMessages": ["Para cadastrar a empresa junto ao BSF clique em 'Cadastre sua Empresa' e preencha o formulário até concluí-lo. Para outras opções permaneça conectado."]
 		}
 	]
 }

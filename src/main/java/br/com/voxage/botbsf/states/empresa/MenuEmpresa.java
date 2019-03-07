@@ -68,16 +68,6 @@ public class MenuEmpresa {
 			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			
-			setPreFunction(botState ->{
-				bot.setLastState(BotBSF.STATES.CNPJ);
-				BotStateFlow botStateFlow = new BotStateFlow();
-				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				
-				botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
-				
-				return botStateFlow;
-			});
-			
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();
 				DadosFluxo dadosFluxo = bot.getDadosFluxo();
@@ -87,23 +77,9 @@ public class MenuEmpresa {
 				dadosFluxo.setFAQ(userInput);
 				
 				switch(userInput) {
-				case "1":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
 				case "Acionar Agora o Serviço Funeral":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
-				case "2":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.OPERADOR);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
@@ -115,23 +91,9 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				case "3":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.ATUALIZAR);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
 				case "Atualizar os Dados da Empresa":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.ATUALIZAR);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
-				case "4":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.SOBRE);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
@@ -143,13 +105,6 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				case "5":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.BOLETOS);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
 				case "Impressão ou Pagamento de Boletos":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.BOLETOS);
@@ -157,23 +112,9 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				case "6":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.INATIVACAO);
-			        }catch(Exception e) {
-		               	botInputResult.setResult(BotInputResult.Result.ERROR);
-			        }
-					break;
 				case "Inativação de Cadastro":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.INATIVACAO);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
-				case "7":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.INADIMPLENCIA);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
@@ -185,23 +126,9 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				case "8":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.SERASA);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
 				case "Empresa está Negativada no SERASA":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.SERASA);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
-				case "9":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.OUTROS);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }

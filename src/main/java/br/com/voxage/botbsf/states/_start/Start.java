@@ -1,48 +1,21 @@
 package br.com.voxage.botbsf.states._start;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.DadosFluxo;
-import br.com.voxage.chat.botintegration.MessageType;
-import br.com.voxage.chat.botintegration.entities.BotMessage;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Start {
-	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Olá, você está no atendimento online da Gestora do Benefício Social Familiar!\nEu sou a Benê, assitente digital e estou aqui para te ajudar. Você deseja falar sobre assuntos da Empresa ou do seu Benefício?\"," + 
-	           "   \"options\":[" + 
-	           "      {" + 
-	           "         \"id\":1," + 
-	           "         \"text\":\"Empresa\"" + 
-	           "      }," + 
-	           "      {" + 
-	           "         \"id\":2," + 
-	           "         \"text\":\"Beneficiário\"" + 
-	           "      }" + 
-	           "   ]" + 
-	           "}";
-	
+public class Start {	
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
 				setId("START");
 				
 				setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
-				
-				setPreFunction(botState -> {
-	                bot.setLastState(BotBSF.STATES.START);
-	                BotStateFlow botStateFlow = new BotStateFlow();
-	                botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-	                
-	                botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
-	                
-	                return botStateFlow;     
-	            });
 				
 				setProcessDirectInputFunction((botState, userInputs) -> {					
 					BotInputResult botInputResult = new BotInputResult();
@@ -52,14 +25,6 @@ public class Start {
 					String userInput = userInputs.getConcatenatedInputs();
 						
 					switch(userInput) {
-						case ("1"):
-							try {
-									dadosFluxo.setType("1");
-					                botInputResult.setIntentName(BotBSF.STATES.CNPJ);
-					        }catch(Exception e) {
-				                	botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
 						case ("Empresa"):
 							try {
 									dadosFluxo.setType("1");
@@ -68,15 +33,7 @@ public class Start {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
 							break;
-						case "2":
-							try {
-					            	dadosFluxo.setType("2");
-					                botInputResult.setIntentName(BotBSF.STATES.CPF);
-					        }catch(Exception e) {
-				                	botInputResult.setResult(BotInputResult.Result.ERROR);
-				            }
-							break;
-						case ("Beneficiário"):
+						case ("Trabalhador/Beneficiário"):
 							try {
 									dadosFluxo.setType("2");
 					                botInputResult.setIntentName(BotBSF.STATES.CPF);

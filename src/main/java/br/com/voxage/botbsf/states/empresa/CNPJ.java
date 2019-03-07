@@ -18,10 +18,8 @@ public class CNPJ {
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
 			setId("CNPJ");
+			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
-			setMaxInputTime(BotBSF.NO_INPUT_TIMEOUT);
-			setMaxInputError(3);
-			setMaxNoInput(3);
 			
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();

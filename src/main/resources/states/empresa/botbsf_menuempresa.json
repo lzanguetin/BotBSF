@@ -3,6 +3,35 @@
 		{
 			"id": "/MENUEMPRESA",
 			"idNavigationDetail":10200,
+			"initialMessages": [{  
+                    "options": [  
+                        {  
+                            "text": "Mais Sobre o Benefício Social Familiar"
+                        },
+                        {  
+                            "text": "Acessar o Cadastro da Empresa"
+                        },
+						{  
+                            "text": "Atualizar Dados da Empresa"
+                        },
+						{  
+                            "text": "Impressão ou Pagamento de Boletos"
+                        },
+						{  
+                            "text": "Inativação de Cadastro"
+                        },
+						{  
+                            "text": "Recebi E-mail e Não Entendi"
+                        },
+						{  
+                            "text": "Empresa Negativada/Recebi E-mail Sobre Isso"
+                        },
+						{  
+                            "text": "Outros Assuntos"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }],
 			"inputErrorResponses":[
 				{"order":"1", "messages":["Desculpe, mas pode digitar novamente? Ou se preferir, pode escolher um dos assuntos acima."]},
 				{"order":"2", "messages": ["Desculpe, mas ainda não entendi o que você deseja. Você pode digitar novamente ou escolher um dos assuntos acima?"]}
