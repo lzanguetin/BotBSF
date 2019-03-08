@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.empresa;
+package br.com.voxage.botbsf.states.empresa_operador;
 
 import java.util.HashMap;
 
@@ -7,11 +7,11 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Sobre {
+public class NCadastroSenha {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("SOBRE");
+			setId("NCADASTROSENHA");
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 			
@@ -24,7 +24,7 @@ public class Sobre {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("FINALIZAR", "#FINALIZAR");
+				put("FINALIZAR", "/FINALIZAR");
 			}});
 		}};
 	}

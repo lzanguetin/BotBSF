@@ -1,10 +1,10 @@
 {
 	"states":[
 		{
-			"id": "/SCADASTRO",
-			"idNavigationDetail": 10900,
+			"id": "/FINALIZAR",
+			"idNavigationDetail": 15000,
 			"initialMessages": [{  
-                    "message": "O CPF informado não possui cadastro para acesso a essa empresa. Você deseja realizar o cadastro agora?",
+                    "message": "Resolvi sua dúvida?",
                     "options": [  
                         {  
                             "text": "Sim"
@@ -17,7 +17,7 @@
                 }],
 			"inputErrorResponses":[
                 {"order":"1", "messages":[{  
-                    "message": "Desculpe, eu não entendi. Eu preciso que você responda se deseja realizar o cadastro agora.",
+                    "message": "Desculpe, eu não entendi. Eu preciso que você responda se eu resolvi sua dúvida.",
                     "options": [  
                         {  
                             "text": "Sim"
@@ -29,7 +29,7 @@
                     "messageType": "OPTION_BOX"
                 }]},
 				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas ainda não entendi. Deseja realizar o cadastro agora.",
+                    "message": "Desculpe, mas ainda não entendi. Eu consegui resolver sua dúvida.",
                     "options": [  
                         {  
                             "text": "Sim"

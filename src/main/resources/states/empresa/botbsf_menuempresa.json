@@ -3,8 +3,12 @@
 		{
 			"id": "/MENUEMPRESA",
 			"idNavigationDetail":10200,
-			"initialMessages": [{  
-                    "options": [  
+			"initialMessages": [{
+					"message": "Vou te passar algumas opções e você define aquela que melhor te ajuda.",			
+                    "options": [
+                        {  
+                            "text": "Acionar Agora o Serviço Funeral"
+                        },					
                         {  
                             "text": "Mais Sobre o Benefício Social Familiar"
                         },
@@ -12,7 +16,7 @@
                             "text": "Acessar o Cadastro da Empresa"
                         },
 						{  
-                            "text": "Atualizar Dados da Empresa"
+                            "text": "Atualizar os Dados da Empresa"
                         },
 						{  
                             "text": "Impressão ou Pagamento de Boletos"
@@ -21,7 +25,7 @@
                             "text": "Inativação de Cadastro"
                         },
 						{  
-                            "text": "Recebi E-mail e Não Entendi"
+                            "text": "Recebeu e-mail de Inadimplência"
                         },
 						{  
                             "text": "Empresa Negativada/Recebi E-mail Sobre Isso"
@@ -31,11 +35,75 @@
                         }
                     ],
                     "messageType": "OPTION_BOX"
-                }],
+            }],
 			"inputErrorResponses":[
-				{"order":"1", "messages":["Desculpe, mas pode digitar novamente? Ou se preferir, pode escolher um dos assuntos acima."]},
-				{"order":"2", "messages": ["Desculpe, mas ainda não entendi o que você deseja. Você pode digitar novamente ou escolher um dos assuntos acima?"]}
-			],
+                {"order":"1", "messages":[{  
+                    "message": "Desculpe, mas pode digitar novamente? Ou se preferir, pode escolher um dos assuntos abaixo:",
+                    "options": [  
+                        {  
+                            "text": "Acionar Agora o Serviço Funeral"
+                        },					
+                        {  
+                            "text": "Mais Sobre o Benefício Social Familiar"
+                        },
+                        {  
+                            "text": "Acessar o Cadastro da Empresa"
+                        },
+						{  
+                            "text": "Atualizar os Dados da Empresa"
+                        },
+						{  
+                            "text": "Impressão ou Pagamento de Boletos"
+                        },
+						{  
+                            "text": "Inativação de Cadastro"
+                        },
+						{  
+                            "text": "Recebeu e-mail de Inadimplência"
+                        },
+						{  
+                            "text": "Empresa Negativada/Recebi E-mail Sobre Isso"
+                        },
+						{  
+                            "text": "Outros Assuntos"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }]},
+				{"order":"2", "messages":[{  
+                    "message": "Desculpe, mas ainda não entendi o que você deseja.Você pode digitar novamente ou escolher um dos assuntos abaixo?",
+                    "options": [  
+                        {  
+                            "text": "Acionar Agora o Serviço Funeral"
+                        },					
+                        {  
+                            "text": "Mais Sobre o Benefício Social Familiar"
+                        },
+                        {  
+                            "text": "Acessar o Cadastro da Empresa"
+                        },
+						{  
+                            "text": "Atualizar os Dados da Empresa"
+                        },
+						{  
+                            "text": "Impressão ou Pagamento de Boletos"
+                        },
+						{  
+                            "text": "Inativação de Cadastro"
+                        },
+						{  
+                            "text": "Recebeu e-mail de Inadimplência"
+                        },
+						{  
+                            "text": "Empresa Negativada/Recebi E-mail Sobre Isso"
+                        },
+						{  
+                            "text": "Outros Assuntos"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }]}
+            ],
 			"maxInputErrorResponses":["Infelizmente não consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
 			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
 		}

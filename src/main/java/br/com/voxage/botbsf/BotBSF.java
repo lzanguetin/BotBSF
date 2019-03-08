@@ -47,6 +47,7 @@ public class BotBSF extends VBot {
 	    	String ATIVO = "ativo";
 	    	String INATIVO = "inativo";
 	    	String SCADASTRO = "scadastro";
+	    	String NCADASTROSENHA = "ncadastrosenha";
 	    	String ESQUECEU = "esqueceu";
 	    	
 	    	String ATUALIZAR = "atualizar";

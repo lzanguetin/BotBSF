@@ -1,7 +1,6 @@
 package br.com.voxage.botbsf.states.empresa;
 
 import java.lang.reflect.Type;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -10,8 +9,6 @@ import com.google.gson.reflect.TypeToken;
 
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.DadosFluxo;
-import br.com.voxage.chat.botintegration.MessageType;
-import br.com.voxage.chat.botintegration.entities.BotMessage;
 import br.com.voxage.chat.botintegration.ejb.entitties.SearchedLiveQuestion;
 import br.com.voxage.lucenesearchengine.LuceneSearchEngine;
 import br.com.voxage.vbot.BotInputResult;
@@ -20,47 +17,6 @@ import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
 public class MenuEmpresa {
-	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Vou te passar algumas opções e você define aquela que melhor te ajuda.\"," + 
-	           "   \"options\":[" + 
-	           "      {" + 
-	           "         \"id\":1," + 
-	           "         \"text\":\"Acionar Agora o Serviço Funeral\"" + 
-	           "      }," + 
-	           "      {" + 
-	           "         \"id\":2," + 
-	           "         \"text\":\"Acesso do Operador ao Cadastro da Empresa\"" + 
-	           "      }," + 
-	           "      {" + 
-	           "         \"id\":3," + 
-	           "         \"text\":\"Atualizar os Dadosd da Empresa\"" + 
-	           "      }," +
-	           "      {" + 
-	           "         \"id\":4," + 
-	           "         \"text\":\"Saber Mais Sobre O Que É BSF\"" + 
-	           "      }," +
-	           "      {" + 
-	           "         \"id\":5," + 
-	           "         \"text\":\"Impressão ou Pagamento de Boletos\"" + 
-	           "      }," +
-	           "      {" + 
-	           "         \"id\":6," + 
-	           "         \"text\":\"Inativação de Cadastro\"" + 
-	           "      }," +
-	           "      {" + 
-	           "         \"id\":7," + 
-	           "         \"text\":\"Recebeu e-mail de Inadimplência\"" + 
-	           "      }," +
-	           "      {" + 
-	           "         \"id\":8," + 
-	           "         \"text\":\"Empresa está Negativada no SERASA\"" + 
-	           "      }," +
-	           "      {" + 
-	           "         \"id\":9," + 
-	           "         \"text\":\"Outros Assuntos\"" + 
-	           "      }" +
-	           "   ]" + 
-	           "}";
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
@@ -84,7 +40,14 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				case "Acesso do Operador ao Cadastro da Empresa":
+				case "Mais Sobre o Benefício Social Familiar":
+					try {
+			            botInputResult.setIntentName(BotBSF.STATES.SOBRE);
+			        }catch(Exception e) {
+		                botInputResult.setResult(BotInputResult.Result.ERROR);
+		            }
+					break;
+				case "Acessar o Cadastro da Empresa":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.OPERADOR);
 			        }catch(Exception e) {
@@ -94,13 +57,6 @@ public class MenuEmpresa {
 				case "Atualizar os Dados da Empresa":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.ATUALIZAR);
-			        }catch(Exception e) {
-		                botInputResult.setResult(BotInputResult.Result.ERROR);
-		            }
-					break;
-				case "Saber Mais Sobre O Que É BSF":
-					try {
-			            botInputResult.setIntentName(BotBSF.STATES.SOBRE);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
@@ -126,7 +82,7 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				case "Empresa está Negativada no SERASA":
+				case "Empresa Negativada/Recebi E-mail Sobre Isso":
 					try {
 			            botInputResult.setIntentName(BotBSF.STATES.SERASA);
 			        }catch(Exception e) {
