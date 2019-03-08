@@ -9,7 +9,6 @@ import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
 public class BoletoImpresso {
-	private static final String INITIAL_MESSAGE = "Sua última impressão foi realizada no dia %s referente ao vencimento %s. Você deverá efetuar o pagamento após %s horas da impressão.";
 	
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
@@ -23,9 +22,9 @@ public class BoletoImpresso {
 				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				String output = String.format(INITIAL_MESSAGE, (consulta.getImpressao().getUltimaImp()), (consulta.getImpressao().getVencUltima()), (consulta.getImpressao().getHrsPagamento()));
-				
-				botState.setInitialMessage(output);
+				botState.setCustomField("dia", consulta.getImpressao().getUltimaImp());
+				botState.setCustomField("vencimento", consulta.getImpressao().getVencUltima());
+				botState.setCustomField("horas", consulta.getImpressao().getHrsPagamento());
 				
 				return botStateFlow;
 			});

@@ -1,0 +1,57 @@
+{
+	"states":[
+		{
+			"id": "/EMAIL",
+			"idNavigationDetail": 11950,
+			"initialMessages": [{  
+                    "message": "No assunto desse email consta:",
+                    "options": [  
+                        {  
+                            "text": "O Seu Boleto Já Está Disponível"
+                        },
+                        {  
+                            "text": "O Seu Boleto Ainda Não Foi Pago"
+                        },
+						{  
+                            "text": "Recebeu E-mail de Inadimplênia"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }],
+			"inputErrorResponses":[
+                {"order":"1", "messages":[{  
+                    "message": "No assunto desse email consta:",
+                    "options": [  
+                        {  
+                            "text": "O Seu Boleto Já Está Disponível"
+                        },
+                        {  
+                            "text": "O Seu Boleto Ainda Não Foi Pago"
+                        },
+						{  
+                            "text": "Recebeu E-mail de Inadimplênia"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }]},
+				{"order":"2", "messages":[{  
+                    "message": "No assunto desse email consta:",
+                    "options": [  
+                        {  
+                            "text": "O Seu Boleto Já Está Disponível"
+                        },
+                        {  
+                            "text": "O Seu Boleto Ainda Não Foi Pago"
+                        },
+						{  
+                            "text": "Recebeu E-mail de Inadimplênia"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }]}
+            ],
+			"maxInputErrorResponses":["Infelizmente nao consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
+			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
+		}
+	]
+}

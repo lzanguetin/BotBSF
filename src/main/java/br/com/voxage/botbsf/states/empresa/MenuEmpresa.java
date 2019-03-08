@@ -75,9 +75,9 @@ public class MenuEmpresa {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
 					break;
-				case "Recebeu e-mail de Inadimplência":
+				case "Recebi um E-mail e Não Entendi":
 					try {
-			            botInputResult.setIntentName(BotBSF.STATES.INADIMPLENCIA);
+			            botInputResult.setIntentName(BotBSF.STATES.EMAIL);
 			        }catch(Exception e) {
 		                botInputResult.setResult(BotInputResult.Result.ERROR);
 		            }
@@ -143,7 +143,7 @@ public class MenuEmpresa {
 				put(BotBSF.STATES.SOBRE, "/SOBRE");	
 				put(BotBSF.STATES.BOLETOS, "/BOLETOS");	
 				put(BotBSF.STATES.INATIVACAO, "/INATIVACAO");	
-				put(BotBSF.STATES.INADIMPLENCIA, "/INADIMPLENCIA");	
+				put(BotBSF.STATES.EMAIL, "/EMAIL");	
 				put(BotBSF.STATES.SERASA, "/SERASA");	
 				put(BotBSF.STATES.OUTROS, "/OUTROS");
 				put(BotBSF.STATES.MENUEMPRESA, "/MENUEMPRESA");

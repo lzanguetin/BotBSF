@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/NTRABALHADOR",
-			"idNavigationDetail": 12100,
-			"initialMessages": ["Como a Empresa é do segmento, mas nunca teve trabalhador registrado, nos envie um email com a última RAIS negativa declarada e em até 48 horas você será respondido. Anote aí o email para você nos enviar e assim já resolvermos essa situação: atendimento@beneficiosocial.com.br ou '<a href=\"https://www.beneficiosocial.com.br/r/form-inativacao\">clique aqui</a>' e preencha o formulário."]
-		}
-	]
-}

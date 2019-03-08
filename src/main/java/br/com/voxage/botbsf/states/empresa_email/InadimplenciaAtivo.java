@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.empresa_inadimplencia;
+package br.com.voxage.botbsf.states.empresa_email;
 
 import java.util.HashMap;
 

@@ -1,0 +1,9 @@
+{
+	"states":[
+	{
+			"id": "/INADINATIVO",
+			"idNavigationDetail": 12400,
+			"initialMessages": ["localizei seu CPF neste CNPJ que você me informou: Empresa: #empresa#, CNPJ: #cnpj#, porem ele ainda está inativo. Para ativa-lo é necessario que o responsavel pelo email #email# o acesse e clique em 'Autorizar Cadastramento'. Verifique o recebimento também na caixa de lixo eletrônico ou spam. Assim que for autorizado acesse o área da empresa e clique em iMPRIMIR > Boletos de Pagamento"]
+		}
+	]
+}

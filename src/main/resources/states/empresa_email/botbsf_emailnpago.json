@@ -1,0 +1,9 @@
+{
+	"states":[
+	{
+			"id": "/EMAILNPAGO",
+			"idNavigationDetail": 11952,
+			"initialMessages": ["Entendi, identificamos que sua empresa realizou a impressão do boleto vencido no dia 10 deste mês, porém até a data que enviamos este e-mail, não foi localixado o pagamento, é só seguir o passo que consta no e-mail que recebeu ou <a href=\"https://www.beneficiosocial.com.br/\">clique aqui</a> e você será direcionado para a 'Àrea da Empresa'. Digite o CNPJ e clique na opção 'Imprimir Boletos de Pagamentos'. O Benefício Social Familiar agradece seu contato."]		
+		}
+	]
+}

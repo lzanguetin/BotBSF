@@ -1,19 +1,18 @@
-package br.com.voxage.botbsf.states.empresa_inadimplencia;
+package br.com.voxage.botbsf.states.empresa_email;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
-import br.com.voxage.chat.botintegration.MessageType;
-import br.com.voxage.chat.botintegration.entities.BotMessage;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
+import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class FinalizaInadimplencia {
+public class InadimplenciaSCadastro {
 	private static final String INITIAL_MESSAGE = "{" + 
-	           "   \"message\":\"Resolvi sua dúvida?\"," + 
+	           "   \"message\":\"Para ter acesso a quais boletos a\nEmpresa: %s\nCNPJ: %s\nPossui em aberto você precisa ser um operador autorizado ao acesso desta empresa no site, porém seu CPF não consta como autorizado.\nDeseja solicitar autorização de acesso? Neste caso o responsável pelo email %s receberá sua solicitação e precisará autorizá-lo.\"," + 
 	           "   \"options\":[" + 
 	           "      {" + 
 	           "         \"id\":1," + 
@@ -22,27 +21,26 @@ public class FinalizaInadimplencia {
 	           "      {" + 
 	           "         \"id\":2," + 
 	           "         \"text\":\"Não\"" + 
-	           "      }," + 
-	           "      {" + 
-	           "         \"id\":3," + 
-	           "         \"text\":\"Não, pois paguei meu boleto hoje e consta em aberto\"" + 
-	           "      }" + 
+	           "      }" +
 	           "   ]" + 
 	           "}";
-	
+
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-				setId("FINALIZARINAD");
+				setId("INADSCADASTRO");
 				
 				setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 				
 				setPreFunction(botState ->{
-					bot.setLastState(BotBSF.STATES.FINALIZARINAD);
 					BotStateFlow botStateFlow = new BotStateFlow();
+					DadosFluxo dadosFluxo = bot.getDadosFluxo();
+					ConsultaCNPJ consulta = bot.getConsultaCNPJ();
 					botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 					
-					botState.setInitialMessages(Arrays.asList(new BotMessage(INITIAL_MESSAGE, MessageType.OPTION_BOX)));
+					String output = String.format(INITIAL_MESSAGE, consulta.getNome(), dadosFluxo.getCNPJ(), consulta.getEmail());
+					
+					botState.setInitialMessage(output);
 					
 					return botStateFlow;
 				});
@@ -56,42 +54,28 @@ public class FinalizaInadimplencia {
 					switch(userInput) {
 						case "1":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.DESPEDE);
+								botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "Sim":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.DESPEDE);
+								botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "2":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
+								botInputResult.setIntentName(BotBSF.STATES.FINALIZAR);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
 							break;
 						case "Não":
 							try {
-								botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
-							}catch(Exception e) {
-								botInputResult.setResult(BotInputResult.Result.ERROR);
-							}
-							break;
-						case "3":
-							try {
-								botInputResult.setIntentName(BotBSF.STATES.INADPAGO);
-							}catch(Exception e) {
-								botInputResult.setResult(BotInputResult.Result.ERROR);
-							}
-							break;
-						case "Não, pois paguei meu boleto hoje e consta em aberto":
-							try {
-								botInputResult.setIntentName(BotBSF.STATES.INADPAGO);
+								botInputResult.setIntentName(BotBSF.STATES.FINALIZAR);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
@@ -112,13 +96,12 @@ public class FinalizaInadimplencia {
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{
-	                put(BotBSF.STATES.INADPAGO, "#INADPAGO");
-	                put(BotBSF.STATES.DESPEDE, "#DESPEDE");
-					put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
+					put(BotBSF.STATES.FINALIZAR, "#FINALIZAR");
+					put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");				
 					put("MAX_INPUT_ERROR", "/TERMINATE");
-	                put("MAX_NO_INPUT", "/TERMINATE");
+					put("MAX_NO_INPUT", "/TERMINATE");
 				}});
 		}};
 	}
-	
 }
+

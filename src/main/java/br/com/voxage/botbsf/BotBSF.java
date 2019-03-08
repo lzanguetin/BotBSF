@@ -70,6 +70,10 @@ public class BotBSF extends VBot {
 	    	String NTRABALHADOR = "ntrabalhador";
 	    	String NREGISTRO = "nregistro";
 	    	
+	    	String EMAIL = "email";
+	    	String EMAILDISPONIVEL = "emaildisponivel";
+	    	String EMAILNPAGO = "emailnpago";
+	    		    	
 	    	String INADIMPLENCIA = "inadimplencia";
 	    	String INADINATIVO = "inadinativo";
 	    	String INADSCADASTRO = "inadscadastro";	    	
