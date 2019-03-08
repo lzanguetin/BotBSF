@@ -34,13 +34,13 @@ public class InadimplenciaSCadastro {
 				
 				setPreFunction(botState ->{
 					BotStateFlow botStateFlow = new BotStateFlow();
-					DadosFluxo dadosFluxo = bot.getDadosFluxo();
 					ConsultaCNPJ consulta = bot.getConsultaCNPJ();
+					DadosFluxo dados = bot.getDadosFluxo();
 					botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 					
-					String output = String.format(INITIAL_MESSAGE, consulta.getNome(), dadosFluxo.getCNPJ(), consulta.getEmail());
-					
-					botState.setInitialMessage(output);
+					botState.setCustomField("empresa", consulta.getNome());
+					botState.setCustomField("cnpj", dados.getCNPJ());
+					botState.setCustomField("email", consulta.getEmail());
 					
 					return botStateFlow;
 				});
@@ -52,23 +52,9 @@ public class InadimplenciaSCadastro {
 					String userInput = userInputs.getConcatenatedInputs();
 					
 					switch(userInput) {
-						case "1":
-							try {
-								botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
-							}catch(Exception e) {
-								botInputResult.setResult(BotInputResult.Result.ERROR);
-							}
-							break;
 						case "Sim":
 							try {
 								botInputResult.setIntentName(BotBSF.STATES.ATENDENTE);
-							}catch(Exception e) {
-								botInputResult.setResult(BotInputResult.Result.ERROR);
-							}
-							break;
-						case "2":
-							try {
-								botInputResult.setIntentName(BotBSF.STATES.FINALIZAR);
 							}catch(Exception e) {
 								botInputResult.setResult(BotInputResult.Result.ERROR);
 							}
