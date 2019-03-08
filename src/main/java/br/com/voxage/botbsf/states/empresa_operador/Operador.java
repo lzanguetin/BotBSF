@@ -50,11 +50,12 @@ public class Operador {
 				
 				try {
 	                    customerInfo = BotBSFIntegration.dadosOperador(bot, dadosFluxo.getCNPJ(), dadosFluxo.getCPF());
-	                    
-	                    if(customerInfo.getNome() == "true") {
+	                    bot.setConsultaOperador(customerInfo);
+	                    ConsultaOperador op = bot.getConsultaOperador();
+	                    if(op.getNome() == "true") {
 	                    	dadosFluxo.setOperador("1");
 	                    	botStateFlow.navigationKey = BotBSF.STATES.ATIVO;
-	                    }else if(customerInfo.getNome() == "false") {
+	                    }else if(op.getNome() == "false") {
 	                    	dadosFluxo.setOperador("2");
 	                    	botStateFlow.navigationKey = BotBSF.STATES.INATIVO;
 	                    }

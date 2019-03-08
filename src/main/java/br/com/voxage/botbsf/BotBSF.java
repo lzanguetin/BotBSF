@@ -7,6 +7,7 @@ import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.DadosFluxo;
 import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.botbsf.models.ConsultaCPF;
+import br.com.voxage.botbsf.models.ConsultaOperador;
 import br.com.voxage.chat.botintegration.ISearchEngine;
 import br.com.voxage.chat.botintegration.ISearchEngineCredentials;
 import br.com.voxage.chat.botintegration.TextSearchEngine;
@@ -28,6 +29,7 @@ public class BotBSF extends VBot {
 	private DadosFluxo dadosFluxo;
 	private ConsultaCNPJ consulta;
 	private ConsultaCPF trab;
+	private ConsultaOperador op;
 	
 	 public interface STATES{
 	    	String START = "start";
@@ -54,6 +56,8 @@ public class BotBSF extends VBot {
 	    	String ATUATIVO = "atuativo";
 	    	String ATUINATIVO = "atuinativo";
 	    	String ATUSCADASTRO = "atuscadastro";
+	    	String ATUSCADASTROSIM = "atuscadastrosim";
+	    	String ATUSCADASTRONAO = "atuscadastronao";
 	    	
 	    	String SOBRE = "sobre";
 	    	
@@ -214,5 +218,13 @@ public class BotBSF extends VBot {
 	
 	public ConsultaCPF getConsultaCPF() {
 		return this.trab;
+	}
+	
+	public void setConsultaOperador(ConsultaOperador op) {
+		this.op = op;
+	}
+	
+	public ConsultaOperador getConsultaOperador() {
+		return this.op;
 	}
 }

@@ -3,7 +3,7 @@
 	{
 			"id": "/NCADASTROSENHA",
 			"idNavigationDetail": 10901,
-			"initialMessages": ["Acabamos de enviar um e-mail para redefinição de sua senha para o endereço: XXXXXXXXX"]		
+			"initialMessages": ["Acabamos de enviar um e-mail para redefinição de sua senha para o endereço: #email#"]		
 		}
 	]
 }

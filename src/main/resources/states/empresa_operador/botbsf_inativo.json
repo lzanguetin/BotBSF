@@ -3,7 +3,7 @@
 		{
 			"id": "/INATIVO",
 			"idNavigationDetail":10800,
-			"initialMessages": ["Localizei seu CPF neste CNPJ que você informou: Empresa: <Nome Empresa> CNPJ: <CNPJ Digitado> Porém ele está inativo. Para ativá-lo é necessário que o responsável pelo email <email responsável> o acesse e clique em “Autorizar Cadastramento”. Verifique o recebimento na caixa de lixo eletrônico ou spam."]
+			"initialMessages": ["Localizei seu CPF como inativo no CNPJ informado:\nCNPJ: #cnpj#\nEmpresa: #empresa#\nPara ativa-lo é necessário que o responsável pelo email #email#, o acesse e clique em 'Autorizar Cadastramento'. Ah, verifique também na caixa de lixo eletrônico ou spam, pois o e-mail pode estar lá."]
 		}
 	]
 }

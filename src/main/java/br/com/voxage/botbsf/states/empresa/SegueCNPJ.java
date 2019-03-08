@@ -3,6 +3,7 @@ package br.com.voxage.botbsf.states.empresa;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
@@ -16,6 +17,16 @@ public class SegueCNPJ {
 			setId("SEGUECNPJ");
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
+			
+			setPreFunction(botState ->{
+				BotStateFlow botStateFlow = new BotStateFlow();
+				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+				
+				botState.setCustomField("numerocontratos", consulta.getContratos());
+				
+				return botStateFlow;
+			});
 			
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();

@@ -10,7 +10,6 @@ import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
 public class AtulizaInativo {
-	private static final String INITIAL_MESSAGE = "Localizei seu CPF neste CNPJ que você informou:\nEmpresa: %s\n CNPJ: %s\nPorém ele ainda está inativo. Para ativá-lo é necessário que o responsável pelo email %s o acesse e clique em 'Autorizar Cadastramento'. Verifique o recebimento na caixa de lixo eletrônico ou spam. Assim que for autorizado acesse a Área da Empresa e clique em 'Solicitar Alteração de Dados Cadastrais.'";
 	
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
@@ -21,13 +20,13 @@ public class AtulizaInativo {
 			
 			setPreFunction(botState ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
-				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
+				DadosFluxo dados = bot.getDadosFluxo();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				String output = String.format(INITIAL_MESSAGE, consulta.getNome(), dadosFluxo.getCNPJ(), consulta.getEmail());
-				
-				botState.setInitialMessage(output);
+				botState.setCustomField("empresa", consulta.getNome());
+				botState.setCustomField("cnpj", dados.getCNPJ());
+				botState.setCustomField("email", consulta.getEmail());
 				
 				return botStateFlow;
 			});

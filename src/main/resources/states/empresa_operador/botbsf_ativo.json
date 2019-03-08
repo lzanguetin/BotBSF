@@ -3,18 +3,19 @@
 		{
 			"id": "/ATIVO",
 			"idNavigationDetail": 10700,
-			"initialMessages": [{  
-                    "message": "Localizei seu CPF como ativo para o CNPJ que você digitou XXXXXXXXXXX.\n Você esqueceu a senha?",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }],	
+			"initialMessages":["Localizei seu CPF como ativo no CNPJ informado:\nCNPJ: #cnpj#\nEmpresa: #empresa#.",
+			{
+				"message": "Você esqueceu a senha?",
+				"options": [  
+                    {  
+                        "text": "Sim"
+                    },
+                    {  
+                        "text": "Não"
+                    }
+                 ],
+                "messageType": "OPTION_BOX"
+			}],			
 			"inputErrorResponses":[
                 {"order":"1", "messages":[{  
                     "message": "Desculpe, eu não entendi. Eu preciso saber se você esqueceu a senha.",
