@@ -1,42 +1,50 @@
 {
 	"states":[
 		{
-			"id": "/INADSCADASTRO",
-			"idNavigationDetail": 12500,
-			"initialMessages": ["Para ter acesso aos boletos em aberto da Empresa: #nome#\nCNPJ: #cnpj#, você precisa ser um usuário autorizado ao acesso no site, porém seu CPF não consta como autorizado.",
-			{  
-                    "message": "Deseja solicitar autorização de acesso? (neste caso o responsável pelo e-mail #emal# receberá sua solicitação e precisará autoriza-lo)",
+			"id": "/FINALIZARINAD",
+			"idNavigationDetail": 12900,
+			"initialMessages": [{  
+                    "message": "Resolvi sua Dúvida?",
                     "options": [  
                         {  
                             "text": "Sim"
                         },
                         {  
                             "text": "Não"
+                        },
+						{  
+                            "text": "Não, pois paguei meu boleto hoje e consta em aberto"
                         }
                     ],
                     "messageType": "OPTION_BOX"
                 }],
 			"inputErrorResponses":[
                 {"order":"1", "messages":[{  
-                    "message": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber se você deseja solicitar autorização de acesso?",
+                    "message": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber se consegui resolver sua Dúvida",
                     "options": [  
                         {  
                             "text": "Sim"
                         },
                         {  
                             "text": "Não"
+                        },
+						{  
+                            "text": "Não, pois paguei meu boleto hoje e consta em aberto"
                         }
                     ],
                     "messageType": "OPTION_BOX"
                 }]},
 				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar, tenho que saber se você deseja solicitar autorização de acesso?",
+                    "message": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar, tenho que saber se consegui resolver sua Dúvida",
                     "options": [  
                         {  
                             "text": "Sim"
                         },
                         {  
                             "text": "Não"
+                        },
+						{  
+                            "text": "Não, pois paguei meu boleto hoje e consta em aberto"
                         }
                     ],
                     "messageType": "OPTION_BOX"

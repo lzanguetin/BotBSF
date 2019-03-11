@@ -5,6 +5,7 @@ import java.util.Map;
 
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.models.DadosFluxo;
+import br.com.voxage.botbsf.models.DebitoAberto;
 import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.botbsf.models.ConsultaCPF;
 import br.com.voxage.botbsf.models.ConsultaOperador;
@@ -30,6 +31,7 @@ public class BotBSF extends VBot {
 	private ConsultaCNPJ consulta;
 	private ConsultaCPF trab;
 	private ConsultaOperador op;
+	private DebitoAberto deb;
 	
 	 public interface STATES{
 	    	String START = "start";
@@ -82,6 +84,7 @@ public class BotBSF extends VBot {
 	    	String SEMINAD = "seminad";
 	    	String FINALIZARINAD = "finalizarinad";
 	    	String INADPAGO = "inadpago";
+	    	String NAUTRIZADO = "nautorizado";
 
 	    	String SERASA = "sarasa";
 	    	String SEMSERASA = "semsarasa";
@@ -230,5 +233,12 @@ public class BotBSF extends VBot {
 	
 	public ConsultaOperador getConsultaOperador() {
 		return this.op;
+	}
+	public void setDebitoAberto(DebitoAberto deb) {
+		this.deb = deb;
+	}
+	
+	public DebitoAberto getDebitoAberto() {
+		return this.deb;
 	}
 }

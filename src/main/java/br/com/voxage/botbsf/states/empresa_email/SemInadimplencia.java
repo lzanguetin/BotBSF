@@ -9,9 +9,7 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class SemInadimplencia {
-	private static final String INITIAL_MESSAGE = "Não localizamos nenhum boleto em aberto para\nEmpresa: %s\nCNPJ: %s\nO último pagamento ocorreu em: %s.";
-	
+public class SemInadimplencia {	
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
@@ -21,13 +19,13 @@ public class SemInadimplencia {
 
 			setPreFunction(botState ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
-				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
+				DadosFluxo dados = bot.getDadosFluxo();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				String output = String.format(INITIAL_MESSAGE, consulta.getNome(), dadosFluxo.getCNPJ(), (consulta.getDebitos().getdataUltimoPagamento()));
-				
-				botState.setInitialMessage(output);
+				botState.setCustomField("empresa", consulta.getNome());
+				botState.setCustomField("cnpj", dados.getCNPJ());
+				botState.setCustomField("data", consulta.getDebitos().getdataUltimoPagamento());
 				
 				return botStateFlow;
 			});

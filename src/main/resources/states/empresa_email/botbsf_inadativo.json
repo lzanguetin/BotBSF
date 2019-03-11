@@ -1,0 +1,9 @@
+{
+	"states":[
+	{
+			"id": "/INADATIVO",
+			"idNavigationDetail": 12600,
+			"initialMessages": ["São esses os boletos #boletos# que constam em aberto para o CNPJ informado. <a href=\"https://www.beneficiosocial.com.br/r/form-inativacao\">Clique Aqui</a> e você será direcionado para a 'Área da Empresa'. Digite o CNPJ e clique na opção Imprimir Boletos de pagamentos. O Benefício Social Familiar agradece seu contato."]
+		}
+	]
+}

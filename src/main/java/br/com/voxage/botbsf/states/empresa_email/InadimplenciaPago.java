@@ -18,13 +18,13 @@ public class InadimplenciaPago {
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = "DESPEDE";
+				botStateFlow.navigationKey = "FINALIZAR";
 				
 				return botStateFlow;
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>() {{
-				put("DESPEDE", "#DESPEDE");
+				put("FINALIZAR", "#FINALIZAR");
 			}});
 		}};
 	}
