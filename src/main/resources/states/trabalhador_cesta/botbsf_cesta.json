@@ -1,9 +1,9 @@
 {
 	"states":[
 		{
-			"id": "/CESTA",
-			"idNavigationDetail":14500,
-			"initialMessages": ["Ok, digite o número do Protocolo"]
+			"id": "/POSSUICESTA",
+			"idNavigationDetail":14501,
+			"initialMessages": ["Você receberá sua cesta número #numero# até #data#"]
 		}
 	]
 }

@@ -1,0 +1,9 @@
+{
+	"states":[
+		{
+			"id": "/NPROTOCOLOCESTA",
+			"idNavigationDetail":14503,
+			"initialMessages": ["Não localizamos o protocolo informado. Vamos transferir para um de nossos atendentes que irá te ajudar"]
+		}
+	]
+}

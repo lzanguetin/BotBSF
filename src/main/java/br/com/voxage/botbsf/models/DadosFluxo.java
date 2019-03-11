@@ -14,8 +14,17 @@ public class DadosFluxo {
 	private String debito;
 	private String vencer;
 	private String os;
+	private String prot;
 	private BotInputResult botInputResult;
-    
+    	
+	public String getProt() {
+		return prot;
+	}
+
+	public void setProt(String prot) {
+		this.prot = prot;
+	}
+	
 	public String getOS() {
 		return os;
 	}

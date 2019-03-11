@@ -1,0 +1,48 @@
+{
+	"states":[
+		{
+			"id": "/REDIRECT",
+			"idNavigationDetail": 18000,
+			"initialMessages": [{  
+                    "message": "Resolvi sua dúvida?",
+                    "options": [  
+                        {  
+                            "text": "Sim"
+                        },
+                        {  
+                            "text": "Não"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }],
+			"inputErrorResponses":[
+                {"order":"1", "messages":[{  
+                    "message": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber se consegui resolver sua dúvida",
+                    "options": [  
+                        {  
+                            "text": "Sim"
+                        },
+                        {  
+                            "text": "Não"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }]},
+				{"order":"2", "messages":[{  
+                    "message": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar eu tenho que saber se consegui resolver sua dúvida?",
+                    "options": [  
+                        {  
+                            "text": "Sim"
+                        },
+                        {  
+                            "text": "Não"
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }]}
+            ],
+			"maxInputErrorResponses":["Infelizmente nao consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
+			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
+		}
+	]
+}

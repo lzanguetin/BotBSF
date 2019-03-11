@@ -2,8 +2,8 @@
 	"states":[
 		{
 			"id": "/NPOSSUICESTA",
-			"idNavigationDetail":14501,
-			"initialMessages": ["Não encontrei nenhuma cesta disponível com o Protocolo que você passou."]
+			"idNavigationDetail":14502,
+			"initialMessages": ["Você não possui cestas de alimentos a serem entregues por este protocolo"]
 		}
 	]
 }

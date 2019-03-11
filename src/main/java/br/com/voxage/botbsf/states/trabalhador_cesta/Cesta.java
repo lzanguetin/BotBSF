@@ -25,28 +25,33 @@ public class Cesta {
 				botInputResult.setResult(BotInputResult.Result.OK);
 				
 				String userInput = userInputs.getConcatenatedInputs();
-				dadosFluxo.setOS(userInput);
-				
+				dadosFluxo.setProt(userInput);
+									
 				return botInputResult;
 			});
 			
 			setAsyncPosFunction((botState, inputResult)-> CompletableFuture.supplyAsync(() ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
-				ConsultaCPF trab = bot.getConsultaCPF();
+				ConsultaCPF consulta = bot.getConsultaCPF();
+				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				if((trab.getCesta().getCestaReceber()) == "true") {
-					botStateFlow.navigationKey = "POSSUICESTA";
+				if(consulta.getProtocolo() == dadosFluxo.getProt()){
+					if(consulta.getCesta().getCestaReceber() == "true"){
+						botStateFlow.navigationKey = "POSSUICESTA";
+					}else {
+						botStateFlow.navigationKey = "NPOSSUICESTA";
+					}
 				}else {
-					botStateFlow.navigationKey = "NPOSSUICESTA";
+					botStateFlow.navigationKey = "NPROTOCOLOCESTA";
 				}
-
 				return botStateFlow;
 			}));
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put("POSSUICESTA", "/POSSUICESTA");
 				put("NPOSSUICESTA", "/NPOSSUICESTA");
+				put("NPROTOCOLOCESTA", "/NPROTOCOLOCESTA");
 			}});
 		}};
 	}

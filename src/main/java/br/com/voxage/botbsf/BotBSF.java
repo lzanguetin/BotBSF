@@ -103,16 +103,23 @@ public class BotBSF extends VBot {
 	    	String CPF = "cpf";
 	    	String SEGUECPF = "seguecpf";
 	    	String ERROCPF = "errocpf";
+	    	String FORAEXPEDIENTE = "foraexpediente";
 	    	String MENUTRABALHADOR = "menutrabalhador";
+	    	String MENUBENEFICIARIO = "menubeneficiario";
 
 	    	String CARTAO = "cartao";
+	    	
 	    	String ANDAMENTO = "andamento";
+	    	String PROTOCOLO = "protocolo";
+	    	String NPROTOCOLO = "nprotocolo";
+	    	
 	    	String VALIDAR = "validar";
 	    	String SALDO = "saldo";
 	    	
 	    	String CESTA = "cesta";
 	    	String POSSUICESTA = "possuicesta";
 	    	String NPOSSUICESTA = "npossuicesta";
+	    	String NPROTOCOLOCESTA = "nprotocolocesta";
 	    	
 	    	String FAQ = "faq";
 	    	String ATENDENTE = "atendente";

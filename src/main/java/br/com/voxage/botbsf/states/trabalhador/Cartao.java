@@ -7,11 +7,11 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Saldo {
+public class Cartao {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-				setId("SALDO");
+				setId("CARTAO");
 				
 				setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 				

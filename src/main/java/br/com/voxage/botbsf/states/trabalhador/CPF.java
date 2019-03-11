@@ -19,9 +19,6 @@ public class CPF {
 		return new BotState("/") {{
 			setId("CPF");
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
-			setMaxInputTime(BotBSF.NO_INPUT_TIMEOUT);
-			setMaxInputError(3);
-			setMaxNoInput(3);
 			
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();

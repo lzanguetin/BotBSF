@@ -1,4 +1,4 @@
-package br.com.voxage.botbsf.states.trabalhador;
+package br.com.voxage.botbsf.states.trabalhador_andamento;
 
 import java.util.HashMap;
 
@@ -7,24 +7,24 @@ import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class Andamento {
+public class NProtocolo {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-				setId("ANDAMENTO");
+				setId("NPROTOCOLO");
 				
 				setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 				
 				setPosFunction((botState, inputResult) ->{
 					BotStateFlow botStateFlow = new BotStateFlow();
 					botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-					botStateFlow.navigationKey = "TERMINATE";
+					botStateFlow.navigationKey = "ATENDENTE";
 					
 					return botStateFlow;
 				});
 				
 				setNextNavigationMap(new HashMap<String, String>(){{			
-                    put("TERMINATE", "#TERMINATE");
+                    put("ATENDENTE", "#ATENDENTE");
 				}});
 		}};
 	}

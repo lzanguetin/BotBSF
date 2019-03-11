@@ -3,9 +3,7 @@
 		{
 			"id": "/ATENDENTE",
 			"idNavigationDetail":14800,
-			"initialMessages":[
-			"Tudo bem. Só um momento, vou transferir seu atendimento para outra pessoa."
-			],
+			"initialMessages":["Tudo bem. Só um momento, vou transferir seu atendimento para outra pessoa."],
 			"customMessages":[
               {
                 "id":"state_transferir",

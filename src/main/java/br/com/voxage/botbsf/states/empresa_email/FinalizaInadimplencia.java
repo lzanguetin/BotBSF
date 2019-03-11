@@ -1,11 +1,8 @@
 package br.com.voxage.botbsf.states.empresa_email;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
-import br.com.voxage.chat.botintegration.MessageType;
-import br.com.voxage.chat.botintegration.entities.BotMessage;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;

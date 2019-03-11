@@ -16,11 +16,11 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-public class MenuTrabalhador {
+public class MenuBeneficiario {	
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("MENUTRABALHADOR");
+			setId("MENUBENEFICIARIO");
 			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 			
@@ -36,13 +36,6 @@ public class MenuTrabalhador {
 					case "Acionar agora o Serviço Funeral":
 						try {
 							botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
-						}catch(Exception e) {
-							botInputResult.setResult(BotInputResult.Result.ERROR);
-						}
-						break;
-					case "Recebi esse cartão e quero saber o que é":
-						try {
-							botInputResult.setIntentName(BotBSF.STATES.CARTAO);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
@@ -124,7 +117,6 @@ public class MenuTrabalhador {
 		
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put(BotBSF.STATES.FUNERAL, "#FUNERAL");
-				put(BotBSF.STATES.CARTAO, "#CARTAO");
 				put(BotBSF.STATES.ANDAMENTO, "#ANDAMENTO");
 				put(BotBSF.STATES.VALIDAR, "#VALIDAR");	
 				put(BotBSF.STATES.SALDO, "#SALDO");

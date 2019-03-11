@@ -3,7 +3,7 @@
 	{
 			"id": "/SERASA",
 			"idNavigationDetail": 13000,
-			"initialMessages": ["Aguarde enquanto eu cosulto seu cadastro."]		
+			"initialMessages": ["Aguarde enquanto eu consulto seu cadastro."]		
 		}
 	]
 }

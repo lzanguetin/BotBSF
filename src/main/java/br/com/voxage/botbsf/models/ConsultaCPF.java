@@ -3,6 +3,7 @@ package br.com.voxage.botbsf.models;
 public class ConsultaCPF {
 	private String dataNascimento;
 	private String numeroProtocolo;
+	private String statusBenef;
 	private String tipoUsuario;
 	private Cesta cesta;
 	private Beneficio benef;
@@ -21,6 +22,14 @@ public class ConsultaCPF {
 	
 	public void setProtocolo(String numeroProtocolo) {
 		this.numeroProtocolo = numeroProtocolo;
+	}
+	
+	public String getStatusProt() {
+		return statusBenef;
+	}
+	
+	public void setStatusProt(String statusBenef) {
+		this.statusBenef = statusBenef;
 	}
 	
 	public String getUsuario() {

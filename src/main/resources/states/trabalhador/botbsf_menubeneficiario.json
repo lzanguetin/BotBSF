@@ -1,8 +1,8 @@
 {
 	"states":[
 		{
-			"id": "/MENUTRABALHADOR",
-			"idNavigationDetail":14000,
+			"id": "/MENUBENEFICIARIO",
+			"idNavigationDetail":15000,
 			"initialMessages": [{
 					"message": "Vou te passar algumas opções e você define aquela que melhor te ajuda.",			
                     "options": [
@@ -51,6 +51,9 @@
                         },
 						{  
                             "text": "Quero saber sobre a próxima cesta de alimentos"
+                        },
+						{  
+                            "text": "Outros Assuntos"
                         }
                     ],
                     "messageType": "OPTION_BOX"
@@ -75,6 +78,9 @@
                         },
 						{  
                             "text": "Quero saber sobre a próxima cesta de alimentos"
+                        },
+						{  
+                            "text": "Outros Assuntos"
                         }
                     ],
                     "messageType": "OPTION_BOX"
