@@ -16,23 +16,27 @@ public class SemSerasa {
 			
 			setBotStateInteractionType(BotStateInteractionType.NO_INPUT);
 			
-			setPosFunction((botState, inputResult) ->{
+			setPreFunction(botState ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				if((consulta.getSerasa().getdataRetiradaSerasa()) != null) {
-					botStateFlow.navigationKey = "NDCONSTA";
-				}else {
-					botStateFlow.navigationKey = "REGULARIZADO";
-				}
+				botState.setCustomField("data", consulta.getSerasa().getdataRetiradaSerasa());
+				
+				return botStateFlow;
+			});
+			
+			setPosFunction((botState, inputResult) ->{
+				BotStateFlow botStateFlow = new BotStateFlow();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+				botStateFlow.navigationKey = "FINALIZAR";
+
 				
 				return botStateFlow;
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.NDCONSTA, "#NDCONSTA");
-				put(BotBSF.STATES.REGULARIZADO, "#REGULARIZADO");				
+				put("FINALIZAR", "#FINALIZAR");				
 			}});
 		}};
 	}

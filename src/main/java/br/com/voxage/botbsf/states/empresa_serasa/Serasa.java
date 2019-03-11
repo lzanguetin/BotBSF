@@ -22,8 +22,10 @@ public class Serasa {
 				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 
-				if(((consulta.getSerasa().getSerasa()) == "true") || ((consulta.getSerasa().getPre()) == "true")) {
+				if((consulta.getSerasa().getSerasa()) == "true"){
 					botStateFlow.navigationKey = "COMSERASA";
+				}else if((consulta.getSerasa().getPre()) == "true"){
+					botStateFlow.navigationKey = "PRESERASA";
 				}else {
 					botStateFlow.navigationKey = "SEMSERASA";
 				}
@@ -33,6 +35,7 @@ public class Serasa {
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put(BotBSF.STATES.COMSERASA, "#COMSERASA");
+				put(BotBSF.STATES.PRESERASA, "#PRESERASA");
 				put(BotBSF.STATES.SEMSERASA, "#SEMSERASA");
 			}});
 		}};

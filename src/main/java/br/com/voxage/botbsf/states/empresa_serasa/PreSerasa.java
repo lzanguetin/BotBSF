@@ -3,18 +3,29 @@ package br.com.voxage.botbsf.states.empresa_serasa;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.ConsultaCNPJ;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
 
-public class ComSerasa {	
+public class PreSerasa {
 	@SuppressWarnings("serial")
 	public static BotState load(BotBSF bot) {
 		return new BotState("/") {{
-			setId("COMSERASA");
+			setId("PRESERASA");
 			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
+
+			setPreFunction(botState ->{
+				BotStateFlow botStateFlow = new BotStateFlow();
+				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+		
+				botState.setCustomField("data", consulta.getSerasa().getdataPreSerasa());
+		
+				return botStateFlow;
+			});
 			
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();
@@ -50,7 +61,7 @@ public class ComSerasa {
 				
 				return botInputResult;
 			});
-				
+			
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
@@ -69,5 +80,3 @@ public class ComSerasa {
 		}};
 	}
 }
-
-		

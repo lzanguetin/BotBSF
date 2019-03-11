@@ -3,8 +3,46 @@
 		{
 			"id": "/INDEVIDA",
 			"idNavigationDetail": 13500,
-			"maxInputErrorResponses":["Infelizmente não consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["VocÃª nÃ£o estÃ¡ respondendo. Tudo bem, nÃ£o tem problema. Vou continuar trabalhando por aqui e quando vocÃª precisar de ajuda pode me chamar."]}]
+			"initialMessages": [{  
+                    "message": "Por que você considera a cobrança indevida?",
+                    "options": [  
+                        {  
+                            "text": "Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar"
+                        },
+                        {  
+                            "text": "Empresa é do segmento que possui o BSF, mas ATUALMENTE não possui nenhum trabalhador registrado."
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }],
+			"inputErrorResponses":[
+                {"order":"1", "messages":[{  
+                    "message": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber por que você considera a cobrança indevida?",
+                    "options": [  
+                        {  
+                            "text": "Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar"
+                        },
+                        {  
+                            "text": "Empresa é do segmento que possui o BSF, mas ATUALMENTE não possui nenhum trabalhador registrado."
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }]},
+				{"order":"2", "messages":[{  
+                    "message": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar eu tenho que saber por que você considera a cobrança indevida?",
+                    "options": [  
+                        {  
+                            "text": "Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar"
+                        },
+                        {  
+                            "text": "Empresa é do segmento que possui o BSF, mas ATUALMENTE não possui nenhum trabalhador registrado."
+                        }
+                    ],
+                    "messageType": "OPTION_BOX"
+                }]}
+            ],
+			"maxInputErrorResponses":["Infelizmente nao consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
+			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
 		}
 	]
-}		
+}	

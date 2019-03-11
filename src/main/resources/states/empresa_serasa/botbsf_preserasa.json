@@ -1,14 +1,14 @@
 {
 	"states":[
 		{
-			"id": "/COMSERASA",
-			"idNavigationDetail": 13200,
-			"initialMessages": ["Este CNPJ está Negativado devido descumprimento de Convenção Coletiva de Trabalho",
+			"id": "/PRESERASA",
+			"idNavigationDetail": 13250,
+			"initialMessages": ["Você tem até o dia #dia# para regularizar o cadastro junto ao BSF e evitar que essa empresa seja negativada:",
 			{  
                     "message": "O que deseja fazer?",
                     "options": [  
                         {  
-                            "text": "Deseja entender porque essa empresa foi negativada"
+                            "text": "Deseja entender por que a Empresa foi negativada"
                         },
                         {  
                             "text": "Entende que essa cobrança é indevida"
@@ -24,7 +24,7 @@
                     "message": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber o que deseja fazer",
                     "options": [  
                         {  
-                            "text": "Deseja entender porque essa empresa foi negativada"
+                            "text": "Deseja entender por que a Empresa foi negativada"
                         },
                         {  
                             "text": "Entende que essa cobrança é indevida"

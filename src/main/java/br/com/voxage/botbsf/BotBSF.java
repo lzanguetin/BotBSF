@@ -96,6 +96,7 @@ public class BotBSF extends VBot {
 	    	String INDEVIDA = "indevida";
 	    	String COBSEGMENTO = "cobsegmento";
 	    	String COBSEMTRAB = "cobsemtrab";
+	    	String PRESERASA = "preserasa";
 	    	
 	    	String OUTROS = "outros";
 	    	
