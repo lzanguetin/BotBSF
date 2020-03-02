@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/POSSUICESTA",
-			"idNavigationDetail":14501,
-			"initialMessages": ["Você receberá sua cesta número #numero# até #data#"]
-		}
-	]
-}

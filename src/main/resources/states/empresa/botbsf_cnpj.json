@@ -1,14 +1,25 @@
 {
-	"states":[
-		{
-			"id": "/CNPJ",
-			"idNavigationDetail":10100,
-			"initialMessages": ["Ok, agora por favor digite o número do CNPJ da Empresa."],
-			"inputErrorResponses":[
-				{"order":"1", "messages":["Não entendi. Por favor, digite o número do CNPJ da Empresa."]},
-				{"order":"2", "messages": ["Ainda não entendi. Vamos tentar mais uma vez. Digite agora, o número completo que possui 14 dígitos (sem pontos ou barra) do CNPJ da Empresa que deseja falar."]}
-			],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
+	"states": [{
+		"id": "/CNPJ",
+		"idNavigationDetail": 10100,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": ["Não entendi. Por favor, informe o CPF ou CNPJ completo do empregador que você deseja atendimento. Pode começar"]
+			},
+			{
+				"order": "2",
+				"messages": ["Vamos tentar mais uma vez. Para agilizar o seu atendimento por favor digite agora todos os dígitos do CPF ou CNPJ do empregador que deseja obter informações."]
+			}
+		],
+		"maxInputErrorResponses": ["Olha já que não está sendo possível te entender...."],
+		"noInputResponses": [{
+				"order": "1",
+				"messages": ["Vou repetir. O primeiro passo é identifica-lo. Então digite agora o CPF ou CNPJ completo do empregador que você deseja atendimento."]
+			},
+			{
+				"order": "2",
+				"messages": ["Por favor, informe o CPF ou CNPJ completo do empregador que você quer obter informações."]
+			}
+		]
+	}]
 }

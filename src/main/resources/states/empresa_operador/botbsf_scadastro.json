@@ -1,48 +1,43 @@
 {
-	"states":[
-		{
-			"id": "/SCADASTRO",
-			"idNavigationDetail": 10900,
-			"initialMessages": [{  
-                    "message": "O CPF informado não possui cadastro para acesso a essa empresa. Você deseja realizar o cadastro agora?",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }],
-			"inputErrorResponses":[
-                {"order":"1", "messages":[{  
-                    "message": "Desculpe, eu não entendi. Eu preciso que você responda se deseja realizar o cadastro agora.",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]},
-				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas ainda não entendi. Deseja realizar o cadastro agora.",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]}
-            ],
-			"maxInputErrorResponses":["Infelizmente nãoo consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
+	"states": [{
+		"id": "/SCADASTRO",
+		"idNavigationDetail": 10900,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, eu não entendi. Eu preciso que você responda se deseja realizar o cadastro agora.",
+						"options": [{
+								"text": "Sim"
+							},
+							{
+								"text": "Não"
+							}
+						]
+					}
+				}]
+			},
+			{
+				"order": "2",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas ainda não entendi. Deseja realizar o cadastro agora.",
+						"options": [{
+								"text": "Sim"
+							},
+							{
+								"text": "Não"
+							}
+						]
+					}
+				}]
+			}
+		],
+		"noInputResponses": [{
+			"order": "1",
+			"messages": ["Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"]
+		}]
+	}]
 }

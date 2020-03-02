@@ -1,111 +1,79 @@
 {
-	"states":[
-		{
-			"id": "/MENUEMPRESA",
-			"idNavigationDetail":10200,
-			"initialMessages": [{
-					"message": "Vou te passar algumas opções e você define aquela que melhor te ajuda.",			
-                    "options": [
-                        {  
-                            "text": "Acionar Agora o Serviço Funeral"
-                        },					
-                        {  
-                            "text": "Mais Sobre o Benefício Social Familiar"
-                        },
-                        {  
-                            "text": "Acessar o Cadastro da Empresa"
-                        },
-						{  
-                            "text": "Atualizar os Dados da Empresa"
-                        },
-						{  
-                            "text": "Impressão ou Pagamento de Boletos"
-                        },
-						{  
-                            "text": "Inativação de Cadastro"
-                        },
-						{  
-                            "text": "Recebi um E-mail e Não Entendi"
-                        },
-						{  
-                            "text": "Empresa Negativada/Recebi E-mail Sobre Isso"
-                        },
-						{  
-                            "text": "Outros Assuntos"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-            }],
-			"inputErrorResponses":[
-                {"order":"1", "messages":[{  
-                    "message": "Desculpe, mas pode digitar novamente? Ou se preferir, pode escolher um dos assuntos abaixo:",
-                    "options": [  
-                        {  
-                            "text": "Acionar Agora o Serviço Funeral"
-                        },					
-                        {  
-                            "text": "Mais Sobre o Benefício Social Familiar"
-                        },
-                        {  
-                            "text": "Acessar o Cadastro da Empresa"
-                        },
-						{  
-                            "text": "Atualizar os Dados da Empresa"
-                        },
-						{  
-                            "text": "Impressão ou Pagamento de Boletos"
-                        },
-						{  
-                            "text": "Inativação de Cadastro"
-                        },
-						{  
-                            "text": "Recebeu e-mail de Inadimplência"
-                        },
-						{  
-                            "text": "Empresa Negativada/Recebi E-mail Sobre Isso"
-                        },
-						{  
-                            "text": "Outros Assuntos"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]},
-				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas ainda não entendi o que você deseja.Você pode digitar novamente ou escolher um dos assuntos abaixo?",
-                    "options": [  
-                        {  
-                            "text": "Acionar Agora o Serviço Funeral"
-                        },					
-                        {  
-                            "text": "Mais Sobre o Benefício Social Familiar"
-                        },
-                        {  
-                            "text": "Acessar o Cadastro da Empresa"
-                        },
-						{  
-                            "text": "Atualizar os Dados da Empresa"
-                        },
-						{  
-                            "text": "Impressão ou Pagamento de Boletos"
-                        },
-						{  
-                            "text": "Inativação de Cadastro"
-                        },
-						{  
-                            "text": "Recebeu e-mail de Inadimplência"
-                        },
-						{  
-                            "text": "Empresa Negativada/Recebi E-mail Sobre Isso"
-                        },
-						{  
-                            "text": "Outros Assuntos"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]}
-            ],
-			"maxInputErrorResponses":["Infelizmente não consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
+	"states": [{
+		"id": "/MENUEMPRESA",
+		"idNavigationDetail": 10200,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar preciso saber o assunto que deseja falar:",
+						"options": [{
+								"text": "1 - Saber mais sobre o que é Benefício Social Familiar"
+							},
+							{
+								"text": "2 - Acesso do Operador ao Cadastro do Empregador"
+							},
+							{
+								"text": "3 - Atualizar os Dados do Empregador"
+							},
+							{
+								"text": "4 - Impressão ou Pagamento de Boletos"
+							},
+							{
+								"text": "5 - Inativação de Cadastro"
+							},
+							{
+								"text": "6 - Dúvidas sobre o e-mail recebido"
+							},
+							{
+								"text": "7 – Empregador Negativado no SERASA"
+							},
+							{
+								"text": "8 - Outros Assuntos"
+							}
+						]
+					}
+				}]
+			},
+			{
+				"order": "2",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar preciso saber o assunto que deseja falar:",
+						"options": [{
+								"text": "1 - Saber mais sobre o que é Benefício Social Familiar"
+							},
+							{
+								"text": "2 - Acesso do Operador ao Cadastro do Empregador"
+							},
+							{
+								"text": "3 - Atualizar os Dados do Empregador"
+							},
+							{
+								"text": "4 - Impressão ou Pagamento de Boletos"
+							},
+							{
+								"text": "5 - Inativação de Cadastro"
+							},
+							{
+								"text": "6 - Dúvidas sobre o e-mail recebido"
+							},
+							{
+								"text": "7 – Empregador Negativado no SERASA"
+							},
+							{
+								"text": "8 - Outros Assuntos"
+							}
+						]
+					}
+				}]
+			}
+		],
+		"noInputResponses": [{
+			"order": "1",
+			"messages": ["Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"]
+		}]
+	}]
 }

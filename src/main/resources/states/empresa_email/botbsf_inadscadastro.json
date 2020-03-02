@@ -1,49 +1,41 @@
 {
-	"states":[
-		{
-			"id": "/INADSCADASTRO",
-			"idNavigationDetail": 12500,
-			"initialMessages": ["Para ter acesso aos boletos em aberto da Empresa: #nome#\nCNPJ: #cnpj#, você precisa ser um usuário autorizado ao acesso no site, porém seu CPF não consta como autorizado.",
-			{  
-                    "message": "Deseja solicitar autorização de acesso? (neste caso o responsável pelo e-mail #emal# receberá sua solicitação e precisará autoriza-lo)",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }],
-			"inputErrorResponses":[
-                {"order":"1", "messages":[{  
-                    "message": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber se você deseja solicitar autorização de acesso?",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]},
-				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar, tenho que saber se você deseja solicitar autorização de acesso?",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]}
-            ],
-			"maxInputErrorResponses":["Infelizmente nao consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
-}		
+	"states": [{
+		"id": "/INADSCADASTRO",
+		"idNavigationDetail": 12500,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber se você deseja solicitar autorização de acesso?",
+						"options": [{
+								"text": "Sim"
+							},
+							{
+								"text": "Não"
+							}
+						]
+					}
+				}]
+			},
+			{
+				"order": "2",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar, tenho que saber se você deseja solicitar autorização de acesso?",
+					"options": [{
+							"text": "Sim"
+						},
+						{
+							"text": "Não"
+						}
+					]
+				}]
+			}
+		],
+		"noInputResponses": [{
+			"order": "1",
+			"messages": ["Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"]
+		}]
+	}]
+}

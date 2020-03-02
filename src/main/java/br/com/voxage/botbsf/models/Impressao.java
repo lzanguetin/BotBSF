@@ -1,53 +1,33 @@
 package br.com.voxage.botbsf.models;
 
+import java.util.Date;
+
 public class Impressao {
-	private String possuiImpressao;
-	private String data;
-	private String vencimento;
-	private String horasParaPagamento;
-
-	public String getPossuiImp() {
-		return possuiImpressao;
-	}
-
-	public void setPossuiImp(String possuiImpressao) {
-		this.possuiImpressao = possuiImpressao;
-	}
-
-	public String getUltimaImp() {
-		return data;
-	}
-
-	public void setUltimaImp(String data) {
-		this.data = data;
+	private String dataHora;
+	private Date dataVencimento;
+	private Integer qtdHorasDePagamento;
+	
+	public String getDataHora() {
+		return dataHora;
 	}
 	
-	public String getVencUltima() {
-		return vencimento;
-	}
-
-	public void setVencUltima(String vencimento) {
-		this.vencimento = vencimento;
+	public void setDataHora(String dataHora) {
+		this.dataHora = dataHora;
 	}
 	
-	public String getHrsPagamento() {
-		return horasParaPagamento;
+	public Date getDataVencimento() {
+		return dataVencimento;
 	}
-
-	public void setHrsPagamento(String horasParaPagamento) {
-		this.horasParaPagamento = horasParaPagamento;
-	}
-
-	@Override
-	public String toString() {
-		return "Impressao [possuiImpressao=" + possuiImpressao + ", data=" + data + ", vencimento=" + vencimento
-				+ ", horasParaPagamento=" + horasParaPagamento + "]";
-	}
-
 	
+	public void setDataVencimento(Date dataVencimento) {
+		this.dataVencimento = dataVencimento;
+	}
+	
+	public Integer getQtdHorasDePagamento() {
+		return qtdHorasDePagamento;
+	}
+	
+	public void setQtdHorasDePagamento(Integer qtdHorasDePagamento) {
+		this.qtdHorasDePagamento = qtdHorasDePagamento;
+	}
 }
-
-
-
-
-

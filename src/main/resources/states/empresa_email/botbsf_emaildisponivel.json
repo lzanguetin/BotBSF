@@ -1,9 +1,0 @@
-{
-	"states":[
-	{
-			"id": "/EMAILDISPONIVEL",
-			"idNavigationDetail": 11951,
-			"initialMessages": ["Entendi, esse e-mail é um apenas um aviso da Gestora do Benefício Social Familiar para alertar que o próximo boleto a vencer referente ao Benefício Social Familiar já está disponivel para impressão.Para imprimi-lo é só seguir o passo a passo que consta no e-mail que recebeu ou <a href=\"https://www.beneficiosocial.com.br/\">clique aqui</a> e você será direcionado para a 'Àrea da Empresa'. Digite o CNPJ e clique na opção 'Imprimir Boletos de Pagamentos'. O Benefício Social Familiar agradece seu contato."]		
-		}
-	]
-}

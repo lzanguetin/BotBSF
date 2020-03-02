@@ -18,13 +18,13 @@ public class Outros {
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = "ATENDENTE";
+				botStateFlow.navigationKey = BotBSF.STATES.ATENDENTE;
 				
 				return botStateFlow;
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("ATENDENTE", "#ATENDENTE");
+				put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
 			}});
 		}};
 	}

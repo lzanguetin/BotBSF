@@ -1,48 +1,62 @@
 {
-	"states":[
+	"states": [
 		{
 			"id": "/START",
 			"idNavigationDetail": 10000,
-			"initialMessages": [{  
-                    "message": "Olá, você está no atendimento online da Gestora do Benefício Social Familiar!\nEu sou a Benê, assitente digital e estou aqui para te ajudar. Você deseja falar sobre assuntos da Empresa ou do seu Benefício?",
-                    "options": [  
-                        {  
-                            "text": "Empresa"
-                        },
-                        {  
-                            "text": "Trabalhador/Beneficiário"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }],
-			"inputErrorResponses":[
-                {"order":"1", "messages":[{  
-                    "message": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber se você quer falar sobre assuntos da Empresa ou do seu Benefício?",
-                    "options": [  
-                        {  
-                            "text": "Empresa"
-                        },
-                        {  
-                            "text": "Trabalhador/Beneficiário"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]},
-				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar eu tenho que saber se você quer falar sobre assuntos da Empresa ou do seu Benefício?",
-                    "options": [  
-                        {  
-                            "text": "Empresa"
-                        },
-                        {  
-                            "text": "Trabalhador/Beneficiário"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]}
-            ],
-			"maxInputErrorResponses":["Infelizmente nao consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
+			"inputErrorResponses": [
+				{
+					"order": "1",
+					"messages": [
+						{
+							"messageType": "OPTION_BOX",
+							"message": {
+								"question": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar preciso saber o assunto que deseja falar:",
+								"options": [
+									{
+										"text": "Serviço Funeral"
+									},
+									{
+										"text": "Trabalhador ou Beneficiário"
+									},
+									{
+										"text": "Empregador"
+									}
+								]
+							}
+						}
+					]
+				},
+				{
+					"order": "2",
+					"messages": [
+						{
+							"messageType": "OPTION_BOX",
+							"message": {
+								"question": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar eu preciso saber o assunto que deseja falar:",
+								"options": [
+									{
+										"text": "Serviço Funeral"
+									},
+									{
+										"text": "Trabalhador ou Beneficiário"
+									},
+									{
+										"text": "Empregador"
+									}
+								]
+							}
+						}
+					]
+				}
+			],
+			"noInputResponses": [
+				{
+					"order": "1",
+					"messages": [
+						"Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"
+					]
+				}
+			]
 		}
 	]
 }

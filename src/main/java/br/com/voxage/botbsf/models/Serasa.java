@@ -1,48 +1,40 @@
 package br.com.voxage.botbsf.models;
 
 public class Serasa {
-	private String posuiCadastroSerasa;
-	private String posuiCadastroPreSerasa;
-	private String dataPreSerasa;
-	private String dataRetiradaSerasa;
+	private String situacao;
+	private String dataEntrada;
+	private String dataParaRegularizacao;
+	private String dataRetirada;
 	
-	public String getSerasa() {
-		return posuiCadastroSerasa;
+	public String getSituacao() {
+		return situacao;
 	}
 
-	public void setSerasa(String posuiCadastroSerasa) {
-		this.posuiCadastroSerasa = posuiCadastroSerasa;
-	}
-
-	public String getPre() {
-		return posuiCadastroPreSerasa;
-	}
-
-	public void setPre(String posuiCadastroPreSerasa) {
-		this.posuiCadastroPreSerasa = posuiCadastroPreSerasa;
-	}
-
-	public String getdataPreSerasa() {
-		return dataPreSerasa;
-	}
-
-	public void setdataPreSerasa(String dataPreSerasa) {
-		this.dataPreSerasa = dataPreSerasa;
+	public void setSituacao(String situacao) {
+		this.situacao = situacao;
 	}
 	
-	public String getdataRetiradaSerasa() {
-		return dataRetiradaSerasa;
-	}
-
-	public void setdataRetiradaSerasa(String dataRetiradaSerasa) {
-		this.dataRetiradaSerasa = dataRetiradaSerasa;
-	}
-
-	@Override
-	public String toString() {
-		return "Serasa [posuiCadastroSerasa=" + posuiCadastroSerasa + ", posuiCadastroPreSerasa="
-				+ posuiCadastroPreSerasa + ", dataPreSerasa=" + dataPreSerasa + ", dataRetiradaSerasa="
-				+ dataRetiradaSerasa + "]";
+	public String getDataEntrada() {
+		return dataEntrada;
 	}
 	
+	public void setDataEntrada(String dataEntrada) {
+		this.dataEntrada = dataEntrada;
+	}
+	
+	public String getDataParaRegularizacao() {
+		return dataParaRegularizacao;
+	}
+	
+	public void setDataParaRegularizacao(String dataParaRegularizacao) {
+		this.dataParaRegularizacao = dataParaRegularizacao;
+	}
+	
+	public String getDataRetirada() {
+		return dataRetirada;
+	}
+	
+	public void setDataRetirada(String dataRetirada) {
+		this.dataRetirada = dataRetirada;
+	}
 }

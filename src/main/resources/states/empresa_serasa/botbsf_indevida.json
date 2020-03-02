@@ -1,48 +1,43 @@
 {
-	"states":[
-		{
-			"id": "/INDEVIDA",
-			"idNavigationDetail": 13500,
-			"initialMessages": [{  
-                    "message": "Por que você considera a cobrança indevida?",
-                    "options": [  
-                        {  
-                            "text": "Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar"
-                        },
-                        {  
-                            "text": "Empresa é do segmento que possui o BSF, mas ATUALMENTE não possui nenhum trabalhador registrado."
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }],
-			"inputErrorResponses":[
-                {"order":"1", "messages":[{  
-                    "message": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber por que você considera a cobrança indevida?",
-                    "options": [  
-                        {  
-                            "text": "Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar"
-                        },
-                        {  
-                            "text": "Empresa é do segmento que possui o BSF, mas ATUALMENTE não possui nenhum trabalhador registrado."
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]},
-				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar eu tenho que saber por que você considera a cobrança indevida?",
-                    "options": [  
-                        {  
-                            "text": "Empresa não pertence ao segmento abrangido pelo Benefício Social Familiar"
-                        },
-                        {  
-                            "text": "Empresa é do segmento que possui o BSF, mas ATUALMENTE não possui nenhum trabalhador registrado."
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]}
-            ],
-			"maxInputErrorResponses":["Infelizmente nao consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
-}	
+	"states": [{
+		"id": "/INDEVIDA",
+		"idNavigationDetail": 13500,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar eu preciso saber por que você considera a cobrança indevida?",
+						"options": [{
+								"text": "1 - Empregador não pertence ao segmento abrangido pelo Benefício Social Familiar"
+							},
+							{
+								"text": "2 - Empregador é do segmento que possui o Benefício Social Familiar, mas atualmente não possui nenhum trabalhador registrado"
+							}
+						]
+					}
+				}]
+			},
+			{
+				"order": "2",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar eu tenho que saber por que você considera a cobrança indevida?",
+						"options": [{
+								"text": "1 - Empregador não pertence ao segmento abrangido pelo Benefício Social Familiar"
+							},
+							{
+								"text": "2 - Empregador é do segmento que possui o Benefício Social Familiar, mas atualmente não possui nenhum trabalhador registrado"
+							}
+						]
+					}
+				}]
+			}
+		],
+		"noInputResponses": [{
+			"order": "1",
+			"messages": ["Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"]
+		}]
+	}]
+}

@@ -1,9 +1,12 @@
 package br.com.voxage.botbsf.states.empresa_boletos;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
-import br.com.voxage.botbsf.models.ConsultaCNPJ;
+import br.com.voxage.botbsf.models.DadosEmpresa;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
@@ -26,16 +29,23 @@ public class Boletos {
 			
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
-				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
+				DadosEmpresa consulta = bot.getDadosEmpresa();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				if((consulta.getImpressao().getPossuiImp()) == "true") {
-					botStateFlow.navigationKey = "BOLETOIMPRESSO";
-				}else if((consulta.getImpressao().getPossuiImp()) == "false") {
-					botStateFlow.navigationKey = "SEMBOLETOS";
-				}
-				else {
-					botStateFlow.navigationKey = "ATENDENTE";
+				if(consulta.getRegrasNegocio().getPossuiImpressaoBoleto() == true) {
+			    	DateFormat actualDate = new SimpleDateFormat("MM");
+			    	DateFormat returnDate = new SimpleDateFormat("MM"); 
+			    	Date date1 = new Date();
+			    	Date date2 = new Date();
+			    	date2 = consulta.getRegrasNegocio().getUltimaImpressao().getDataHora();
+			    	
+			    	if(actualDate.format(date1).equals(returnDate.format(date2))) {
+			    		botStateFlow.navigationKey = BotBSF.STATES.BOLETOIMPRESSO;
+			    	}else {
+			    		botStateFlow.navigationKey = BotBSF.STATES.SEMBOLETOS;
+			    	}
+				}else if(consulta.getRegrasNegocio().getPossuiImpressaoBoleto() == false) {
+					botStateFlow.navigationKey = BotBSF.STATES.SEMBOLETOS;
 				}
 				
 				return botStateFlow;
@@ -45,8 +55,8 @@ public class Boletos {
 				put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
 				put(BotBSF.STATES.SEMBOLETOS, "#SEMBOLETOS");
 				put(BotBSF.STATES.BOLETOIMPRESSO, "#BOLETOIMPRESSO");
-				put("MAX_INPUT_ERROR", "/TERMINATE");
-				put("MAX_NO_INPUT", "/TERMINATE");
+				put("MAX_INPUT_ERROR", "/MAX_INPUT_ERROR");
+				put("MAX_NO_INPUT", "/MAX_NO_INPUT");
 			}});
 		}};
 	}

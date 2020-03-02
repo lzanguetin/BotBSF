@@ -1,57 +1,49 @@
 {
-	"states":[
-		{
-			"id": "/EMAIL",
-			"idNavigationDetail": 11950,
-			"initialMessages": [{  
-                    "message": "No assunto desse email consta:",
-                    "options": [  
-                        {  
-                            "text": "O Seu Boleto Já Está Disponível"
-                        },
-                        {  
-                            "text": "O Seu Boleto Ainda Não Foi Pago"
-                        },
-						{  
-                            "text": "Recebeu E-mail de Inadimplênia"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }],
-			"inputErrorResponses":[
-                {"order":"1", "messages":[{  
-                    "message": "No assunto desse email consta:",
-                    "options": [  
-                        {  
-                            "text": "O Seu Boleto Já Está Disponível"
-                        },
-                        {  
-                            "text": "O Seu Boleto Ainda Não Foi Pago"
-                        },
-						{  
-                            "text": "Recebeu E-mail de Inadimplênia"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]},
-				{"order":"2", "messages":[{  
-                    "message": "No assunto desse email consta:",
-                    "options": [  
-                        {  
-                            "text": "O Seu Boleto Já Está Disponível"
-                        },
-                        {  
-                            "text": "O Seu Boleto Ainda Não Foi Pago"
-                        },
-						{  
-                            "text": "Recebeu E-mail de Inadimplênia"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]}
-            ],
-			"maxInputErrorResponses":["Infelizmente nao consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
+	"states": [{
+		"id": "/EMAIL",
+		"idNavigationDetail": 12300,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "No assunto desse email consta:",
+						"options": [{
+								"text": "1 - Saber mais sobre o e-mail com assunto \"O seu boleto já está disponível\""
+							},
+							{
+								"text": "2 - Saber mais sobre o e-mail com assunto \"O seu boleto ainda não foi pago\""
+							},
+							{
+								"text": "3 - Saber mais sobre e-mail de inadimplência."
+							}
+						]
+					}
+				}]
+			},
+			{
+				"order": "2",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "No assunto desse email consta:",
+						"options": [{
+								"text": "1 - Saber mais sobre o e-mail com assunto \"O seu boleto já está disponível\""
+							},
+							{
+								"text": "2 - Saber mais sobre o e-mail com assunto \"O seu boleto ainda não foi pago\""
+							},
+							{
+								"text": "3 - Saber mais sobre e-mail de inadimplência."
+							}
+						]
+					}
+				}]
+			}
+		],
+		"noInputResponses": [{
+			"order": "1",
+			"messages": ["Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"]
+		}]
+	}]
 }

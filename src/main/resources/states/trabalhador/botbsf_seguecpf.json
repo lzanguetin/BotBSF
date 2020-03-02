@@ -1,9 +1,0 @@
-{
-	"states":[
-	{
-			"id": "/SEGUECPF",
-			"idNavigationDetail": 13902,
-			"initialMessages": ["Pronto! Já localizei."]		
-		}
-	]
-}

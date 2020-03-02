@@ -1,49 +1,43 @@
 {
-	"states":[
-		{
-			"id": "/ATUSCADASTRO",
-			"idNavigationDetail":11400,
-			"initialMessages":["Para atualizar os dados cadastrais da Empresa: #empresa#\nCNPJ: #cnpj#\nVocê precisa ser um usuário autorizado ao acesso desta empresa no site, porém seu CPF não consta como autorizado.",    
-             {
-				"message": "Deseja solicitar autorização de acesso? (neste caso o responsavel pelo Email #email# receberá sua solicitação e precisará autoriza-lo)",
-				"options": [
-                    {  
-                        "text": "Sim"
-                    },
-                    {  
-                        "text": "Não"
-                    }
-                 ],
-                "messageType": "OPTION_BOX"
-			}],			
-			"inputErrorResponses":[
-                {"order":"1", "messages":[{  
-                    "message": "Desculpe, eu não entendi. Deseja solicitar autorização de acesso?",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]},
-				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas ainda não entendi. Deseja solicitar autorização de acesso?",
-                    "options": [  
-                        {  
-                            "text": "Sim"
-                        },
-                        {  
-                            "text": "Não"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]}
-            ],
-			"maxInputErrorResponses":["Infelizmente nãoo consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
+	"states": [{
+		"id": "/ATUSCADASTRO",
+		"idNavigationDetail": 11400,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, eu não entendi. Deseja solicitar autorização de acesso?",
+						"options": [{
+								"text": "Sim"
+							},
+							{
+								"text": "Não"
+							}
+						]
+					}
+				}]
+			},
+			{
+				"order": "2",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas ainda não entendi. Deseja solicitar autorização de acesso?",
+						"options": [{
+								"text": "Sim"
+							},
+							{
+								"text": "Não"
+							}
+						]
+					}
+				}]
+			}
+		],
+		"noInputResponses": [{
+			"order": "1",
+			"messages": ["Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"]
+		}]
+	}]
 }

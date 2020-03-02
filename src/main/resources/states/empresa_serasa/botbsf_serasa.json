@@ -1,9 +1,0 @@
-{
-	"states":[
-	{
-			"id": "/SERASA",
-			"idNavigationDetail": 13000,
-			"initialMessages": ["Aguarde enquanto eu consulto seu cadastro."]		
-		}
-	]
-}

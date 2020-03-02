@@ -1,14 +1,19 @@
 {
-	"states":[
-		{
-			"id": "/OPERADOR",
-			"idNavigationDetail": 10600,
-			"initialMessages": ["Digite o CPF do Operador que deve ter acesso a área da Empresa:"],
-			"inputErrorResponses":[
-				{"order":"1", "messages":["O CPF que você digitou não é válido. Digite novamente o CPF do trabalhador com 11 dígitos."]},
-				{"order":"2", "messages": ["O CPF continua inválido. Vamos tentar mais uma vez. Digite o CPF do trabalhador com 11 dígitos."]}
-			],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
+	"states": [{
+		"id": "/OPERADOR",
+		"idNavigationDetail": 10600,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": ["O CPF que você digitou não é válido. Digite novamente o CPF do trabalhador com 11 dígitos."]
+			},
+			{
+				"order": "2",
+				"messages": ["O CPF continua inválido. Vamos tentar mais uma vez. Digite o CPF do trabalhador com 11 dígitos."]
+			}
+		],
+		"noInputResponses": [{
+			"order": "1",
+			"messages": ["Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"]
+		}]
+	}]
 }

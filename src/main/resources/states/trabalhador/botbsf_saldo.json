@@ -1,9 +1,0 @@
-{
-	"states":[
-	{
-			"id": "/SALDO",
-			"idNavigationDetail": 14400,
-			"initialMessages": ["Para saber o saldo no cartão Agilitas, baixe o APP BSF ONLINE e verifique através da opção Conta Corrente Virtual."]		
-		}
-	]
-}

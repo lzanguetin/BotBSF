@@ -18,13 +18,19 @@ public class NProtocolo {
 				setPosFunction((botState, inputResult) ->{
 					BotStateFlow botStateFlow = new BotStateFlow();
 					botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-					botStateFlow.navigationKey = "ATENDENTE";
+					
+					if(bot.getFirstTime() == 0) {
+						botStateFlow.navigationKey = BotBSF.STATES.ANDAMENTO;
+					}else {
+						botStateFlow.navigationKey = BotBSF.STATES.ATENDENTE;
+					}
 					
 					return botStateFlow;
 				});
 				
-				setNextNavigationMap(new HashMap<String, String>(){{			
-                    put("ATENDENTE", "#ATENDENTE");
+				setNextNavigationMap(new HashMap<String, String>(){{
+					put(BotBSF.STATES.ANDAMENTO, "#ANDAMENTO");
+                    put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
 				}});
 		}};
 	}

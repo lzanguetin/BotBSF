@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/ATUALIZAR",
-			"idNavigationDetail":11000,
-			"initialMessages": ["Digite o CPF do usuário que deve ter acesso à área da empresa"]
-		}
-	]
-}

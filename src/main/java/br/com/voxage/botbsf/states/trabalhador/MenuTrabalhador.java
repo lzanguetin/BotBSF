@@ -1,20 +1,22 @@
 package br.com.voxage.botbsf.states.trabalhador;
 
-import br.com.voxage.botbsf.BotBSF;
-import br.com.voxage.botbsf.models.DadosFluxo;
-import br.com.voxage.chat.botintegration.ejb.entitties.SearchedLiveQuestion;
-import br.com.voxage.lucenesearchengine.LuceneSearchEngine;
-import br.com.voxage.vbot.BotInputResult;
-import br.com.voxage.vbot.BotState;
-import br.com.voxage.vbot.BotStateFlow;
-import br.com.voxage.vbot.BotStateInteractionType;
-
 import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import br.com.voxage.botbsf.BotBSF;
+import br.com.voxage.botbsf.models.DadosFluxo;
+import br.com.voxage.chat.botintegration.ejb.entitties.SearchedLiveQuestion;
+import br.com.voxage.chat.botintegration.message.Message;
+import br.com.voxage.chat.botintegration.message.OptionBuilder;
+import br.com.voxage.lucenesearchengine.LuceneSearchEngine;
+import br.com.voxage.vbot.BotInputResult;
+import br.com.voxage.vbot.BotState;
+import br.com.voxage.vbot.BotStateFlow;
+import br.com.voxage.vbot.BotStateInteractionType;
 
 public class MenuTrabalhador {
 	@SuppressWarnings("serial")
@@ -23,60 +25,81 @@ public class MenuTrabalhador {
 			setId("MENUTRABALHADOR");
 			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
+			setMaxNoInput(2);
+			setMaxInputTime(120000);
+			
+			setPreFunction(botState ->{
+				BotStateFlow botStateFlow = new BotStateFlow();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+				
+				bot.setMenuType("Menu Trabalhador - ");
+				
+				Integer aux = bot.getFlagError();
+				bot.setFlagError(aux+1);
+				
+				Message<?> message = null;
+				message = OptionBuilder.optionBox("Vou te passar algumas opções e você define aquela que melhor te ajudar.")
+						.addOption("1", "1 - O que é Benefício Social Familiar?").addOption("2", "2 - Acompanhar o andamento do "
+						+ "meu Benefício").addOption("3", "3 - Validar seu Cartão de Benefícios").addOption("4", "4 - Quero saber meu "
+						+ "saldo no cartão Agilitas").addOption("5", "5 - Quer saber quando irá receber sua próxima Cesta de Alimentos")
+						.addOption("6", "6 - Outros Assuntos").build();
+				bot.addResponse(message);
+				
+				return botStateFlow;
+			});
 			
 			setProcessDirectInputFunction((botState, userInputs) ->{
 				BotInputResult botInputResult = new BotInputResult();
 				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botInputResult.setResult(BotInputResult.Result.OK);
 				
-				String userInput = userInputs.getConcatenatedInputs();
+				String userInput = userInputs.getConcatenatedInputs().toLowerCase();
 				dadosFluxo.setFAQ(userInput);
 				
 				switch(userInput) {
-					case "Acionar agora o Serviço Funeral":
+					case "1 - o que é benefício social familiar?":
 						try {
-							botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
+							bot.setOcorrencia("1 - Sobre BSF");
+							botInputResult.setIntentName(BotBSF.STATES.SOBRE);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
-					case "Recebi esse cartão e quero saber o que é":
+					case "2 - acompanhar o andamento do meu benefício":
 						try {
-							botInputResult.setIntentName(BotBSF.STATES.CARTAO);
-						}catch(Exception e) {
-							botInputResult.setResult(BotInputResult.Result.ERROR);
-						}
-						break;
-					case "Acompanhar o andamento do meu benefício":
-						try {
+							bot.setOcorrencia("2 - Andamento Benefício");
 							botInputResult.setIntentName(BotBSF.STATES.ANDAMENTO);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
-					case "Validar seu cartão de benefícios":
+					case "3 - validar seu cartão de benefícios":
 						try {
+							bot.setOcorrencia("3 - Validar Cartão");
 							botInputResult.setIntentName(BotBSF.STATES.VALIDAR);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
-					case "Quero saber meu saldo no cartão Agilitas":
+					case "4 - quero saber meu saldo no cartão agilitas":
 						try {
+							bot.setOcorrencia("4 - Saldo Cartão");
 							botInputResult.setIntentName(BotBSF.STATES.SALDO);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
-					case "Quer saber quando irá receber sua próxima Cesta de Alimentos":
+					case "5 - quer saber quando irá receber sua próxima cesta de alimentos":
 						try {
+							bot.setOcorrencia("5 - Status Cesta");
 							botInputResult.setIntentName(BotBSF.STATES.CESTA);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}
 						break;
-					case "Outros Assuntos":
+					case "6 - outros assuntos":
 						try {
+							bot.setOcorrencia("6 - Outros Assuntos");
 							botInputResult.setIntentName(BotBSF.STATES.OUTROS);
 						}catch(Exception e) {
 							botInputResult.setResult(BotInputResult.Result.ERROR);
@@ -90,6 +113,7 @@ public class MenuTrabalhador {
 			                 
 							return BotInputResult.BOT_INPUT_RESULT_RETRY;
 						}catch(Exception ex) {
+							setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
 							botInputResult.setResult(BotInputResult.Result.ERROR);
 						}	
 					}
@@ -105,11 +129,16 @@ public class MenuTrabalhador {
 	                    List<SearchedLiveQuestion> results = new Gson().fromJson(input.getAnswer(), listType);
 	                    if(!results.isEmpty()) {
 	                        botInputResult.setAnswer(results.get(0).getChAnswer());
+	                        botInputResult.setIntentName(BotBSF.STATES.FAQ);
 	                    }
 	                }catch(Exception e) {
-	                    botInputResult.setResult(br.com.voxage.vbot.BotInputResult.Result.ERROR);
+	                	if(bot.getFlagError() < 3) {
+	                		setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
+	                		botInputResult.setResult(BotInputResult.Result.ERROR);
+	                	}else {
+	                		botInputResult.setIntentName("MAX_INPUT_ERROR");
+	                	}
 	                }
-	                botInputResult.setIntentName(BotBSF.STATES.FAQ);
 	                
 	                return botInputResult;
 	            });	
@@ -124,15 +153,16 @@ public class MenuTrabalhador {
 		
 			setNextNavigationMap(new HashMap<String, String>(){{
 				put(BotBSF.STATES.FUNERAL, "#FUNERAL");
-				put(BotBSF.STATES.CARTAO, "#CARTAO");
+				put(BotBSF.STATES.SOBRE, "#SOBRE");
 				put(BotBSF.STATES.ANDAMENTO, "#ANDAMENTO");
+				put(BotBSF.STATES.MENUTRABALHADOR, "#MENUTRABALHADOR");
 				put(BotBSF.STATES.VALIDAR, "#VALIDAR");	
 				put(BotBSF.STATES.SALDO, "#SALDO");
 				put(BotBSF.STATES.CESTA, "#CESTA");	
 				put(BotBSF.STATES.OUTROS, "#OUTROS");
 				put("faq", "#FAQ");
-                put("MAX_INPUT_ERROR", "/TERMINATE");
-                put("MAX_NO_INPUT", "/TERMINATE");
+                put("MAX_INPUT_ERROR", "/MAX_INPUT_ERROR");
+                put("MAX_NO_INPUT", "/MAX_NO_INPUT");
 			}});
 		}};
 	}

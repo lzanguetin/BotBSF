@@ -3,11 +3,12 @@ package br.com.voxage.botbsf.states.empresa_atualizar;
 import java.util.HashMap;
 import java.util.concurrent.CompletableFuture;
 
+import br.com.voxage.basicvalidators.CNPJValidator;
 import br.com.voxage.basicvalidators.CPFValidator;
 import br.com.voxage.botbsf.BotBSF;
 import br.com.voxage.botbsf.BotBSFIntegration;
-import br.com.voxage.botbsf.models.ConsultaOperador;
 import br.com.voxage.botbsf.models.DadosFluxo;
+import br.com.voxage.botbsf.models.DadosOperador;
 import br.com.voxage.vbot.BotInputResult;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
@@ -20,6 +21,17 @@ public class Atualizar {
 			setId("ATUALIZAR");
 			
 			setBotStateInteractionType(BotStateInteractionType.DIRECT_INPUT);
+			setMaxNoInput(2);
+			setMaxInputTime(120000);
+			
+			setPreFunction(botState ->{
+				BotStateFlow botStateFlow = new BotStateFlow();
+				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
+				
+				setInitialMessage("Digite o CPF do usuário que deve ter acesso a área do empregador.");
+				
+				return botStateFlow;
+			});
 			
 			setProcessDirectInputFunction((botState, userInputs) -> {
 				BotInputResult botInputResult = new BotInputResult();
@@ -29,11 +41,11 @@ public class Atualizar {
 				
 				dadosFluxo.setCPF(userInput);
 				
-				if((CPFValidator.isValidCPF(userInput)) == false) {
-					botInputResult.setResult(BotInputResult.Result.ERROR);
-				}else {
+				if(((CPFValidator.isValidCPF(userInput)) == true) || ((CNPJValidator.isValidCNPJ(userInput)) == true)){
 					dadosFluxo.setCPF(userInput);
 					botInputResult.setResult(BotInputResult.Result.OK);
+				}else {
+					botInputResult.setResult(BotInputResult.Result.ERROR);
 				}
 				
 				return botInputResult;
@@ -44,16 +56,16 @@ public class Atualizar {
 				DadosFluxo dadosFluxo = bot.getDadosFluxo();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				ConsultaOperador customerInfo = null;
+				DadosOperador customerInfo = null;
 				
 				try {
 	                    customerInfo = BotBSFIntegration.dadosOperador(bot, dadosFluxo.getCNPJ(), dadosFluxo.getCPF());
-	                    bot.setConsultaOperador(customerInfo);
-	                    ConsultaOperador op = bot.getConsultaOperador();
-	                    if(op.getNome() == "true") {
+	                    bot.setDadosOperador(customerInfo);
+	                    DadosOperador op = bot.getDadosOperador();
+	                    if("true".equals(op.getAtivo())) {
 	                    	dadosFluxo.setOperador("1");
 	                    	botStateFlow.navigationKey = BotBSF.STATES.ATUATIVO;
-	                    }else if(op.getNome() == "false") {
+	                    }else if("false".equals(op.getAtivo())) {
 	                    	dadosFluxo.setOperador("2");
 	                    	botStateFlow.navigationKey = BotBSF.STATES.ATUINATIVO;
 	                    }
@@ -69,8 +81,8 @@ public class Atualizar {
 				put(BotBSF.STATES.ATUATIVO, "#ATUATIVO");
 				put(BotBSF.STATES.ATUINATIVO, "#ATUINATIVO");
 				put(BotBSF.STATES.ATUSCADASTRO, "#ATUSCADASTRO");
-				put("MAX_INPUT_ERROR", "/TERMINATE");
-				put("MAX_NO_INPUT", "/TERMINATE");
+				put("MAX_INPUT_ERROR", "/MAX_INPUT_ERROR");
+				put("MAX_NO_INPUT", "/MAX_NO_INPUT");
 			}});
 		}};
 	}

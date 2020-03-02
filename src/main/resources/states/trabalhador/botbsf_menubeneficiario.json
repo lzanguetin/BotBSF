@@ -1,93 +1,61 @@
 {
-	"states":[
-		{
-			"id": "/MENUBENEFICIARIO",
-			"idNavigationDetail":15000,
-			"initialMessages": [{
-					"message": "Vou te passar algumas opções e você define aquela que melhor te ajuda.",			
-                    "options": [
-                        {  
-                            "text": "Acionar Agora o Serviço Funeral"
-                        },					
-                        {  
-                            "text": "Recebi esse cartão e quero saber o que é"
-                        },
-                        {  
-                            "text": "Acompanhar o andamento do meu benefício"
-                        },
-						{  
-                            "text": "Validar seu cartão de benefícios"
-                        },
-						{  
-                            "text": "Quero saber meu saldo no cartão Agilitas"
-                        },
-						{  
-                            "text": "Quero saber sobre a próxima cesta de alimentos"
-                        },
-						{  
-                            "text": "Outros Assuntos"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-            }],
-			"inputErrorResponses":[
-                {"order":"1", "messages":[{  
-                    "message": "Desculpe, mas pode digitar novamente? Ou se preferir, pode escolher um dos assuntos abaixo:",
-                    "options": [
-                        {  
-                            "text": "Acionar Agora o Serviço Funeral"
-                        },					
-                        {  
-                            "text": "Recebi esse cartão e quero saber o que é"
-                        },
-                        {  
-                            "text": "Acompanhar o andamento do meu benefício"
-                        },
-						{  
-                            "text": "Validar seu cartão de benefícios"
-                        },
-						{  
-                            "text": "Quero saber meu saldo no cartão Agilitas"
-                        },
-						{  
-                            "text": "Quero saber sobre a próxima cesta de alimentos"
-                        },
-						{  
-                            "text": "Outros Assuntos"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]},
-				{"order":"2", "messages":[{  
-                    "message": "Desculpe, mas ainda não entendi o que você deseja.Você pode digitar novamente ou escolher um dos assuntos abaixo?",
-                    "options": [
-                        {  
-                            "text": "Acionar Agora o Serviço Funeral"
-                        },					
-                        {  
-                            "text": "Recebi esse cartão e quero saber o que é"
-                        },
-                        {  
-                            "text": "Acompanhar o andamento do meu benefício"
-                        },
-						{  
-                            "text": "Validar seu cartão de benefícios"
-                        },
-						{  
-                            "text": "Quero saber meu saldo no cartão Agilitas"
-                        },
-						{  
-                            "text": "Quero saber sobre a próxima cesta de alimentos"
-                        },
-						{  
-                            "text": "Outros Assuntos"
-                        }
-                    ],
-                    "messageType": "OPTION_BOX"
-                }]}
-            ],
-			"maxInputErrorResponses":["Infelizmente não consegui te entender. Retorne o contato e nos informe o que deseja para que possamos atendê-lo da melhor forma."],
-			"noInputResponses":[{"order":"1", "messages":["Você não está respondendo. Tudo bem, não tem problema. Vou continuar trabalhando por aqui e quando você precisar de ajuda pode me chamar."]}]
-		}
-	]
+	"states": [{
+		"id": "/MENUBENEFICIARIO",
+		"idNavigationDetail": 16700,
+		"inputErrorResponses": [{
+				"order": "1",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas pode digitar novamente?\nOu se preferir, pode escolher um dos assuntos abaixo:",
+						"options": [{
+								"text": "1 - Acompanhar o andamento do meu Benefício"
+							},
+							{
+								"text": "2 - Validar seu Cartão de Benefícios"
+							},
+							{
+								"text": "3 - Quero saber meu saldo no cartão Agilitas"
+							},
+							{
+								"text": "4 - Quer saber quando irá receber sua próxima Cesta de Alimentos"
+							},
+							{
+								"text": "5 - Outros Assuntos"
+							}
+						]
+					}
+				}]
+			},
+			{
+				"order": "2",
+				"messages": [{
+					"messageType": "OPTION_BOX",
+					"message": {
+						"question": "Desculpe, mas ainda não entendi o que você deseja.\nVocê pode digitar novamente ou escolher um dos assuntos abaixo?",
+						"options": [{
+								"text": "1 - Acompanhar o andamento do meu Benefício"
+							},
+							{
+								"text": "2 - Validar seu Cartão de Benefícios"
+							},
+							{
+								"text": "3 - Quero saber meu saldo no cartão Agilitas"
+							},
+							{
+								"text": "4 - Quer saber quando irá receber sua próxima Cesta de Alimentos"
+							},
+							{
+								"text": "5 - Outros Assuntos"
+							}
+						]
+					}
+				}]
+			}
+		],
+		"noInputResponses": [{
+			"order": "1",
+			"messages": ["Olá, você está aí? Caso não me responda precisarei encerrar essa conversa. Mas não tem problema, caso ainda possua dúvidas ou para maiores informações entre em contato novamente"]
+		}]
+	}]
 }

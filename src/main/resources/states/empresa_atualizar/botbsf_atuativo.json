@@ -1,9 +1,0 @@
-{
-	"states":[
-		{
-			"id": "/ATUATIVO",
-			"idNavigationDetail":11200,
-			"initialMessages": ["Para atualizar o cadastro você será direcionado para a 'Área da Empresa', onde deverá apenas informar o CNPJ, seu CPF e senha de acesso e clicar em Consultar - Alteração de Dados Cadastrais."]
-		}
-	]
-}

@@ -1,8 +1,150 @@
 {
-	"states":[
+	"states": [
+		{
+			"id": "/MAX_NO_INPUT",
+			"idNavigationDetail": 9996,
+			"initialMessages":["Finalizo o atendimento por falta de comunicação. Para mais informações entre em contato novamente via on line ou pelos DDG's 0800 773 37 38 ou 0800 580 3738"]
+		},
+		{
+			"id": "/MAX_INPUT_ERROR",
+			"idNavigationDetail": 9998
+		},
+		{
+			"id": "/TERMINATE",
+			"idNavigationDetail": 9999
+		},
 		{
 			"id": "/START",
 			"idNavigationDetail": 10000
+		},
+		{
+			"id": "/FUNERAL",
+			"idNavigationDetail": 10300
+		},
+		{
+			"id": "/INATIVO",
+			"idNavigationDetail": 10800
+		},
+		{
+			"id": "/ATUALIZAR",
+			"idNavigationDetail": 11000
+		},
+		{
+			"id": "/ATUATIVO",
+			"idNavigationDetail": 11200
+		},
+		{
+			"id": "/ATUINATIVO",
+			"idNavigationDetail": 11300
+		},
+		{
+			"id": "/SOBRE",
+			"idNavigationDetail": 11500
+		},
+		{
+			"id": "/BOLETOS",
+			"idNavigationDetail": 11600
+		},
+		{
+			"id": "/BOLETOIMPRESSO",
+			"idNavigationDetail": 11700
+		},
+		{
+			"id": "/INATIVACAO",
+			"idNavigationDetail": 11900
+		},
+		{
+			"id": "/EMAILDISPONIVEL",
+			"idNavigationDetail": 16100
+		},
+		{
+			"id": "/EMAILNPAGO",
+			"idNavigationDetail": 16200
+		},
+		{
+			"id": "/INADIMPLENCIA",
+			"idNavigationDetail": 16000
+		},
+		{
+			"id": "/INADINATIVO",
+			"idNavigationDetail": 12400
+		},
+		{
+			"id": "/INADEBITO",
+			"idNavigationDetail": 12600
+		},
+		{
+			"id": "/INADVENCER",
+			"idNavigationDetail": 12700
+		},
+		{
+			"id": "/SEMINAD",
+			"idNavigationDetail": 12800
+		},
+		{
+			"id": "/SERASA",
+			"idNavigationDetail": 13000
+		},
+		{
+			"id": "/SEMSERASA",
+			"idNavigationDetail": 13100
+		},
+
+		{
+			"id": "/NEGATIVADA",
+			"idNavigationDetail": 13300
+		},
+		{
+			"id": "/ACORDO",
+			"idNavigationDetail": 13400
+		},
+		{
+			"id": "/COBSEGMENTO",
+			"idNavigationDetail": 13600
+		},
+		{
+			"id": "/OUTROS",
+			"idNavigationDetail": 13800
+		},
+		{
+			"id": "/SEGUECPF",
+			"idNavigationDetail": 13902
+		},
+		{
+			"id": "/ERROCPF",
+			"idNavigationDetail": 13901
+		},
+		{
+			"id": "/ANDAMENTO",
+			"idNavigationDetail": 14200
+		},
+		{
+			"id": "/PROTOCOLO",
+			"idNavigationDetail": 16400
+		},
+		{
+			"id": "/NPROTOCOLO",
+			"idNavigationDetail": 16500
+		},
+		{
+			"id": "/VALIDAR",
+			"idNavigationDetail": 14300
+		},
+		{
+			"id": "/SALDO",
+			"idNavigationDetail": 14400
+		},
+		{
+			"id": "/CESTA",
+			"idNavigationDetail": 14500
+		},
+		{
+			"id": "/DESPEDE",
+			"idNavigationDetail": 14700
+		},
+		{
+			"id": "/ATENDENTE",
+			"idNavigationDetail": 14800
 		}
 	]
 }

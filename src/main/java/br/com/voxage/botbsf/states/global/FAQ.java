@@ -19,13 +19,13 @@ public class FAQ {
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = "REDIRECT";
+				botStateFlow.navigationKey = BotBSF.STATES.REDIRECT;
 				
 				return botStateFlow;
 			});
 
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("REDIRECT", "#REDIRECT");
+				put(BotBSF.STATES.REDIRECT, "#REDIRECT");
 			}});
 		}};
 	}

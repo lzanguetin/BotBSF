@@ -1,9 +1,14 @@
 package br.com.voxage.botbsf.states.empresa_boletos;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 import br.com.voxage.botbsf.BotBSF;
-import br.com.voxage.botbsf.models.ConsultaCNPJ;
+import br.com.voxage.botbsf.models.DadosEmpresa;
+import br.com.voxage.chat.botintegration.message.Message;
+import br.com.voxage.chat.botintegration.message.SimpleMessage;
 import br.com.voxage.vbot.BotState;
 import br.com.voxage.vbot.BotStateFlow;
 import br.com.voxage.vbot.BotStateInteractionType;
@@ -19,12 +24,22 @@ public class BoletoImpresso {
 			
 			setPreFunction(botState ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
-				ConsultaCNPJ consulta = bot.getConsultaCNPJ();
+				DadosEmpresa consulta = bot.getDadosEmpresa();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
 				
-				botState.setCustomField("dia", consulta.getImpressao().getUltimaImp());
-				botState.setCustomField("vencimento", consulta.getImpressao().getVencUltima());
-				botState.setCustomField("horas", consulta.getImpressao().getHrsPagamento());
+		    	DateFormat dia = new SimpleDateFormat("dd-MM-yyyy");
+		    	DateFormat hora = new SimpleDateFormat("HH:mm:ss"); 
+		    	Date date = new Date();
+		    	Date vencimento = new Date();
+		    	date = consulta.getRegrasNegocio().getUltimaImpressao().getDataHora();
+		    	vencimento = consulta.getRegrasNegocio().getUltimaImpressao().getDataVencimento();
+		    	Integer qtdHoras = consulta.getRegrasNegocio().getUltimaImpressao().getQtdHorasDePagamento();
+				
+				Message<?> message = null;
+				message = SimpleMessage.text(String.format("Sua última impressão foi realizada no dia %s as %s referente ao vencimento "
+						+ "de %s. Você deverá efetuar o pagamento após %s hora(s) da impressão.", dia.format(date), hora.format(date), 
+						dia.format(vencimento), qtdHoras));
+				bot.addResponse(message);
 				
 				return botStateFlow;
 			});
@@ -32,15 +47,13 @@ public class BoletoImpresso {
 			setPosFunction((botState, inputResult) ->{
 				BotStateFlow botStateFlow = new BotStateFlow();
 				botStateFlow.flow = BotStateFlow.Flow.CONTINUE;
-				botStateFlow.navigationKey = "FINALIZAR";
+				botStateFlow.navigationKey = BotBSF.STATES.FINALIZAR;
 				
 				return botStateFlow;
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put("FINALIZAR", "#FINALIZAR");
-				put("MAX_INPUT_ERROR", "/TERMINATE");
-				put("MAX_NO_INPUT", "/TERMINATE");
+				put(BotBSF.STATES.FINALIZAR, "#FINALIZAR");
 			}});
 		}};
 	}

@@ -1,9 +1,0 @@
-{
-	"states":[
-	{
-			"id": "/ESQUECEU",
-			"idNavigationDetail": 10702,
-			"initialMessages": ["Acabamos de enviar um e-mail para redefinição de sua senha para o endereço: #email#"]		
-		}
-	]
-}

@@ -1,9 +1,0 @@
-{
-	"states":[
-	{
-			"id": "/INADVENCER",
-			"idNavigationDetail": 12700,
-			"initialMessages": ["O único boleto disponível para pagamento irá vencer em #data#, portanto deve ter recebido um e-mail de aviso de boleto disponível e não de inadimplência para imprimi-lo é só seguir o passo a passo que consta no e-mail que recebeu ou clique aqui e você será direcionado para a 'Área da Empresa'. Digite o CNPJ e clique na opção 'Imprimir Boletos de Pagamentos'. O Benefício Social Familiar agradece o seu contato."]
-		}
-	]
-}
