@@ -38,7 +38,7 @@ public class MenuTrabalhador {
 				bot.setFlagError(aux+1);
 				
 				Message<?> message = null;
-				message = OptionBuilder.optionBox("Vou te passar algumas opções e você define aquela que melhor te ajudar.")
+				message = OptionBuilder.optionBox("Vou te passar algumas opções e você escolhe aquela que melhor te ajudar, mas se preferir, digite agora em poucas palavras o que você precisa")
 						.addOption("1", "1 - O que é Benefício Social Familiar?").addOption("2", "2 - Acompanhar o andamento do "
 						+ "meu Benefício").addOption("3", "3 - Validar seu Cartão de Benefícios").addOption("4", "4 - Quero saber meu "
 						+ "saldo no cartão Agilitas").addOption("5", "5 - Quer saber quando irá receber sua próxima Cesta de Alimentos")

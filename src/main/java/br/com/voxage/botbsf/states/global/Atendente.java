@@ -115,8 +115,6 @@ public class Atendente {
                             state.flow = BotStateFlow.Flow.TRANSFER;
                             bot.setBotNameToTransfer(CHAT_TRANSFER_WEB);
                             log.info("BotNameToTransfer=" + bot.getBotNameToTransfer(), bot.getSessionId());
-                            System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                            System.out.println(bot.getUserSession().get("textInfo"));
                         } else {
                             state.flow = BotStateFlow.Flow.END_CURRENT_STATE;
                             state.navigationKey = "#FORA_HORARIO";

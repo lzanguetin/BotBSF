@@ -21,8 +21,8 @@ import br.com.voxage.chat.botintegration.utils.JsonUtils;
 public class BotBSFIntegration {
 	private static final String BASE_URL = "https://api.bsfonline.com.br/vox-age/";
 	
-	public static Token validarUsuario(BotBSF bot, String user, String pass) {
-		String url = String.format("%s%s?%s&%s", BASE_URL, "acesso", "usuario=" + user, "senha=" + pass);
+	public static Token validarUsuario(BotBSF bot, String user, String pass, String ip) {
+		String url = String.format("%s%s?%s&%s&%s&%s", BASE_URL, "acesso", "usuario=" + user, "senha=" + pass, "canal=BOT", "origem=" + ip);
 
 		HashMap<String, String> headers = new HashMap<String, String>();
 

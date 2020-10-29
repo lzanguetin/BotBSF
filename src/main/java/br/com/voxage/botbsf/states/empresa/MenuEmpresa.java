@@ -39,7 +39,7 @@ public class MenuEmpresa {
 				bot.setFlagError(aux+1);
 				
 				Message<?> message = null;
-				message = OptionBuilder.optionBox("Vou te passar algumas opções e você escolhe aquela que melhor te ajudar.").
+				message = OptionBuilder.optionBox("Vou te passar algumas opções e você escolhe aquela que melhor te ajudar, mas se preferir, digite agora em poucas palavras o que você precisa").
 						addOption("1", "1 - Saber mais sobre o que é Benefício Social Familiar").addOption("2", "2 - Acesso do Operador ao Cadastro do Empregador").
 						addOption("3", "3 - Atualizar os Dados do Empregador").addOption("4", "4 - Impressão ou Pagamento de Boletos").
 						addOption("5", "5 - Inativação de Cadastro").addOption("6", "6 - Dúvidas sobre o e-mail recebido").

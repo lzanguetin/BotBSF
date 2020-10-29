@@ -84,9 +84,10 @@ public class Start {
 					Token customerInfo = null;
 					String user = "voxage";
 					String pass = "1234";
+					String ip = bot.getUserSession().get("ip").toString();
 					
 					try {
-						customerInfo = BotBSFIntegration.validarUsuario(bot, user, pass);
+						customerInfo = BotBSFIntegration.validarUsuario(bot, user, pass, ip);
 						bot.setToken(customerInfo);
 						botStateFlow.navigationKey = inputResult.getIntentName();
 					}catch(Exception e) {

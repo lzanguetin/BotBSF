@@ -52,7 +52,6 @@ public class Boletos {
 			});
 			
 			setNextNavigationMap(new HashMap<String, String>(){{
-				put(BotBSF.STATES.ATENDENTE, "#ATENDENTE");
 				put(BotBSF.STATES.SEMBOLETOS, "#SEMBOLETOS");
 				put(BotBSF.STATES.BOLETOIMPRESSO, "#BOLETOIMPRESSO");
 				put("MAX_INPUT_ERROR", "/MAX_INPUT_ERROR");

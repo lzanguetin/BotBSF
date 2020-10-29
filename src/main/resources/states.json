@@ -3,11 +3,17 @@
 		{
 			"id": "/MAX_NO_INPUT",
 			"idNavigationDetail": 9996,
-			"initialMessages":["Finalizo o atendimento por falta de comunicação. Para mais informações entre em contato novamente via on line ou pelos DDG's 0800 773 37 38 ou 0800 580 3738"]
+			"initialMessages": [
+				"Finalizo o atendimento por falta de comunicação. Para mais informações entre em contato novamente via on line ou pelos DDG's 0800 773 37 38 ou 0800 580 3738"
+			]
 		},
 		{
 			"id": "/MAX_INPUT_ERROR",
 			"idNavigationDetail": 9998
+		},
+		{
+			"id": "/FORA_HORARIO",
+			"idNavigationDetail": 14900
 		},
 		{
 			"id": "/TERMINATE",
@@ -89,7 +95,6 @@
 			"id": "/SEMSERASA",
 			"idNavigationDetail": 13100
 		},
-
 		{
 			"id": "/NEGATIVADA",
 			"idNavigationDetail": 13300
@@ -141,6 +146,10 @@
 		{
 			"id": "/DESPEDE",
 			"idNavigationDetail": 14700
+		},
+		{
+			"id": "/FAQ",
+			"idNavigationDetail": 17000
 		},
 		{
 			"id": "/ATENDENTE",

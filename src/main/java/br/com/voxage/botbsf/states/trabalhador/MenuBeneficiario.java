@@ -38,7 +38,7 @@ public class MenuBeneficiario {
 				bot.setFlagError(aux+1);
 				
 				Message<?> message = null;
-				message = OptionBuilder.optionBox("Vou te passar algumas opções e você define aquela que melhor te ajudar.")
+				message = OptionBuilder.optionBox("Vou te passar algumas opções e você escolhe aquela que melhor te ajudar, mas se preferir, digite agora em poucas palavras o que você precisa")
 						.addOption("1", "1 - Acompanhar o andamento do meu Benefício").addOption("2", "2 - Validar seu Cartão de "
 						+ "Benefícios").addOption("3", "3 - Quero saber meu saldo no cartão Agilitas").addOption("4", "4 - Quer saber "
 						+ "quando irá receber sua próxima Cesta de Alimentos").addOption("5", "5 - Outros Assuntos").build();
