@@ -13,13 +13,13 @@
 								"question": "Desculpe, mas esta opção que você escolheu não existe. Para eu conseguir te ajudar preciso saber o assunto que deseja falar:",
 								"options": [
 									{
-										"text": "Serviço Funeral"
+										"text": "Preciso do Serviço Funerário agora, pois ocorreu falecimento"
 									},
 									{
-										"text": "Trabalhador ou Beneficiário"
+										"text": "Sou Trabalhador ou Beneficiário"
 									},
 									{
-										"text": "Empregador"
+										"text": "Sou um Empregador ou Contabilidade"
 									}
 								]
 							}
@@ -35,13 +35,13 @@
 								"question": "Desculpe, mas você escolheu novamente uma opção que não existe. Para eu conseguir te ajudar eu preciso saber o assunto que deseja falar:",
 								"options": [
 									{
-										"text": "Serviço Funeral"
+										"text": "Preciso do Serviço Funerário agora, pois ocorreu falecimento"
 									},
 									{
-										"text": "Trabalhador ou Beneficiário"
+										"text": "Sou Trabalhador ou Beneficiário"
 									},
 									{
-										"text": "Empregador"
+										"text": "Sou um Empregador ou Contabilidade"
 									}
 								]
 							}

@@ -32,7 +32,9 @@ public class Start {
 					
 					Message<?> message = null;
 					message = OptionBuilder.optionBox("Olá, eu sou a Benê, atendente virtual da Gestora do Benefício Social Familiar!\n "
-							+ "Selecione o Assunto para que eu possa te ajudar:").addOption("1", "Serviço Funeral").addOption("2", "Trabalhador ou Beneficiário").addOption("3", "Empregador").build();
+							+ "Ah, fique tranquilo, estamos alinhados com as normas de privacidade e da Lei Geral de proteção aos dados.\n"
+							+ "Para que eu possa te ajudar, escolha por favor uma das opções abaixo:").addOption("1", "Preciso do Serviço Funerário agora, pois ocorreu falecimento")
+							.addOption("2", "Sou Trabalhador ou Beneficiário").addOption("3", "Sou um Empregador ou Contabilidade").build();
 					
 					bot.addResponse(message);
 		
@@ -47,7 +49,7 @@ public class Start {
 					String userInput = userInputs.getConcatenatedInputs().toLowerCase();
 						
 					switch(userInput) {
-						case ("serviço funeral"):
+						case ("preciso do serviço funerário agora, pois ocorreu falecimento"):
 							try {
 									dadosFluxo.setType("1");
 					                botInputResult.setIntentName(BotBSF.STATES.FUNERAL);
@@ -55,7 +57,7 @@ public class Start {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
 							break;
-						case ("trabalhador ou beneficiário"):
+						case ("sou trabalhador ou beneficiário"):
 							try {
 									dadosFluxo.setType("2");
 					                botInputResult.setIntentName(BotBSF.STATES.CPF);
@@ -63,7 +65,7 @@ public class Start {
 				                	botInputResult.setResult(BotInputResult.Result.ERROR);
 				            }
 							break;
-						case ("empregador"):
+						case ("sou um empregador ou contabilidade"):
 							try {
 									dadosFluxo.setType("3");
 					                botInputResult.setIntentName(BotBSF.STATES.CNPJ);
